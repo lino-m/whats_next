@@ -1,0 +1,23 @@
+.banner {
+  height: 60vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(255,255,255,0.4)), image-url("banner1.jpg");
+  background-size: cover;
+  background-position: 10% 15%;
+  color: black;
+  h1 {
+    font-weight: bold;
+    font-size: 45px;
+  }
+  p {
+    opacity: .8;
+    font-size: 25px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+  }
+  .banner-content {
+    padding-left: 5em;
+  }
+}
