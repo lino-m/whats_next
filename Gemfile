@@ -16,6 +16,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# What's Next GEMS
+# Cloudinary gem -> for hosting images
+gem 'cloudinary', '~> 1.12.0'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
