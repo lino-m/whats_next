@@ -1,5 +1,6 @@
 class Goal < ApplicationRecord
+  include PgSearch::Model
   belongs_to :user
   belongs_to :activity
-  include PgSearch::Model
+  has_one_attached :photo
 end
