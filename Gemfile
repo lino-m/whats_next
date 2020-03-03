@@ -19,6 +19,7 @@ gem 'webpacker'
 # What's Next GEMS
 # Cloudinary gem -> for hosting images
 gem 'cloudinary', '~> 1.12.0'
+gem "algoliasearch-rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
