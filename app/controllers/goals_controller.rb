@@ -3,6 +3,10 @@ class GoalsController < ApplicationController
 
   end
 
+  def achievement_index
+    @achievements = Goal.where(completed: true)
+  end
+
   def show
   end
 end
