@@ -19,6 +19,10 @@ gem 'webpacker'
 # What's Next GEMS
 # Cloudinary gem -> for hosting images
 gem 'cloudinary', '~> 1.12.0'
+# Gem to display actual currency in Goals and Total Budgets
+gem 'money-rails'
+#faker for testing
+gem 'faker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -32,7 +36,3 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
-
-
-# Gem to display actual currency in Goals and Total Budgets
-gem 'money-rails'

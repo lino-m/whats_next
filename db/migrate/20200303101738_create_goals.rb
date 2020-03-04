@@ -6,8 +6,8 @@ class CreateGoals < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :motivation
       t.string :category
-      t.integer :target_budget
-      t.boolean :completed
+      t.integer :contribution
+      t.boolean :completed, defaul: false
 
       t.timestamps
     end
