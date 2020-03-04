@@ -1,15 +1,19 @@
 class Goal < ApplicationRecord
   include PgSearch::Model
-  multisearchable against: [:category, :title, :motivation]
+  multisearchable against: [:title, :category, :motivation]
   pg_search_scope :search_by_title_and_category_and_motivation,
-    against: {
+    against: [:title]
+    {
       category: 'A',
       title: 'B',
       motivation: 'C'
-    },
-    using: {
-      tsearch: { prefix: true }
     }
+  #     associated_against: {
+  #      activity: [:name ]
+  #    },
+  #   using: {
+  #     tsearch: { prefix: true }
+  #   }
 
   # pg_search_scope :global_search,
   #   against:: {
@@ -30,7 +34,7 @@ class Goal < ApplicationRecord
 
   belongs_to :user
   belongs_to :activity
-  
+
   has_many :milestones, dependent: :destroy
 
   has_one_attached :photo

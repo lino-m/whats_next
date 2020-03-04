@@ -12,6 +12,20 @@ Milestone.destroy_all
 puts 'Creating users'
 
 counter = 0
+frieda = User.new(
+   first_name: Frieda,
+    last_name: Scholz,
+    email: frieda@scholz.de,
+    achievement_score: (100..1000).to_a.sample,
+    impressions: (10..500).to_a.sample
+  )
+fred = User.new(
+   first_name: Fred,
+    last_name: Schulz,
+    email: frieda@schulz.de,
+    achievement_score: (100..1000).to_a.sample,
+    impressions: (10..500).to_a.sample
+  )
 
 5.times do
   user = User.new(
@@ -30,6 +44,18 @@ end
 
 # Display activity
 puts 'Creating activities'
+
+Activity.create(
+  name: 'Horseriding',
+  location: 'Somestreet 4, 12345 Someplace',
+  category: 'Sports',
+  )
+
+Activity.create(
+  name: 'Gardening',
+  location: 'Someroad 1, 12345 Somewhere',
+  category: 'Nature',
+  )
 
 Activity.create(
   name: 'Parachuting Near Berlin',
@@ -116,6 +142,30 @@ users.each do |user|
     completed: true
     )
 end
+
+  Goal.create!(
+    user_id: User.where(First_name: 'Frieda').id,
+    activity_id: activities.sample.id,
+    title: 'Frieda: I like Icecream !',
+    motivation: 'Skiing is awesome',
+    contribution: 100,
+    category: 'Sports' #,
+    # photo: , TBD
+    completed: true
+    )
+
+
+  Goal.create!(
+    user_id: User.where(First_name: 'Fred').id,
+    activity_id: activities.sample.id,
+    title: 'love new things!',
+    motivation: 'I want to live to the fullest',
+    contribution: 100,
+    category: 'Icecream' #,
+    # photo: , TBD
+    completed: true
+    )
+
 
 # Display activity
 puts 'Creating Milestones for Achievements'
