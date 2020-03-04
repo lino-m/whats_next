@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get '/achievements', to: 'goals#achievements', as: 'achievements'
   resources :goals do
     resources :milestones, except: :show
   end
