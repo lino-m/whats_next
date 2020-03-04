@@ -1,1 +1,126 @@
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+.card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin-bottom: 40px;
+
+  h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 10px;
+  color: $logo-green
+    }
+  }
+}
+
+.card-trip > .image_card_goal{
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.card-trip .motivation {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  margin-right: 30px;
+}
+
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+  top: -50px;
+}
+
+.green_point {
+  right: 35px;
+  max-width: 30px;
+  top: 204px;
+}
+
+.lockup {
+  position: absolute;
+  right: 23px;
+  top: 14px;
+  .target {
+    max-width: 25px;
+    margin-top: -3px;
+    margin-right: 3px;
+  }
+  h2 {
+    margin-bottom: 0 !important;
+  }
+  p {
+    font-size: .7rem;
+    margin-top: 8px;
+  }
+}
+
+.btn-light {
+  background-color: $logo-pink;
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  right: 13px;
+  font-weight: 700;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.inspiration_text {
+  font-size: 11px;
+  margin: 0;
+}
+
+.inspiration_image {
+  width: 28px;
+}
+
+.inspiration {
+  position: absolute;
+  background-color: white;
+  top: 213px;
+  left: 21px;
+}
+
+.btn-light:hover {
+  color: $logo-green;
+}
+@media (max-width: 990px) {
+  // .lockup {
+  //   position: relative;
+  // }
+  .card-trip .motivation  {
+      width: 250px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
