@@ -1,6 +1,5 @@
 class Goal < ApplicationRecord
   include PgSearch::Model
-  multisearchable against: [:category, :title, :motivation]
   pg_search_scope :search_by_title_and_category_and_motivation,
     against: {
       category: 'A',
@@ -30,7 +29,7 @@ class Goal < ApplicationRecord
 
   belongs_to :user
   belongs_to :activity
-  
+
   has_many :milestones, dependent: :destroy
 
   has_one_attached :photo
