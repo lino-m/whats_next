@@ -1,4 +1,6 @@
 class GoalsController < ApplicationController
+before_action :find_goal, only: [:goal]
+
   def index
 
   end
@@ -14,6 +16,11 @@ class GoalsController < ApplicationController
   end
 
   def show
+
+  end
+
+  def achievement
+    @achievement = Goal.find(params[:id])
   end
 
   def searched
@@ -36,5 +43,11 @@ class GoalsController < ApplicationController
     # else
     #   @movies = Movie.all
     # end
+  end
+
+  private
+
+  def find_goal
+    @goal = Goal.find(params[:id])
   end
 end
