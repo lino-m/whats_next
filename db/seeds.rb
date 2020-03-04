@@ -120,9 +120,9 @@ end
 # Display activity
 puts 'Creating Milestones for Achievements'
 
-goals = Goal.all
+achievements = Goal.where(completed: true)
 
-goals.each do |goal|
+achievements.each do |goal|
   Milestone.create(
     goal_id: goal.id,
     name: 'Step 01',
@@ -145,6 +145,4 @@ goals.each do |goal|
     # price assigned as 0 by default
     )
 end
-
-
 
