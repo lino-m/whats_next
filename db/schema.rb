@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_142840) do
+ActiveRecord::Schema.define(version: 2020_03_03_171922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_142840) do
     t.string "title"
     t.string "motivation"
     t.string "category"
-    t.integer "target_budget"
+    t.integer "contribution"
     t.boolean "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -63,9 +63,10 @@ ActiveRecord::Schema.define(version: 2020_03_03_142840) do
     t.string "name"
     t.string "description"
     t.boolean "done"
-    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.string "url"
     t.index ["goal_id"], name: "index_milestones_on_goal_id"
   end
 

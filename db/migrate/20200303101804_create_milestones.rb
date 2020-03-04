@@ -5,7 +5,6 @@ class CreateMilestones < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :description
       t.boolean :done
-      t.integer :price
 
       t.timestamps
     end

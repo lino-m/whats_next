@@ -20,6 +20,10 @@ gem 'webpacker'
 # Cloudinary gem -> for hosting images
 gem 'cloudinary', '~> 1.12.0'
 gem 'pg_search'
+# Gem to display actual currency in Goals and Total Budgets
+gem 'money-rails'
+#faker for testing
+gem 'faker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
