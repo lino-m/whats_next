@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#111111;stroke-width:3;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#111111;stroke-width:3;stroke-linecap:square;stroke-miterlimit:10;}
+</style>
+<title>archery target</title>
+<g>
+	<path class="st0" d="M48.3,29c1.1,2.8,1.7,5.8,1.7,9c0,13.3-10.7,24-24,24S2,51.3,2,38s10.7-24,24-24c3.2,0,6.2,0.6,9,1.7"/>
+	<circle class="st1" cx="26" cy="38" r="13"/>
+	<line class="st1" x1="26" y1="38" x2="58" y2="6"/>
+	<polygon class="st1" points="51,13 49,3 41,11 43,21 53,23 61,15 	"/>
+</g>
+</svg>
