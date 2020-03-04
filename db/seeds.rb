@@ -8,6 +8,15 @@ Activity.destroy_all
 Goal.destroy_all
 Milestone.destroy_all
 
+
+############################################# Customized Users, Goals, Activities, Milestones and Achievments
+
+
+# The space for customization
+
+
+############################################# Generic Population
+
 # Display activity
 puts 'Creating users'
 
@@ -102,7 +111,6 @@ end
 puts 'Creating Achievements'
 
 users = User.all
-
 activities = Activity.all
 
 users.each do |user|
@@ -145,4 +153,6 @@ achievements.each do |goal|
     # price assigned as 0 by default
     )
 end
+
+
 
