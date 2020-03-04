@@ -1,0 +1,6 @@
+<%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"mt-5" } do |f| %>
+  <div class="d-flex">
+    <%= f.input :query, label: false, placeholder: "What does your heart crave?" %>
+    <%= f.submit 'go', class: "btn btn-info" %>
+  </div>
+  <% end %>
