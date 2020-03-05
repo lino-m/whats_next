@@ -3,10 +3,26 @@
 }
 
 .achievement_title {
-  font-size: 30px;
+  font-weight: 600;
+  margin: 20px 0;
+  font-size: 40px;
 }
 
 .price {
   font-weight: 700;
+  // margin-left: auto;
 }
 
+.row {
+  justify-content: space-between;
+}
+
+.motivation {
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+.col-6 {
+  border: 1px lightgrey solid;
+  padding: 10px;
+}
