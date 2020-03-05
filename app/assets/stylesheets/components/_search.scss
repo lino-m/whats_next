@@ -1,7 +1,7 @@
 
 .my-container {
   width: 600px;
-  background-color: $light-gray;
+  background-color: none;
   height: 300px;
   padding: 10px;
   position: absolute;
@@ -13,6 +13,11 @@
 }
 #hidden-search {
   display: none;
+  background-color: white;
+  padding-top: 20px;
+  width: 522px;
+  position: absolute;
+  margin-left: 30px;
 
 }
 .box {
