@@ -51,7 +51,6 @@ fred = User.create(
   counter += 1
   user.username = user.first_name
   user.password = '123456'
-  # user.avatar.attach(File.open('../../app/assets/images/default-avatar.jpg')
   user.save!
 end
 
