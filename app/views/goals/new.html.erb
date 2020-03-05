@@ -22,6 +22,12 @@
                                                     assocticiation_insert_method: :append
                                               } %>
           </div>
+          <br>
+          <div>
+            <%= f.simple_fields_for @activities do |a| %>
+              <%= a.input :name, as: :select, collection: @activities, prompt: "Select Activity", label: false %>
+            <% end %>
+          </div>
         </div>
         <%= f.button :submit, class: "btn btn-primary" %>
       <% end %>
