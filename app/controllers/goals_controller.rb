@@ -1,4 +1,6 @@
 class GoalsController < ApplicationController
+before_action :find_goal, only: [:show]
+
   def index
   end
 
@@ -24,6 +26,12 @@ class GoalsController < ApplicationController
   end
 
   def show
+
+  end
+
+  def achievement
+    @achievement = Goal.find(params[:id])
+    @milestones = Milestone.where(goal_id: @achievement.id)
   end
 
   def searched
@@ -48,10 +56,10 @@ class GoalsController < ApplicationController
     # end
   end
 
-private
 
-def set_goal
-  @goal = Goal.find(params[:id])
-end
+  private
 
+  def find_goal
+    @goal = Goal.find(params[:id])
+  end
 end

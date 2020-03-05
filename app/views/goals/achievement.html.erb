@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+     <!--  <------------- Card ---------------->
+    <div class="col-6" >
+      <div class="achievement_card">
+        <%= image_tag "https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80", class: "image_achievement" %>
+        <h1 class="achievement_title"> <%=  @achievement.title %> </h1>
+        <p class="description"> <%= @achievement.motivation %> </p>
+      </div>
+      <div class="container">
+
+            <% @milestones[0..2].each do |milestone| %>
+
+              <div class="row">
+                <p class="checkbox"> <%= milestone.done %> </p> <p class="name"><%= milestone.name %> </p> <p class="description"> <%= milestone.description %> </p> <p class="price"> <%= milestone.price %> € </p>
+             </div>
+          <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
