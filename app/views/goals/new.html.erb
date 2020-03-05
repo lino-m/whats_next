@@ -1,0 +1,16 @@
+
+<div class="container col-lg-6">
+  <div class="card-form">
+    <div class="form-group">
+      <%= simple_form_for @goal do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :title, class: "form-control"%>
+        <%= f.input :motivation, class: "form-control"%>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "btn btn-primary" %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  </div>
+</div>
+
+
