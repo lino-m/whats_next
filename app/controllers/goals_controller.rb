@@ -2,8 +2,16 @@ class GoalsController < ApplicationController
 before_action :find_goal, only: [:show]
 
   def index
-
   end
+
+  def new
+    @goal = Goal.new
+    # @goal.build_milestones
+  end
+
+  def create
+  end
+
 
   def achievements
 
@@ -33,6 +41,7 @@ before_action :find_goal, only: [:show]
     #   user_input = params[:search][:query]
     #   @movies = Movie.where(year: user_input)
   # end
+
 
   private
 
