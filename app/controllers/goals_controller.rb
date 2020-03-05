@@ -2,8 +2,16 @@ class GoalsController < ApplicationController
 before_action :find_goal, only: [:show]
 
   def index
-
   end
+
+  def new
+    @goal = Goal.new
+    # @goal.build_milestones
+  end
+
+  def create
+  end
+
 
   def achievements
     if params[:search].present?# && params[:search][:query].match(/^\w+$/)
@@ -47,6 +55,7 @@ before_action :find_goal, only: [:show]
     #   @movies = Movie.all
     # end
   end
+
 
   private
 
