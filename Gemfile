@@ -15,6 +15,8 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'geocoder'
+
 
 # What's Next GEMS
 # Cloudinary gem -> for hosting images
