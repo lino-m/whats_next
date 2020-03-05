@@ -51,7 +51,6 @@ fred = User.create(
   counter += 1
   user.username = user.first_name
   user.password = '123456'
-  # user.avatar.attach(File.open('../../app/assets/images/default-avatar.jpg')
   user.save!
 end
 
@@ -110,8 +109,13 @@ end
   Goal.create!(
     user_id: frieda.id,
     activity_id: activities.sample.id,
+<<<<<<< HEAD
     title: 'practice skating backflips!  more Icecream!',
     motivation: 'Skiing is awesome',
+=======
+    title: 'practice skating backflips!',
+    motivation: 'Just because it is awesome and will impress a lot of people!',
+>>>>>>> cd46e5b526115c71f484c3e552f698d8e6f744cc
     contribution: 100,
     category: 'Sports',
     # photo: , TBD

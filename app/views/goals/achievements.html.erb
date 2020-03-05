@@ -1,7 +1,7 @@
 <div class="d-flex">
   <% @achievements.each do |achievement| %>
   <%#= achievement.searchable_type %>
-    <%# if achievement.searchable_type == "Goal" %>
+    <%= achievement.searchable_type %>
       <%=  achievement.title %>
     <%# else %>
       <%#= 'else' %>

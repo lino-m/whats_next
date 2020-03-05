@@ -1,3 +1,11 @@
+.container {
+    padding: 30px 0px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
@@ -22,11 +30,12 @@
 }
 
 .card-trip > .image_card_goal{
-  height: 250px;
+  height: 150px;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   padding: 6px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .card-trip .motivation {
@@ -94,22 +103,6 @@
   background-color: white;
   top: 213px;
   left: 21px;
-  padding: 5px;
-  border-radius: 3px;
-}
-
-.profile {
-  background: $logo-green;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
-}
-
-.background_badge {
-  background-color: $logo-green;
-  padding: 70px;
-  margin: 10px;
-  text-align: center;
-  font-weight: 700;
 }
 
 .btn-light:hover {
@@ -123,18 +116,5 @@
       width: 250px;
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

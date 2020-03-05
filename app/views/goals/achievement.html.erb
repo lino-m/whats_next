@@ -7,6 +7,17 @@
         <h1 class="achievement_title"> <%=  @achievement.title %> </h1>
         <p class="description"> <%= @achievement.motivation %> </p>
       </div>
+      <div class="container">
+
+            <% @milestones[0..2].each do |milestone| %>
+
+              <div class="row">
+                <p class="checkbox"> <%= milestone.done %> </p> <p class="name"><%= milestone.name %> </p> <p class="description"> <%= milestone.description %> </p> <p class="price"> <%= milestone.price %> € </p>
+             </div>
+          <% end %>
+      </div>
+
     </div>
   </div>
 </div>
+
