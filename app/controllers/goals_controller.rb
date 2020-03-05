@@ -24,15 +24,18 @@ before_action :find_goal, only: [:show]
 
 
   def achievements
-    if params[:search].present?# && params[:search][:query].match(/^\w+$/)
+    if params[:search].present?
       user_query = params[:search][:query]
-      @achievements = Goal.where(completed: true)
-      @achievements_pg= PgSearch.multisearch(user_query)
-      @achievements = @achievements_pg.map(&:searchable)
+      # @achievements = Goal.where(completed: true)
+      @achievements_pg = PgSearch.multisearch(user_query)
+      @query_achievements = @achievements_pg.where(completed: true)
 
     else
-      @achievements = Goal.where(completed: true)
+
+      # @achievements = Goal.where(completed: true)
     end
+
+
   end
 
   def show
@@ -44,27 +47,11 @@ before_action :find_goal, only: [:show]
     @milestones = Milestone.where(goal_id: @achievement.id)
   end
 
-  def searched
+  # def notes to self
     # if params[:search].present? && params[:search][:query].match(/^\d+$/)
     #   user_input = params[:search][:query]
     #   @movies = Movie.where(year: user_input)
-    # elsif params[:search].present?
-    #   user_input = params[:search][:query]
-    #   # @movies = Movie.where("title ILIKE ? OR syllabus ILIKE ? ", "%#{user_input}%", "%#{user_input}%" )
-    #   # sql_query = "
-    #   #   movies.title @@ :query
-    #   #   OR movies.syllabus @@ :query
-    #   #   OR directors.full_name @@ :query
-    #   # "
-    #   # @movies = Movie.joins(:director).where(sql_query, query: "%#{user_input}%")
-    #   # @movies = Movie.search_for_bananas(user_input)
-    #   @movies_pg_format = PgSearch.multisearch(user_input)
-    #   # @movies = @movies_pg_format.map { |movie| movie.searchable }
-    #   @movies = @movies_pg_format.map(&:searchable)
-    # else
-    #   @movies = Movie.all
-    # end
-  end
+  # end
 
 
   private
@@ -76,6 +63,7 @@ before_action :find_goal, only: [:show]
   def goal_params
     params.require(:goal).permit(:name, :description, :photo , milestones_attributes: [:name, :description, :done,  :price_cents]) #Milestone.attribute_names.map(:to_sym).push(:_destroy))
   end
+
 end
 
 
