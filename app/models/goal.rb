@@ -37,5 +37,5 @@ class Goal < ApplicationRecord
 
   has_many :milestones, dependent: :destroy
   has_one_attached :photo
-  accepts_nested_attributes_for :milestones # to nest in forms change made by Lino
+  accepts_nested_attributes_for :milestones, reject_if: :all_blank, allow_destroy: true
 end

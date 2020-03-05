@@ -6,8 +6,16 @@ class MilestonesController < ApplicationController
 
 # def show
 #   @milestone = Milestone.find(params[:id])
-
-
 # end
 
+  def new
+    @milestone = Milestone.new
+  end
+
+
+  private
+
+  def find_milestone
+    @milestone = Milestone.find(params[:id])
+  end
 end

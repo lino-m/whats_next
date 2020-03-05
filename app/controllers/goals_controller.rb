@@ -6,10 +6,16 @@ before_action :find_goal, only: [:show]
 
   def new
     @goal = Goal.new
-    # @goal.build_milestones
+    @goal.milestones.build
   end
 
   def create
+    @goal = Goal.new(goal_params)
+    if @goal.save!
+      redirect to goals_path
+    else
+      render :new
+    end
   end
 
 
@@ -62,4 +68,18 @@ before_action :find_goal, only: [:show]
   def find_goal
     @goal = Goal.find(params[:id])
   end
+
+  def goal_params
+    params.require(:goal).permit(:name, :description, Milestone.attribute_names.map(:to_sym).push(:_destroy))
+  end
 end
+
+
+
+
+
+
+
+
+
+

@@ -19,11 +19,15 @@ gem 'webpacker'
 # What's Next GEMS
 # Cloudinary gem -> for hosting images
 gem 'cloudinary', '~> 1.12.0'
+# Gem for search
 gem 'pg_search'
 # Gem to display actual currency in Goals and Total Budgets
 gem 'money-rails'
-#faker for testing
+# Gem for seeding and for testing
 gem 'faker'
+# Gem to nest forms in one another -> _milestones_fields partial in goal_form
+gem "cocoon"
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
