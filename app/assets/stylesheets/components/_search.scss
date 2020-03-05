@@ -1,3 +1,57 @@
+
+.form-control {
+  width: -webkit-fill-available !important;
+}
+.my-row {
+  width:100%;
+}
+.my-container {
+  width: 500px;
+  background-color: $light-gray;
+  height: 300px;
+}
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+.query-input {
+  flex-grow: 1;
+  min-width:300px !important;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  box-shadow: 0 0 2.5px rgb(150, 150, 150)
+}
+.our-btn {
+  color: $font-black;
+  border-radius: 2px;
+  background-color: white;
+  height: 1.3em;
+  text-align: center;
+  flex-grow: 1;
+}
+.small-btn{
+  font-size: 13px;
+}
+.city-btn {
+  height: 1.3em;
+  border: 1px solid $border-grey;
+  flex-grow: 1;
+  margin: 0px 5px 0px 5px;
+}
+
+.explore-btn {
+  height: 1.8em;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+.recent {
+  border-top: 1px solid $border-grey;
+ }
+.search-header {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/*
 .form-post {
   background: white;
   margin-top: 50px;
@@ -43,3 +97,4 @@
   opacity: 1;
   }
 }
+*/

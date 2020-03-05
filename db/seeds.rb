@@ -109,7 +109,7 @@ end
   Goal.create!(
     user_id: frieda.id,
     activity_id: garden.id,
-    title: 'practice skating backflips! Icecream!',
+    title: 'practice skating backflips with Icecream!',
     motivation: 'Skiing is awesome',
     contribution: 100,
     category: 'Sports',
