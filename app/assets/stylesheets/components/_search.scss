@@ -1,4 +1,5 @@
 
+/* containers*/
 .my-container {
   width: 600px;
   background-color: none;
@@ -20,15 +21,31 @@
   margin-left: 30px;
   padding-bottom: 30px;
   border-radius: 3px;
-
 }
 .box {
   margin: 0px 30px;
+}
+.recent {
+  border-top: 1px solid $border-grey;
+}
+.searches {
+  margin-top: 20px;
+  border-top: 1px solid $border-grey;
+}
+.explore {
+  .simple_form {
+    margin: 0 5px;
+    flex-grow: 1;
+    input {
+      width: 100%
+    }
+  }
 }
 .my-row {
   width:100%;
 }
 
+/*input*/
 .query-input {
   flex-grow: 1;
   height:50px;
@@ -39,6 +56,38 @@
 }
 .input-field {
   flex-grow: 1;
+}
+.top-search {
+  .form-group {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+.search-header {
+  font-weight: bold;
+  font-size: 12px;
+  margin: 20px 0px 10px 0px;
+}
+.form-control:focus {
+  border-color: none;
+  box-shadow: none;
+}
+/*buttons*/
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+.radio-toolbar label {
+  margin: 0;
+  color: $font-black;
+  border-radius: 2px;
+  background-color: white;
+  height: 1.6em;
+  min-width: 108px;
+  /*text-align: center;*/
+  flex-grow: 1;
+  /*align-content: center;*/
 }
 .our-btn {
   margin: 0;
@@ -65,84 +114,3 @@
   box-shadow: 0 0px 10px rgba(0,0,0,.1);
   border: none;
 }
-.recent {
-  border-top: 1px solid $border-grey;
-}
-.search-header {
-  font-weight: bold;
-  font-size: 12px;
-  margin: 20px 0px 10px 0px;
-}
-.form-control:focus {
-  border-color: none;
-  box-shadow: none;
-}
-.searches {
-  margin-top: 20px;
-  border-top: 1px solid $border-grey;
-}
-
-.explore {
-  .simple_form {
-    margin: 0 5px;
-    flex-grow: 1;
-    input {
-      width: 100%
-    }
-  }
-}
-
-
-.top-search {
-  .form-group {
-    width: 100%;
-    margin-bottom: 0;
-  }
-}
-/*
-.form-post {
-  background: white;
-  margin-top: 50px;
-  padding: 20px;
-  border-radius: 5px;
-  h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-    color: #666666;
-    margin-bottom: 50px;
-    margin-top: 0px;
-  }
-  .btn {
-    width: 100%;
-    padding: 10px;
-    font-weight: bold;
-  }
-}
-
-// Checkboxes design
-.category-choices {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 20px 0;
-}
-
-.category-choice {
-  background: #b7b7b7;
-  padding: 20px;
-  border-radius: 5px;
-  opacity: .4;
-  flex: 0 0 30%;
-  text-align: center;
-  &:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-  &.active {
-  background: $yellow;
-  color: white;
-  opacity: 1;
-  }
-}
-*/
