@@ -1,7 +1,15 @@
 class GoalsController < ApplicationController
   def index
-
   end
+
+  def new
+    @goal = Goal.new
+    # @goal.build_milestones
+  end
+
+  def create
+  end
+
 
   def achievements
     if params[:search].present?# && params[:search][:query].match(/^\w+$/)
@@ -39,4 +47,11 @@ class GoalsController < ApplicationController
     #   @movies = Movie.all
     # end
   end
+
+private
+
+def set_goal
+  @goal = Goal.find(params[:id])
+end
+
 end
