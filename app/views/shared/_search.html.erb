@@ -1,8 +1,31 @@
 <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"mt-5" } do |f| %>
-  <div class="d-flex">
+  <!-- <div class="d-flex"> -->
     <%= f.input :query, label: false, placeholder: "What does your heart crave?" %>
     <%= f.submit 'go', class: "btn btn-info" %>
-    <%#= image_tag "Binoculars.svg", height:50 %>
+    <%= image_tag "Binoculars.svg", height:50 %>
 
-  </div>
+  <!-- </div> -->
   <% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-post">
+
+        <%= simple_form_for(@post) do |f| %>
+        <div class="row">
+          <div class="col-xs-6 col-ml-9">
+            <%= f.input :name, placeholder: "How to design a form" %>
+          </div>
+          <div class="col-xs-6">
+            <%= f.input :status, collection: Post::STATUSES, prompt: "Which status" %>
+          </div>
+        </div>
+          <!-- Inject categories here -->
+          <%= f.input :content, placeholder: "In this tutorial..." %>
+          <%= f.submit "Save", class: "btn btn-primary"  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
