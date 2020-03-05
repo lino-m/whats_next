@@ -1,16 +1,36 @@
 
-<div class="container col-lg-6">
+<div class="container new-goal col-lg-6 my-4 p-3">
   <div class="card-form">
     <div class="form-group">
       <%= simple_form_for @goal do |f| %>
         <%= f.error_notification %>
-        <%= f.input :title, class: "form-control"%>
-        <%= f.input :motivation, class: "form-control"%>
-        <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "btn btn-primary" %>
+        <%= f.input :title %>
+        <%= f.input :motivation %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "form-control" %>
+        <!-- nested Milestones Partial -->
+        <div id="milestone">
+
+        </div>
+        <div id="milestones">
+          <%= f.simple_fields_for :milestones do |builder| %>
+            <%= render 'milestone_fields', :f => builder %>
+          <% end %>
+          <div class='links'>
+            <%= link_to_add_association 'add milestone',
+                                              f, :milestones,
+                                              data: {assocticiation_insert_node: '#milestone',
+                                                    assocticiation_insert_method: :append
+                                              } %>
+          </div>
+          <br>
+          <div>
+            <%= f.simple_fields_for @activities do |a| %>
+              <%= a.input :name, as: :select, collection: @activities, prompt: "Select Activity", label: false %>
+            <% end %>
+          </div>
+        </div>
         <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
