@@ -8,6 +8,15 @@ Activity.destroy_all
 Goal.destroy_all
 Milestone.destroy_all
 
+
+############################################# Customized Users, Goals, Activities, Milestones and Achievments
+
+
+# The space for customization
+
+
+############################################# Generic Population
+
 # Display activity
 puts 'Creating users'
 
@@ -155,7 +164,6 @@ end
 puts 'Creating Achievements'
 
 users = User.all
-
 activities = Activity.all
 
 users.each do |user|
@@ -176,9 +184,9 @@ end
 # Display activity
 puts 'Creating Milestones for Achievements'
 
-goals = Goal.all
+achievements = Goal.where(completed: true)
 
-goals.each do |goal|
+achievements.each do |goal|
   Milestone.create(
     goal_id: goal.id,
     name: 'Step 01',
