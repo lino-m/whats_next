@@ -28,6 +28,7 @@
           <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'Achievements', class: "our-btn explore-btn"%>
+          <%= f.input :query, as: :radio_button, collection: ['Achievements'] %>
           <% end %>
 
           <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>

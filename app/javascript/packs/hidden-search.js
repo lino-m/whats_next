@@ -11,3 +11,8 @@ const hiddenSearch = () => {
 }
 
 export { hiddenSearch };
+
+// add common class to buttons
+// listen to  click on common class
+ // trigger form submission
+//
