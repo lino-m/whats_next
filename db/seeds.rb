@@ -86,13 +86,13 @@ end
 # Display activity
 puts 'Creating activities'
 
-activity1 = Activity.create(
-  name: 'go to the animal shelter',
+horse = Activity.create(
+  name: 'Horseriding',
   location: 'Somestreet 4, 12345 Someplace',
   category: 'New Things',
   )
 
-Activity.create(
+garden = Activity.create(
   name: 'Gardening',
   location: 'Someroad 1, 12345 Somewhere',
   category: 'Nature',
@@ -167,6 +167,7 @@ activities = Activity.all
     activity_id: activities.sample.id,
     title: 'Buy a cat!',
     motivation: "Everything is better with a cat – I will never be alone again",
+
     contribution: 100,
     category: 'New Things', #,
     # photo: , TBD
@@ -188,7 +189,6 @@ activities = Activity.all
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414838/sushi_mm7hgu.jpg')
   goal4.photo.attach(io: file, filename: 'sushi.jpeg', content_type: 'image/jpeg')
-
 
   goal5 = Goal.create!(
     user_id: hanna.id,

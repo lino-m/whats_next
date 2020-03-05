@@ -2,10 +2,6 @@
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "whatsnext.svg", height:50 %>
   <% end %>
-  <div class="search d-flex">
-    <%= render 'shared/search' %>
-  </div>
-
 
   <div class="d-flex " id="navbarSupportedContent">
     <div class="plus">
@@ -31,3 +27,7 @@
     </ul>
   </div>
 </div>
+
+ <div class="search d-flex">
+    <%= render 'shared/search' %>
+  </div>
