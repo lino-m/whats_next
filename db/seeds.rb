@@ -57,13 +57,13 @@ end
 # Display activity
 puts 'Creating activities'
 
-Activity.create(
+horse = Activity.create(
   name: 'Horseriding',
   location: 'Somestreet 4, 12345 Someplace',
   category: 'Sports',
   )
 
-Activity.create(
+garden = Activity.create(
   name: 'Gardening',
   location: 'Someroad 1, 12345 Somewhere',
   category: 'Nature',
@@ -108,14 +108,9 @@ end
 
   Goal.create!(
     user_id: frieda.id,
-    activity_id: activities.sample.id,
-<<<<<<< HEAD
-    title: 'practice skating backflips!  more Icecream!',
+    activity_id: garden.id,
+    title: 'practice skating backflips! Icecream!',
     motivation: 'Skiing is awesome',
-=======
-    title: 'practice skating backflips!',
-    motivation: 'Just because it is awesome and will impress a lot of people!',
->>>>>>> cd46e5b526115c71f484c3e552f698d8e6f744cc
     contribution: 100,
     category: 'Sports',
     # photo: , TBD
@@ -125,7 +120,7 @@ end
 
   Goal.create!(
     user_id: fred.id,
-    activity_id: activities.sample.id,
+    activity_id: horse.id,
     title: 'love new things!',
     motivation: 'I want to live to the fullest',
     contribution: 100,
