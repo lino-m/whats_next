@@ -7,10 +7,20 @@ before_action :find_goal, only: [:show]
 
   def new
     @goal = Goal.new
-    # @goal.build_milestones
+    @goal.milestones.build
+    @activities = Activity.all
   end
 
   def create
+    @goal = Goal.new(goal_params)
+    @goal.user = current_user
+    @activity = Activity.find(params[:goal][:activity][:name])
+    @goal.activity_id = @activity.id
+    if @goal.save!
+      redirect_to goals_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -104,4 +114,7 @@ before_action :find_goal, only: [:show]
     @goal = Goal.find(params[:id])
   end
 
+  def goal_params
+    params.require(:goal).permit(:name, :description, :photo , milestones_attributes: [:name, :description, :done,  :price_cents]) #Milestone.attribute_names.map(:to_sym).push(:_destroy))
+  end
 end
