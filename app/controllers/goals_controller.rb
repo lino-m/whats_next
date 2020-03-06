@@ -32,7 +32,7 @@ before_action :find_goal, only: [:show]
 
   def achievements
    @achievements = Goal.where(completed: true)
-<<<<<<< HEAD
+
    @activities = Activity.geocoded #returns flats with coordinates
 
     @markers = @flats.map do |activity|
@@ -41,9 +41,6 @@ before_action :find_goal, only: [:show]
         lng: activity.longitude
       }
     end
-=======
-
->>>>>>> master
   end
 
   def show
@@ -64,7 +61,7 @@ before_action :find_goal, only: [:show]
 
   def duplicate
   end
-  
+
   def searched
     # @activities = Activity.geocoded #returns flats with coordinates
 

@@ -2,9 +2,11 @@
   <div class="results">
     <h3><%= @text %></h3>
     <!-- <div class="d-flex"> -->
+      <div class="d-flex">
         <% @achievements.each do |goal| %>
-          <%= render "achievement_card_wide", achievement: goal %>
+          <%= render "shared/achievement_card_wide", achievement: goal %>
         <% end %>
+      </div>
   </div>
 
   <div id="map">
