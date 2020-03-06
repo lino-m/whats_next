@@ -1,6 +1,7 @@
 class Goal < ApplicationRecord
   include PgSearch::Model
   multisearchable against: [:title, :category, :motivation]
+    # associated
     #   {
     #   category: 'A',
     #   title: 'B',

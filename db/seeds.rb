@@ -270,7 +270,7 @@ activities = Activity.all
 
   goal2 = Goal.create!(
     user_id: fred.id,
-    activity_id: activities.sample.id,
+    activity_id: garden.id,
     title: 'Dare a parachute!',
     motivation: "I want to live to the fullest and feel it! I don't know what tomorrow brings, so better live now!" ,
     contribution: 100,
