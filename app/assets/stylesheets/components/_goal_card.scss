@@ -36,6 +36,9 @@
   margin-right: 30px;
 }
 
+.box_inspiration {
+  margin-right: 7px;
+}
 
 .card-trip-infos .card-trip-user {
   position: absolute;
@@ -83,19 +86,30 @@
 .inspiration_text {
   font-size: 11px;
   margin: 0;
+  margin-left: 7px;
+  margin-right: 3px;
+  line-height: 9px;
+  margin-top: 6px;
+}
+
+.name {
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 7px;
 }
 
 .inspiration_image {
-  width: 28px;
+  width: 30px;
+  padding-bottom: 15px;
 }
 
 .inspiration {
   position: absolute;
   background-color: white;
-  top: 213px;
-  left: 21px;
+  top: 202px;
+  left: 17px;
   padding: 5px;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .profile {
