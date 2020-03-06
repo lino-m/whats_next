@@ -65,6 +65,7 @@
           <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'cologne', id: "cologne", class: "city-btn our-btn"%>
+            <% raise %>
           <% end %>
 
           <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
