@@ -5,7 +5,9 @@
 
   <div class="d-flex " id="navbarSupportedContent">
     <div class="plus">
-      <%= image_tag "add_project.svg", height:50 %>
+      <%= link_to new_goal_path, class: "" do %>
+        <%= image_tag "add_project.svg", height:50 %>
+      <% end %>
     </div>
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>

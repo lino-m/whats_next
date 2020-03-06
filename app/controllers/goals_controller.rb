@@ -22,6 +22,22 @@ before_action :find_goal, only: [:show]
     end
   end
 
+  def edit
+    @goal = find_goal
+    @milestones = Milestone.where(goal_id: @goal.id)
+  end
+
+  def update
+    @goal = Goal.new(goal_params)
+    @goal.user = current_user
+    @activity = Activity.find(params[:goal][:activity][:name])
+    @goal.activity_id = @activity.id
+    if @goal.save!
+      redirect_to goals_path
+    else
+      render :edit
+    end
+  end
 
   def achievements
     if params[:search].present?
