@@ -2,7 +2,7 @@
 
 <div class="my-container">
   <div class="box query-input">
-    <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"input-field" } do |f| %>
+    <%= simple_form_for :search, method: :get, url: search_path, html: {class:"input-field" } do |f| %>
       <div class="my-row">
         <div class="top-search d-flex justify-content-between align-self-stretch">
           <%= f.input :query, label: false, placeholder: "What does your heart crave?", input_html: { autocomplete: 'off', class: "query-input" }  %>
@@ -20,12 +20,12 @@
       <div class="my-row">
         <div class="explore d-flex justify-content-between">
 
-          <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'All', class: "our-btn explore-btn"%>
           <% end %>
 
-          <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'Achievements', class: "our-btn explore-btn"%>
             <%#= f.input :query, label: false, as: :radio_buttons, collection: ['Vegan'] %>
@@ -33,13 +33,13 @@
             <%#= f.input :query,     as: :radio_buttons %>
           <% end %>
 
-          <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'Users', id: 'users', class: "our-btn explore-btn"%>
 
           <% end %>
 
-          <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'Surprise me!', class: "our-btn explore-btn"%>
           <% end %>
@@ -52,23 +52,23 @@
       <p class= 'search-header'>EVERYTHING CLOSE TO...</p>
       <div class="my-row">
         <div class="cities small-btn d-flex d-flex justify-content-between">
-          <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'munich', class: "city-btn our-btn"%>
           <% end %>
 
-          <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'berlin', class: "city-btn our-btn"%>
           <% end %>
 
-          <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'cologne', id: "cologne", class: "city-btn our-btn"%>
 
           <% end %>
 
-          <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'stuttgart', class: "city-btn our-btn"%>
           <% end %>
@@ -82,22 +82,22 @@
       <p class= 'search-header'>RECENT SEARCHES</p>
       <div class="my-row">
         <div class="small-btn d-flex justify-content-between">
-          <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'paragliding', class: "city-btn our-btn"%>
           <% end %>
 
-          <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'diving', class: "city-btn our-btn"%>
           <% end %>
 
-          <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'horseriding', class: "city-btn our-btn"%>
           <% end %>
 
-          <%= simple_form_for :search, method: :get, url: achievements_path, html: {class:"" } do |f| %>
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
             <%= f.input :query, label: false, as: :hidden %>
             <%= f.submit 'skiing', class: "city-btn our-btn"%>
           <% end %>
