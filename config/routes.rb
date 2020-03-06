@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get '/search', to: 'goals#searched', as: 'search'
   get '/achievements/:id', to: 'goals#achievement', as: 'achievement'
   resources :goals do
+    member do
+      get 'duplicate'
+    end
     resources :milestones, except: :show
   end
 
