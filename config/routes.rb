@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/achievements', to: 'goals#achievements', as: 'achievements'
   get '/achievements/:id', to: 'goals#achievement', as: 'achievement'
   resources :goals do
+    member do
+      get 'duplicate'
+    end
     resources :milestones, except: :show
   end
 

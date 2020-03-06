@@ -67,7 +67,11 @@ before_action :find_goal, only: [:show]
     # if params[:search].present? && params[:search][:query].match(/^\d+$/)
     #   user_input = params[:search][:query]
     #   @movies = Movie.where(year: user_input)
-  # end
+  # endup
+
+  def duplicate
+    raise
+  end
 
 
   private
