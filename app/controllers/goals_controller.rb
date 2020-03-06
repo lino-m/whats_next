@@ -32,6 +32,7 @@ before_action :find_goal, only: [:show]
 
   def achievements
    @achievements = Goal.where(completed: true)
+
   end
 
   def show
@@ -43,6 +44,16 @@ before_action :find_goal, only: [:show]
     @milestones = Milestone.where(goal_id: @achievement.id)
   end
 
+
+  # def notes to self
+    # if params[:search].present? && params[:search][:query].match(/^\d+$/)
+    #   user_input = params[:search][:query]
+    #   @movies = Movie.where(year: user_input)
+  # endup
+
+  def duplicate
+  end
+  
   def searched
    if params[:search].present?
       user_query = params[:search][:query]
