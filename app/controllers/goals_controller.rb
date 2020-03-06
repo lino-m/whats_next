@@ -2,7 +2,7 @@ class GoalsController < ApplicationController
 before_action :find_goal, only: [:show]
 
   def index
-    @achievements = Goal.all
+    @achievements = Goal.where(completed: true)
   end
 
   def new
