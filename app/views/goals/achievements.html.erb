@@ -1,16 +1,11 @@
-<div class="d-flex">
-  <% @achievements_pg.each do |goal| %>
-    <% if goal.searchable_type == 'Goal'%>
-      <%= goal.searchable.title %>
-      <%#= render "goal_card", goal: goal %>
-    <% else %>
-      <h2>There was no match for your search, get inspired by other users:</h2>
-      <%# @achievements.each do |a| %>
-        <%#= a.title %>
-        <%#= render "goal_card", goal: a %>
-      <% end %>
-    <% end %>
 
-    <div style='height: 500px; padding: 20px;'> <%#= achievement.title %> </div>
 
-</div>
+
+
+
+<% @achievements.each do |achievement| %>
+    <%= render 'shared/achievement_card_wide', achievement: achievement %>
+  <%#= render "goal_card", goal: goal %>
+<% end %>
+
+

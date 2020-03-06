@@ -2,24 +2,15 @@ class GoalsController < ApplicationController
 before_action :find_goal, only: [:show]
 
   def index
+    @achievements = Goal.where(completed: true)
   end
 
   def new
     @goal = Goal.new
-    @goal.milestones.build
-    @activities = Activity.all
+    # @goal.build_milestones
   end
 
   def create
-    @goal = Goal.new(goal_params)
-    @goal.user = current_user
-    @activity = Activity.find(params[:goal][:activity][:name])
-    @goal.activity_id = @activity.id
-    if @goal.save!
-      redirect_to goals_path
-    else
-      render :new
-    end
   end
 
   def edit
@@ -40,17 +31,7 @@ before_action :find_goal, only: [:show]
   end
 
   def achievements
-    if params[:search].present?
-      user_query = params[:search][:query]
-      # @achievements = Goal.where(completed: true)
-      @achievements_pg = PgSearch.multisearch(user_query)
-      @query_achievements = @achievements_pg.where(completed: true)
-
-    else
-
-      # @achievements = Goal.where(completed: true)
-    end
-
+   @achievements = Goal.where(completed: true)
 
   end
 
@@ -63,6 +44,7 @@ before_action :find_goal, only: [:show]
     @milestones = Milestone.where(goal_id: @achievement.id)
   end
 
+
   # def notes to self
     # if params[:search].present? && params[:search][:query].match(/^\d+$/)
     #   user_input = params[:search][:query]
@@ -70,7 +52,23 @@ before_action :find_goal, only: [:show]
   # endup
 
   def duplicate
-    raise
+  end
+  
+  def searched
+   if params[:search].present?
+      user_query = params[:search][:query]
+      @goals_and_activities_pg = PgSearch.multisearch(user_query)
+      if @goals_and_activities_pg.empty?
+        @text = "Sorry, no matches. Look at what others did"
+        @achievements = Goal.where(completed: true)
+        @goals = @achievements.select { |a| a.class.name == 'Goal' }
+      else
+        @text = ''
+        @goals_and_activities = @goals_and_activities_pg.map(&:searchable)
+        @goals = @goals_and_activities.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
+        @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
+      end
+    end
   end
 
 
@@ -79,20 +77,4 @@ before_action :find_goal, only: [:show]
   def find_goal
     @goal = Goal.find(params[:id])
   end
-
-  def goal_params
-    params.require(:goal).permit(:name, :description, :photo , milestones_attributes: [:name, :description, :done,  :price_cents]) #Milestone.attribute_names.map(:to_sym).push(:_destroy))
-  end
-
 end
-
-
-
-
-
-
-
-
-
-
-

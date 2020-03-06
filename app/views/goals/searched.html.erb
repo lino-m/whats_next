@@ -1,0 +1,11 @@
+ <h3><%= @text %></h3>
+<!-- <div class="d-flex"> -->
+
+<% @goals.each do |goal| %>
+    <%= goal.title %>
+  <%#= render "goal_card", goal: goal %>
+<% end %>
+
+<div style='height: 500px; padding: 20px;'></div>
+
+
