@@ -1,13 +1,17 @@
-.card {
-
+.style_image {
+  border-right: 1px solid #000;
+}
+.plus {
+  padding-right: 40px;
 }
 
-.avatar-bordered {
+.icon-color {
+  width: 40px;
   position: absolute;
-  top: 10px;
-  left: 15px;
-  width: 35px;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border: white 1px solid;
+  top: 15px;
+  right: 15px;
+}
+
+.icon-color {
+  fill: #fafafa;
 }

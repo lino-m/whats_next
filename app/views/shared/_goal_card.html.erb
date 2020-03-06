@@ -17,14 +17,16 @@
     </div>
 
       <!--  <------------- Goal Card ---------------->
-
-  <div class="col-8">
-    <div class="card-trip">
-      <%= image_tag "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", class: "image_card_goal" %>
-      <div class="inspiration">
-        <div class="d-flex">
-          <%= image_tag "inspiration.svg", class: "inspiration_image" %>
-          <p class="inspiration_text"><strong>Inspiration</strong><br>Some Guy</p>
+    <div class="col-8">
+      <div class="card-trip">
+        <%= image_tag "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", class: "image_card_goal" %>
+        <div class="inspiration">
+          <div class="d-flex">
+            <%= image_tag "inspiration.svg", class: "inspiration_image" %>
+            <div class="box_inspiration">
+              <p class="inspiration_text">Inspiration</p><p class="name">Some Guy</p>
+            </div>
+          </div>
         </div>
       </div>
       <%= image_tag "notification.svg", class: "green_point position-absolute" %>
