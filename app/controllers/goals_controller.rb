@@ -32,6 +32,7 @@ before_action :find_goal, only: [:show]
 
   def achievements
    @achievements = Goal.where(completed: true)
+<<<<<<< HEAD
    @activities = Activity.geocoded #returns flats with coordinates
 
     @markers = @flats.map do |activity|
@@ -40,6 +41,9 @@ before_action :find_goal, only: [:show]
         lng: activity.longitude
       }
     end
+=======
+
+>>>>>>> master
   end
 
   def show
@@ -51,6 +55,16 @@ before_action :find_goal, only: [:show]
     @milestones = Milestone.where(goal_id: @achievement.id)
   end
 
+
+  # def notes to self
+    # if params[:search].present? && params[:search][:query].match(/^\d+$/)
+    #   user_input = params[:search][:query]
+    #   @movies = Movie.where(year: user_input)
+  # endup
+
+  def duplicate
+  end
+  
   def searched
     # @activities = Activity.geocoded #returns flats with coordinates
 
