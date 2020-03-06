@@ -6,6 +6,7 @@
     "bootstrap": "^4.4.1",
     "cocoon": "github:nathanvda/cocoon#c24ba53",
     "jquery": "^3.4.1",
+    "mapbox-gl": "^1.8.1",
     "popper.js": "^1.16.1"
   },
   "devDependencies": {

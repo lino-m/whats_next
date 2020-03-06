@@ -43,6 +43,14 @@ before_action :find_goal, only: [:show]
   def achievements
    @achievements = Goal.where(completed: true)
 
+   @activities = Activity.geocoded #returns flats with coordinates
+
+    @markers = @flats.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude
+      }
+    end
   end
 
   def show
@@ -63,22 +71,40 @@ before_action :find_goal, only: [:show]
 
   def duplicate
   end
-  
+
   def searched
+    # @activities = Activity.geocoded #returns flats with coordinates
+
+    # @markers = @flats.map do |activity|
+    #   {
+    #     lat: activity.latitude,
+    #     lng: activity.longitude
+    #   }
+
    if params[:search].present?
       user_query = params[:search][:query]
       @goals_and_activities_pg = PgSearch.multisearch(user_query)
       if @goals_and_activities_pg.empty?
         @text = "Sorry, no matches. Look at what others did"
         @achievements = Goal.where(completed: true)
-        @goals = @achievements.select { |a| a.class.name == 'Goal' }
+        @achievements = @achievements.select { |a| a.class.name == 'Goal' }
       else
         @text = ''
         @goals_and_activities = @goals_and_activities_pg.map(&:searchable)
-        @goals = @goals_and_activities.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
+        # @achievements = @goals_and_activities
+        @achievements = @goals_and_activities.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
         @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
+        @activities.each do |a|
+        @achievements = Goal.joins(:activity).where(activity_id: a.id)
+        end
+
       end
+
+
     end
+
+    # Flat.near('Tour Eiffel', 10)      # venues within 10 km of Tour Eiffel
+    # Flat.near([40.71, 100.23], 20)
   end
 
 
