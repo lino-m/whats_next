@@ -2,6 +2,7 @@ class GoalsController < ApplicationController
 before_action :find_goal, only: [:show]
 
   def index
+    @achievements = Goal.all
   end
 
   def new
