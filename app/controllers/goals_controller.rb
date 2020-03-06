@@ -32,6 +32,7 @@ before_action :find_goal, only: [:show]
 
   def achievements
    @achievements = Goal.where(completed: true)
+
   end
 
   def show
