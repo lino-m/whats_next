@@ -5,10 +5,10 @@
       <img class="rounded-circle" style="overflow:hidden; height:40px; width:40px; border-radius:50% box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
       border: white 1px solid; position:absolute; top: 15px; left: 15px;;"alt="avatar-bordered-card" src="https://kitt.lewagon.com/placeholder/users/sarahlafer">
       <%= render "shared/icon-add" %>
-      <img src="https://images.unsplash.com/5/unsplash-kitsune-4.jpg?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=fb86e2e09fceac9b363af536b93a1275" class="card-image p-2" alt="unsplash random">
+      <%= cl_image_tag achievement.photo.key, { class: "card-image"} %>
       <div class="card-body">
-        <h5 class="card-title" style="text-transform: uppercase;"><strong>TITLE</strong></h5>
-        <p class="card-text" style="font-style: italic;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h5 class="card-title" style="text-transform: uppercase;"><strong><%=  achievement.title %></strong></h5>
+        <p class="card-text" style="font-style: italic;"><%=achievement.motivation %></p>
         <a href="#" class="btn btn-flat">set goal</a>
       </div>
 
