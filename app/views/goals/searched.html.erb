@@ -1,21 +1,19 @@
-<div class="d-flex x">
-  <div class="results">
-    <h3><%= @text %></h3>
-    <!-- <div class="d-flex"> -->
-      <div class="d-flex">
-        <% @achievements.each do |goal| %>
-          <%= render "shared/achievement_card_wide", achievement: goal %>
-        <% end %>
-      </div>
+<div class="container w-100">
+  <div class="row">
+
+    <div class="results col-xs-8 x">
+      <h3><%= @text %></h3>
+      <% @achievements.each do |goal| %>
+        <%= render "shared/achievement_card_wide", achievement: goal %>
+      <% end %>
+    </div>
+
+    <div class= 'col-xs-4' id="map", data-markers="<%= @markers.to_json %>">
+
   </div>
-
-  <div id="map">
-
-  </div>
-
-
 </div>
 
 
 
-  <div style='height: 500px; padding: 20px;'></div>
+
+  <div style='height: 50px; padding: 20px;'></div>
