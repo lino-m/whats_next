@@ -41,16 +41,8 @@ before_action :find_goal, only: [:show]
   end
 
   def achievements
-   @achievements = Goal.where(completed: true)
-
-   @activities = Activity.geocoded #returns flats with coordinates
-
-    @markers = @flats.map do |activity|
-      {
-        lat: activity.latitude,
-        lng: activity.longitude
-      }
-    end
+    @achievements = Goal.where(completed: true)
+    geocode_activities
   end
 
   def show
@@ -93,6 +85,7 @@ before_action :find_goal, only: [:show]
         @goals_and_activities = @goals_and_activities_pg.map(&:searchable)
         # @achievements = @goals_and_activities
         @achievements = @goals_and_activities.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
+        geocode_activities
         @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
         @activities.each do |a|
         @achievements = Goal.joins(:activity).where(activity_id: a.id)
@@ -112,6 +105,17 @@ before_action :find_goal, only: [:show]
 
   def find_goal
     @goal = Goal.find(params[:id])
+  end
+
+  def geocode_activities
+    @activities = Activity.geocoded
+
+    @markers = @activities.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude
+      }
+      end
   end
 
   def goal_params
