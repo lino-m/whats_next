@@ -54,25 +54,10 @@ before_action :find_goal, only: [:show]
     @milestones = Milestone.where(goal_id: @achievement.id)
   end
 
-
-  # def notes to self
-    # if params[:search].present? && params[:search][:query].match(/^\d+$/)
-    #   user_input = params[:search][:query]
-    #   @movies = Movie.where(year: user_input)
-  # endup
-
   def duplicate
   end
 
   def searched
-    # @activities = Activity.geocoded #returns flats with coordinates
-
-    # @markers = @flats.map do |activity|
-    #   {
-    #     lat: activity.latitude,
-    #     lng: activity.longitude
-    #   }
-
    if params[:search].present?
       user_query = params[:search][:query]
       @goals_and_activities_pg = PgSearch.multisearch(user_query)
@@ -90,9 +75,7 @@ before_action :find_goal, only: [:show]
         @activities.each do |a|
         @achievements = Goal.joins(:activity).where(activity_id: a.id)
         end
-
       end
-
 
     end
 
