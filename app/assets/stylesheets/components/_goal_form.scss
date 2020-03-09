@@ -10,8 +10,16 @@
     background-color: grey;
     padding: 12px;
     margin-bottom: 12px;
-    border: 1px solid red ;
+    // border: 1px solid red ;
     border-radius: 8px 8px 0px 0px;
+    .upload-field {
+      width: 400px;
+      background-color:white;
+      padding: 8px;
+      border-radius: 8px;
+      position: absolute;
+      top: 95px;
+    }
   }
   h3 {
     font-size: 18px;
@@ -60,6 +68,25 @@
     font-size: 14px;
   }
 }
+
+.progress-management {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.progress {
+  width: 100%;
+  background-color: #C4C4C4;
+  border-radius: 8px;
+  margin-right: 28px;
+}
+
+.progress-bar {
+  background-color: #47c79f;
+  border-radius: 8px;
+}
+
+
 
 .milestones {
   .milestone-done {
