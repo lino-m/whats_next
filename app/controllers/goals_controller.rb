@@ -46,13 +46,6 @@ before_action :find_goal, only: [:show]
 
     @achievements = Goal.where(completed: true)
     geocode_activities
-
-    @markers = @flats.map do |activity|
-      {
-        lat: activity.latitude,
-        lng: activity.longitude
-      }
-    end
   end
 
   def show
