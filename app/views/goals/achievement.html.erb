@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
      <!--  <------------- Card ---------------->
-    <div class="col-6" >
+    <div class="col-8" >
       <div class="achievement_card">
         <%= cl_image_tag @achievement.photo.key, { class: "image_achievement"} %>
         <h1 class="achievement_title"> <%=  @achievement.title %> </h1>
@@ -17,9 +17,9 @@
           <% end %>
           <p class="name"><%= milestone.name %> </p> <p class="description"> <%= milestone.description %> </p> <p class="price"> <%= milestone.price %> € </p>
         </div>
-        <% end %>
-      </div>
 
+      <% end %>
+      </div>
     </div>
   </div>
 </div>
