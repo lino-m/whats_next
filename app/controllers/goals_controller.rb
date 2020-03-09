@@ -53,6 +53,7 @@ before_action :find_goal, only: [:show]
         lng: activity.longitude
       }
     end
+
   end
 
   def show
