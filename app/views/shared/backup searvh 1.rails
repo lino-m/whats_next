@@ -13,8 +13,6 @@
   </div>
 </div>
   <div id="hidden-search">
-          <%#= button_to 'Cologne', search_path, params: {query: 'cologne'}, class: "our-btn city-btn" %>
-          <%#= button_to '+', {:controller => "goals", :action => "searched", :query => "fehrbellin"} , :method=>:post  %>
 
     <div class="explore box">
       <p class= 'search-header justify-content-start'>EXPLORE WHAT'S NEXT</p>
@@ -35,7 +33,7 @@
           <%= button_to 'Munich', search_path, method: :get, params: {query: 'munich'}, class: "our-btn city-btn" %>
           <%= button_to 'Berlin', search_path, method: :get, params: {query: 'berlin'}, class: "our-btn city-btn" %>
           <%= button_to 'Cologne', search_path, method: :get, params: {query: 'cologne'}, class: "our-btn city-btn" %>
-          <%= button_to 'Stuttgart', search_path, method: :get, params: {query: 'stuttgart'}, class: "our-btn city-btn" %>
+          <%= button_to 'Stuttgart', search_path, method: :get, params: {query: ''}, class: "our-btn city-btn" %>
         </div>
       </div>
     </div>
@@ -53,4 +51,3 @@
     </div>
 
   </div>
-
