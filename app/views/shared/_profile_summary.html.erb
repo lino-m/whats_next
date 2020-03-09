@@ -1,39 +1,37 @@
-
-    <div class="profile_summary">
-      <div>
-        <p class="background_badge">Badges</p>
+<div class="profile_summary">
+  <div>
+     <p class="background_badge">Badges</p>
+  </div>
+  <div class="seperator"><hr></div>
+    <div class="show-user d-flex">
+      <div class="avatar-position">
+        <%= avatar_or_default_image_tag(current_user, class: 'avatar-profile') %>
       </div>
-      <div class="seperator"><hr></div>
-      <div class="show-user d-flex">
-        <div class="avatar-position">
-            <%= avatar_or_default_image_tag(current_user, class: 'avatar-profile') %>
-        </div>
-        <div class="profile-description">
-          <h3> Username </h3>
-          <p>Digital nomad and traveller @me if you if you need some pointers with travelling the US</p>
-        </div>
+      <div class="profile-description">
+        <h3> Username </h3>
+        <p>Digital nomad and traveller @me if you if you need some pointers with travelling the US</p>
       </div>
-        <div class="buttons d-flex justify-content-center">
-          <div class="btn btn-edit-profile">
-            <%= link_to "Edit Profile", edit_user_registration_path, class: ""%>
-          </div>
-          <div class="btn btn-message">
-            <%= link_to "Message", edit_user_registration_path, class: ""%>
-          </div>
-        </div>
-        <div class="social-infos">
-          <div class="achievements d-flex justify-content-between">
-            <div class="social"><p>Achievements</p></div>
-            <div class="social bold"><p><%= 100 %></p></div>
-          </div>
-          <div class="impressions d-flex justify-content-between">
-            <div class="social"><p>Impressions</p></div>
-            <div class="social bold"><p><%= 46 %></p></div>
-          </div>
-        </div>
-        <div class="seperator"><hr></div>
-        <div class="new-goal d-flex justify-content-center">
-          <%= link_to "New Goal", new_goal_path, class: "btn btn-new-goal" %>
-        </div>
     </div>
-
+    <div class="buttons d-flex justify-content-center">
+      <div class="btn btn-edit-profile">
+        <%= link_to "Edit Profile", edit_user_registration_path, class: ""%>
+      </div>
+      <div class="btn btn-message">
+        <%= link_to "Message", edit_user_registration_path, class: ""%>
+      </div>
+    </div>
+    <div class="social-infos">
+      <div class="achievements d-flex justify-content-between">
+        <div class="social"><p>Achievements</p></div>
+        <div class="social bold"><p><%= 100 %></p></div>
+      </div>
+      <div class="impressions d-flex justify-content-between">
+        <div class="social"><p>Impressions</p></div>
+        <div class="social bold"><p><%= 46 %></p></div>
+      </div>
+    </div>
+    <div class="seperator"><hr></div>
+    <div class="new-goal d-flex justify-content-center">
+      <%= link_to "New Goal", new_goal_path, class: "btn btn-new-goal" %>
+  </div>
+</div>

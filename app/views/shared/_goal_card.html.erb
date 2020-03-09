@@ -1,41 +1,46 @@
-
-      <div class="card-trip">
-        <%= image_tag "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", class: "image_card_goal" %>
-        <div class="inspiration">
-          <div class="d-flex">
-            <%= image_tag "inspiration.svg", class: "inspiration_image" %>
-            <div class="box_inspiration">
-              <p class="inspiration_text">Inspiration</p><p class="name">Some Guy</p>
-            </div>
-          </div>
+<div class="card-trip">
+  <%= goal_or_default_image_tag(goal, class: "image-card-goal") %>
+  <%#= image_tag "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", class: "image-card-goal" %>
+  <div class="inspiration">
+    <div class="d-flex">
+      <%= image_tag "inspiration.svg", class: "inspiration-image" %>
+        <div class="box-inspiration">
+              <p class="inspiration-text">Inspiration</p><p class="name">Some Guy</p>
         </div>
-        <%= image_tag "notification.svg", class: "green_point position-absolute" %>
-        <div class="card-trip-infos">
-          <div>
-            <h2 class="headline">Headline of Goal</h2>
-            <p class="motivation">This is what first motivated you to go after your goal. Best not to forget it</p>
-          </div>
-          <div class="lockup">
-            <div class="d-flex justify-content-end">
-              <%= image_tag "target.svg", class: "target" %>
-              <h2 class="card-trip-goal">GOAL</h2>
-            </div>
-            <p class="date_added">created:15.03.2020</p>
-          </div>
-          <div>
-            <button type="button" class="btn btn-light">ARCHIEVED</button>
-          </div>
-        </div>
-      </div>
     </div>
-
-
-
-
-
-
-
-
-
-
+  </div>
+  <%= image_tag "notification.svg", class: "green-point position-absolute" %>
+  <div class="card-trip-infos">
+    <div>
+      <h2 class="headline"><%= goal.title %></h2>
+      <p class="motivation"><%= goal.motivation %></p>
+    </div>
+    <div class="lockup">
+      <% if goal.completed == false %>
+        <div class="false">
+          <div class="d-flex justify-content-end">
+            <%= image_tag "target.svg", class: "target" %>
+            <h2 class="card-trip-goal">GOAL</h2>
+          </div>
+          <p class="date-added">created: <%= goal.created_at.strftime("%B %d, %Y") %></p> <!-- ("%B %d %Y, %l:%M%P")  -->
+        </div>
+      <% else %>
+        <div class="true">
+          <div class="d-flex justify-content-end">
+            <h2 class="card-trip-goal">Achievement</h2>
+          </div>
+          <p class="date-added">created:<%= goal.created_at %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="progress-management">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="progress" style="height: 9px;">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <button type="button" class="btn btn-light">ARCHIEVED</button>
+    </div>
+  </div>
+</div>
 

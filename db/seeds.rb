@@ -120,7 +120,6 @@ Activity.create(
 puts 'Creating Goals'
 
 users = User.all
-
 activities = Activity.all
 
 # users.each do |user|

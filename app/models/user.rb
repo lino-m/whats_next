@@ -17,5 +17,6 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
   has_many :goals, dependent: :destroy
+  has_many :milestones, through: :goals
 
 end
