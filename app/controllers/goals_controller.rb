@@ -46,6 +46,7 @@ before_action :find_goal, only: [:show]
 
     @achievements = Goal.where(completed: true)
     geocode_activities
+
   end
 
   def show
@@ -66,8 +67,13 @@ before_action :find_goal, only: [:show]
       @goals_and_activities_pg = PgSearch.multisearch(user_query)
       if @goals_and_activities_pg.empty?
         @text = "Sorry, no matches. Look at what others did"
-        @achievements = Goal.where(completed: true)
-        @achievements = @achievements.select { |a| a.class.name == 'Goal' }
+        @achievements = @goals_and_activities.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
+        geocode_activities
+        @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
+
+        @activities.each do |a|
+          @achievements = Goal.joins(:activity).where(activity_id: a.id)
+        end
       else
         @text = ''
         @goals_and_activities = @goals_and_activities_pg.map(&:searchable)
@@ -75,11 +81,12 @@ before_action :find_goal, only: [:show]
         @achievements = @goals_and_activities.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
         geocode_activities
         @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
-        @activities.each do |a|
-        @achievements = Goal.joins(:activity).where(activity_id: a.id)
-        end
-      end
 
+        @activities.each do |a|
+          @achievements = Goal.joins(:activity).where(activity_id: a.id)
+        end
+
+      end
     end
 
     # Flat.near('Tour Eiffel', 10)      # venues within 10 km of Tour Eiffel
