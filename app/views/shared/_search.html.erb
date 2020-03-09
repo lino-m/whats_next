@@ -1,12 +1,10 @@
-
-
 <div class="my-container">
   <div class="box query-input">
     <%= simple_form_for :search, method: :get, url: search_path, html: {class:"input-field" } do |f| %>
       <div class="my-row">
         <div class="top-search d-flex justify-content-between align-self-stretch">
           <%= f.input :query, label: false, placeholder: "What does your heart crave?", input_html: { autocomplete: 'off', class: "query-input" }  %>
-          <div class="submit btn-info">
+          <div class="submit btn-info binoculars">
             <%#= f.submit as: :hidden  %>
             <%= image_tag "Binoculars.svg", height:50, width:50 %>
           </div>
@@ -27,7 +25,7 @@
           <% end %>
 
           <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
-            <%= f.input :query, label: false, as: :hidden %>
+            <%= f.input :query, value: 'achievements', label: false, as: :hidden %>
             <%= f.submit 'Achievements', class: "our-btn explore-btn"%>
             <%#= f.input :query, label: false, as: :radio_buttons, collection: ['Vegan'] %>
             <%#= f.input :query, as: :radio_button, collection: ['Achievements'] %>

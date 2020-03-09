@@ -1,32 +1,42 @@
 
 /* containers*/
+/*.cont {
+  z-index: -10;
+}*/
 .my-container {
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
   width: 600px;
-  background-color: none;
-  padding: 10px;
-  position: absolute;
   top: 5px;
   left: 50%;
-  margin-left: - 300px;
-  z-index: 2;
+  z-index: 1;
   border-radius: 3px;
 
 }
 #hidden-search {
+  margin-left: auto;
+  margin-right: auto;
   display: none;
   background-color: white;
   padding-top: 20px;
-  width: 522px;
+  width: auto;
   position: absolute;
   padding-bottom: 30px;
-  border-radius: 3px;
-  left: 50%;
-  margin-left: - 262px;
-  z-index: 2;
+  z-index: 5;
   border-radius: 3px;
 }
 .box {
   margin: 0px 30px;
+}
+.binoculars {
+  background-color: $logo-pink;
+  border-radius: 0 4px 4px 0;
+  opacity: 0.8;
+  &:hover{
+    background-color: $logo-pink;
+    opacity: 0.5;
+  }
 }
 .recent {
   border-top: 1px solid $border-grey;

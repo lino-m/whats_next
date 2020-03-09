@@ -1,19 +1,18 @@
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
-  margin-top: 20px;
-  background-color: white;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  // bottom: 0;
+  // width: 100%;
+  // height: 2.5rem;
+  // padding: 0px 50px;
+  // color: rgba(0,0,0,0.3);
+  // margin-top: 20px;
+  // background-color: white;
 }
 .footer-links {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 .footer-links a {
   color: black;
@@ -27,4 +26,12 @@
 }
 .footer .fa-heart {
   color: $logo-pink;
+}
+
+
+.fixed-bottom {
+  position: relative;
+  justify-content: flex-end;
+  background-color: white;
+  padding: 15px;
 }

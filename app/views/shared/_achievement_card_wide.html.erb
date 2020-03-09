@@ -1,18 +1,32 @@
+<div class="card ">
 
-<div class="container">
-  <div class="row">
-    <div class="card col-8">
-      <img class="rounded-circle" style="overflow:hidden; height:40px; width:40px; border-radius:50% box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-      border: white 1px solid; position:absolute; top: 15px; left: 15px;;"alt="avatar-bordered-card" src="https://kitt.lewagon.com/placeholder/users/sarahlafer">
-      <%= render "shared/icon-add" %>
-      <%= cl_image_tag achievement.photo.key, { class: "card-image"} %>
-      <div class="card-body">
-        <h5 class="card-title" style="text-transform: uppercase;"><strong><%=  achievement.title %></strong></h5>
-        <p class="card-text" style="font-style: italic;"><%=achievement.motivation %></p>
-        <a href="#" class="btn btn-flat">set goal</a>
+  <%= cl_image_tag achievement.user.avatar.key, { class: "rounded-circle"} %>
+  <%= render "shared/icon-add" %>
+  <%= cl_image_tag achievement.photo.key, { class: "card-image"} %>
+  <div class="card-body">
+    <h5 class="card-title" style="text-transform: uppercase;"><strong><%=  achievement.title %></strong></h5>
+    <p class="card-text" style="font-style: italic;"><%=achievement.motivation %></p>
+    <a href="#" class="btn btn-flat">set goal</a>
+
+    <div class="container">
+      <% achievement.milestones.each do |milestone| %>
+      <div class="drop_down">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <% if milestone.done == true %>
+            <%= image_tag "checkbox.png", height:20 %>
+            <% else %>
+            <%= image_tag "checkbox_unchecked", height:20 %>
+            <% end %>
+            <p class="name mb-0"><%= milestone.name %> </p>
+          </div>
+          <div class="goal_description">
+            <p class="description mb-0"> <%= milestone.description %> </p>
+          </div>
+          <p class="price mb-0"> <%= milestone.price %> € </p>
+        </div>
       </div>
-
+      <% end %>
     </div>
   </div>
 </div>
-

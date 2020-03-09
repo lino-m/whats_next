@@ -31,6 +31,9 @@ frieda = User.create(
     username: 'frieda',
     password: '123456'
   )
+file = URI.open('https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2800&q=80')
+  frieda.avatar.attach(io: file, filename: 'frieda.jpeg', content_type: 'image/jpeg')
+
 fred = User.create(
    first_name: 'Fred',
     last_name: 'Schulz',
@@ -40,6 +43,9 @@ fred = User.create(
     username: 'fred',
     password: '123456'
   )
+file = URI.open('https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1002&q=80')
+  fred.avatar.attach(io: file, filename: 'fred.jpeg', content_type: 'image/jpeg')
+
 karl = User.create(
    first_name: 'Karl',
     last_name: 'Muller',
@@ -49,6 +55,9 @@ karl = User.create(
     username: 'karl',
     password: '123456'
   )
+file = URI.open('https://images.unsplash.com/photo-1541534401786-2077eed87a74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
+  karl.avatar.attach(io: file, filename: 'karl.jpeg', content_type: 'image/jpeg')
+
 marie = User.create(
    first_name: 'Marie',
     last_name: 'Dabo',
@@ -58,6 +67,9 @@ marie = User.create(
     username: 'marie',
     password: '123456'
   )
+file = URI.open('https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
+  marie.avatar.attach(io: file, filename: 'marie.jpeg', content_type: 'image/jpeg')
+
 hanna = User.create(
    first_name: 'Hanna',
     last_name: 'Weber',
@@ -67,6 +79,8 @@ hanna = User.create(
     username: 'hanna',
     password: '123456'
   )
+file = URI.open('https://images.unsplash.com/photo-1528341866330-07e6d1752ec2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1002&q=80')
+  hanna.avatar.attach(io: file, filename: 'hanna.jpeg', content_type: 'image/jpeg')
 
 5.times do
   user = User.new(
@@ -141,7 +155,7 @@ activities = Activity.all
     motivation: 'Just because it is awesome and will impress a lot of people!',
     contribution: 100,
     category: 'Sports',
-    completed: true
+    completed: false
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/backflips_jmaze3.jpg')
   goal1.photo.attach(io: file, filename: 'backflips.jpeg', content_type: 'image/jpeg')
@@ -156,7 +170,7 @@ activities = Activity.all
     contribution: 100,
     category: 'Action', #,
     # photo: , TBD
-    completed: true
+    completed: false
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/parachute_xbagma.jpg')
   goal2.photo.attach(io: file, filename: 'parachute.jpeg', content_type: 'image/jpeg')
@@ -170,7 +184,7 @@ activities = Activity.all
     contribution: 100,
     category: 'New Things', #,
     # photo: , TBD
-    completed: true
+    completed: false
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414836/cat_cybhei.jpg')
   goal3.photo.attach(io: file, filename: 'cat.jpeg', content_type: 'image/jpeg')
@@ -184,7 +198,7 @@ activities = Activity.all
     contribution: 100,
     category: 'Delicious', #,
     # photo: , TBD
-    completed: true
+    completed: false
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414838/sushi_mm7hgu.jpg')
   goal4.photo.attach(io: file, filename: 'sushi.jpeg', content_type: 'image/jpeg')
@@ -197,7 +211,7 @@ activities = Activity.all
     contribution: 100,
     category: 'Travel', #,
     # photo: , TBD
-    completed: true
+    completed: false
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414836/Wien_i3ra0m.jpg')
   goal5.photo.attach(io: file, filename: 'wien.jpeg', content_type: 'image/jpeg')
@@ -208,7 +222,7 @@ activities = Activity.all
 # Display activity
 puts 'Creating Milestones for Goals'
 
-goals = Goal.all
+goals = Goal.where(completed: false)
 
 goals.each do |goal|
   Milestone.create(
@@ -253,73 +267,73 @@ activities = Activity.all
 #     )
 # end
 
-  goal1 = Goal.create!(
+  goal6 = Goal.create!(
     user_id: frieda.id,
     activity_id: activities.sample.id,
-    title: 'Practice backflips!',
-    motivation: 'Just because it is awesome and will impress a lot of people!',
+    title: 'Go hiking in Georgia!',
+    motivation: 'The nature there is supposed to be beyond beautiful!',
     contribution: 100,
-    category: 'Sports',
+    category: 'Nature',
     completed: true
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/backflips_jmaze3.jpg')
-  goal1.photo.attach(io: file, filename: 'backflips.jpeg', content_type: 'image/jpeg')
+  goal6.photo.attach(io: file, filename: 'georgia.jpeg', content_type: 'image/jpeg')
 
 
 
-  goal2 = Goal.create!(
+  goal7 = Goal.create!(
     user_id: fred.id,
     activity_id: garden.id,
-    title: 'Dare a parachute!',
-    motivation: "I want to live to the fullest and feel it! I don't know what tomorrow brings, so better live now!" ,
+    title: 'Mountainbiking in Puglia !',
+    motivation: "Challenging and exiting routes to explore surrounded by a great landscape" ,
     contribution: 100,
-    category: 'Action', #,
+    category: 'Sports', #,
     # photo: , TBD
     completed: true
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/parachute_xbagma.jpg')
-  goal2.photo.attach(io: file, filename: 'parachute.jpeg', content_type: 'image/jpeg')
+  goal7.photo.attach(io: file, filename: 'puglia.jpeg', content_type: 'image/jpeg')
 
-  goal3 = Goal.create!(
+  goal8 = Goal.create!(
     user_id: karl.id,
     activity_id: activities.sample.id,
-    title: 'Buy a cat!',
-    motivation: "Everything is better with a cat – I will never be alone again",
+    title: 'Buy a dog!',
+    motivation: "Dogs are great friends and will force me to exercise more!",
     contribution: 100,
     category: 'New Things', #,
     # photo: , TBD
     completed: true
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414836/cat_cybhei.jpg')
-  goal3.photo.attach(io: file, filename: 'cat.jpeg', content_type: 'image/jpeg')
+  goal8.photo.attach(io: file, filename: 'cat.jpeg', content_type: 'image/jpeg')
 
 
-  goal4 = Goal.create!(
+  goal9 = Goal.create!(
     user_id: marie.id,
     activity_id: activities.sample.id,
-    title: 'Do a Sushi Workshop!',
-    motivation: "I always admire the Sushi Chefs in my favorite japanese Restaurant. I bet I can do that too!" ,
+    title: 'Sell stuff on a fleamarket!',
+    motivation: "My closet is exploding and I don't wear half of the stuff inside. I really need to get rid of some pieces to make room for new ones." ,
+    contribution: 100,
+    category: 'Clothes', #,
+    # photo: , TBD
+    completed: true
+    )
+  file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414838/sushi_mm7hgu.jpg')
+  goal9.photo.attach(io: file, filename: 'sushi.jpeg', content_type: 'image/jpeg')
+
+
+  goal10 = Goal.create!(
+    user_id: hanna.id,
+    activity_id: activities.sample.id,
+    title: 'Eat at a five star restaurant!',
+    motivation: "I am curious whats so special about eating such an expensive meal",
     contribution: 100,
     category: 'Delicious', #,
     # photo: , TBD
     completed: true
     )
-  file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414838/sushi_mm7hgu.jpg')
-  goal4.photo.attach(io: file, filename: 'sushi.jpeg', content_type: 'image/jpeg')
-
-
-  goal5 = Goal.create!(
-    user_id: hanna.id,
-    activity_id: activities.sample.id,
-    title: 'Travel to Vienna!',
-    motivation: "It's supposed to be one of the most beautiful cities in Europe. Also: Great food!",
-    contribution: 100,
-    category: 'Travel', #,
-    # photo: , TBD
-    completed: true
-    )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414836/Wien_i3ra0m.jpg')
-  goal5.photo.attach(io: file, filename: 'wien.jpeg', content_type: 'image/jpeg')
+  goal10.photo.attach(io: file, filename: 'restaurant.jpeg', content_type: 'image/jpeg')
 
 
 # Display activity
