@@ -42,13 +42,15 @@ before_action :find_goal, only: [:show]
     end
   end
 
-  def achievements
+ def achievements
 
     @achievements = Goal.where(completed: true)
-    # @activities = @activitiess.select{ |activity| activity.location }
+    @activitiess = @achievements.map { |goal| goal.activity }
     geocode_activities
-
-  end
+    @activities.each do |a|
+      @achievements = Goal.joins(:activity).where(activity_id: a.id)
+    end
+ end
 
   def show
 
@@ -89,7 +91,7 @@ before_action :find_goal, only: [:show]
         # @activities = @achievements.map(&:activity)
         # @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
 
-        @activities.each do |a|
+        @activitiess.each do |a|
           @achievements = Goal.joins(:activity).where(activity_id: a.id)
         end
       end
