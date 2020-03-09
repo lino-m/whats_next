@@ -1,7 +1,13 @@
+<div class="container">
+  <div class="row ">
 
-<% @achievements.each do |achievement| %>
-    <%= render 'shared/achievement_card_wide', achievement: achievement %>
-  <%#= render "goal_card", goal: goal %>
-<% end %>
+    <div class="col-8">
+      <% @achievements.each do |achievement| %>
+      <%= render 'shared/achievement_card_wide', achievement: achievement %>
+      <%#= render "goal_card", goal: goal %>
+      <% end %>
 
+    </div>
+  </div>
+</div>
 
