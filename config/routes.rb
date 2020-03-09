@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'dashboard/goals'
-  get 'dashboard/achievements'
+  # get 'dashboard/goals'
+  # get 'dashboard/achievements'
   devise_for :users
   root to: 'pages#home'
 
