@@ -1,13 +1,16 @@
 
 /* containers*/
+/*.cont {
+  z-index: -10;
+}*/
 .my-container {
   width: 600px;
   background-color: none;
   padding: 10px;
   position: absolute;
   top: 5px;
-  /*left: 50%;*/
-  margin-left: 50px;
+  left: 50%;
+  // margin-left: -300px;
   z-index: 2;
   border-radius: 3px;
 
@@ -18,10 +21,10 @@
   padding-top: 20px;
   width: 522px;
   position: absolute;
+  left: 50%;
   padding-bottom: 30px;
   border-radius: 3px;
-  left: 8.5%;
-  /*margin-left: 150 px;*/
+  margin-left: 200 px;
   z-index: 5;
   border-radius: 3px;
 }
@@ -31,10 +34,10 @@
 .binoculars {
   background-color: $logo-pink;
   border-radius: 0 4px 4px 0;
-  opacity: 0.5;
+  opacity: 0.8;
   &:hover{
     background-color: $logo-pink;
-    opacity: 0.8;
+    opacity: 0.5;
   }
 }
 .recent {

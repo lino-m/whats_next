@@ -85,7 +85,6 @@ before_action :find_goal, only: [:show]
         # @activities = @achievements.map(&:activity)
         # @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
 
-
         @activities.each do |a|
           @achievements = Goal.joins(:activity).where(activity_id: a.id)
         end
@@ -109,7 +108,7 @@ before_action :find_goal, only: [:show]
       {
         lat: activity.latitude,
         lng: activity.longitude,
-        # infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
+        infoWindow: render_to_string(partial: "shared/info_window", locals: { activity: activity }),
         image_url: helpers.asset_url('whatsnext.svg')
       }
       end
