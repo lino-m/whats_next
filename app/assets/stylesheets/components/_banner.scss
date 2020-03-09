@@ -6,16 +6,21 @@
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(255,255,255,0.4)), image-url("banner1.jpg");
   background-size: cover;
   background-position: 10% 15%;
-  color: black;
+  color: #3E3E3E;
+  text-align: left;
+  background-color: #f0f0f0;
   h1 {
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 45px;
   }
   p {
-    opacity: .8;
+    font-family: roboto thin;
+    font-style: italic;
+    color: #3E3E3E;
+    opacity: .5;
     font-size: 25px;
-    font-weight: lighter;
-    margin-bottom: 30px;
+    margin-bottom: 30px;;
   }
 /*  .banner-content {
     padding-left: 5rem;
