@@ -15,3 +15,21 @@
 .icon-color {
   fill: #fafafa;
 }
+
+.indent-button {
+  position: relative;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 16px;
+}
+
+.card-img-top {
+  height: 150px;
+}

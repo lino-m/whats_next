@@ -1,25 +1,16 @@
 <%= render 'shared/banner' %>
 
 <div class="container">
-  <div class="row my-5">
+  <div class="row my-5 h-100">
+     <% @achievements.each do |achievement| %>
     <div class="col-3">
-      <%= render 'shared/achievement_card' %>
-    </div>
-
-    <div class="col-3">
-      <%= render 'shared/achievement_card' %>
-    </div>
-
-    <div class="col-3">
-      <%= render 'shared/achievement_card' %>
-    </div>
-
-    <div class="col-3">
-      <%= render 'shared/achievement_card' %>
-    </div>
+      <%= render 'shared/achievement_card', achievement: achievement %>
+      </div>
+      <% end %>
   </div>
 </div>
 
 <div class="tesst" style= "height:300px;">
   <p>test footer position</p>
 </div>
+
