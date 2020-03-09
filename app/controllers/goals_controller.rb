@@ -43,6 +43,10 @@ before_action :find_goal, only: [:show]
   end
 
   def achievements
+<<<<<<< HEAD
+    @achievements = Goal.where(completed: true)
+    geocode_activities
+=======
    @achievements = Goal.where(completed: true)
 
    @activities = Activity.geocoded #returns flats with coordinates
@@ -54,6 +58,7 @@ before_action :find_goal, only: [:show]
       }
     end
 
+>>>>>>> 112812d3bbcb9beea1a187a95a664b1a69514031
   end
 
   def show
@@ -65,25 +70,10 @@ before_action :find_goal, only: [:show]
     @milestones = Milestone.where(goal_id: @achievement.id)
   end
 
-
-  # def notes to self
-    # if params[:search].present? && params[:search][:query].match(/^\d+$/)
-    #   user_input = params[:search][:query]
-    #   @movies = Movie.where(year: user_input)
-  # endup
-
   def duplicate
   end
 
   def searched
-    # @activities = Activity.geocoded #returns flats with coordinates
-
-    # @markers = @flats.map do |activity|
-    #   {
-    #     lat: activity.latitude,
-    #     lng: activity.longitude
-    #   }
-
    if params[:search].present?
       user_query = params[:search][:query]
       @goals_and_activities_pg = PgSearch.multisearch(user_query)
@@ -96,13 +86,12 @@ before_action :find_goal, only: [:show]
         @goals_and_activities = @goals_and_activities_pg.map(&:searchable)
         # @achievements = @goals_and_activities
         @achievements = @goals_and_activities.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
+        geocode_activities
         @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
         @activities.each do |a|
         @achievements = Goal.joins(:activity).where(activity_id: a.id)
         end
-
       end
-
 
     end
 
@@ -115,6 +104,19 @@ before_action :find_goal, only: [:show]
 
   def find_goal
     @goal = Goal.find(params[:id])
+  end
+
+  def geocode_activities
+    @activities = Activity.geocoded
+    @activities = @activities.where.not(latitude: nil, longitude: nil)
+    @markers = @activities.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
+
+      }
+      end
   end
 
   def goal_params

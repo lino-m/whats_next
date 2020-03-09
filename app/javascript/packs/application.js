@@ -8,6 +8,5 @@ import {searchCologne} from './search_buttons';
 searchCologne();
 
 import { initMapbox } from '../plugins/init_mapbox';
-
 initMapbox();
 
