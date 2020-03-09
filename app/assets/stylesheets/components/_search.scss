@@ -4,27 +4,25 @@
   z-index: -10;
 }*/
 .my-container {
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
   width: 600px;
-  background-color: none;
-  padding: 10px;
-  position: absolute;
   top: 5px;
   left: 50%;
-  // margin-left: -300px;
-  z-index: 2;
+  z-index: 1;
   border-radius: 3px;
 
 }
 #hidden-search {
+  margin-left: auto;
+  margin-right: auto;
   display: none;
   background-color: white;
   padding-top: 20px;
-  width: 522px;
+  width: auto;
   position: absolute;
-  left: 50%;
   padding-bottom: 30px;
-  border-radius: 3px;
-  margin-left: 200 px;
   z-index: 5;
   border-radius: 3px;
 }

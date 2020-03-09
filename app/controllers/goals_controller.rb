@@ -71,7 +71,7 @@ before_action :find_goal, only: [:show]
       if @goals_and_activities_pg.empty?
         @text = "Sorry, no matches. Look at what others did"
         @achievements = Goal.all.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
-        @activitiess = @achievements.map { |goal| goal.activity }
+        @activities = @achievements.map { |goal| goal.activity }
         geocode_activities
 
         @activities.each do |a|
@@ -82,7 +82,7 @@ before_action :find_goal, only: [:show]
         @goals_and_activities = @goals_and_activities_pg.map(&:searchable)
         # @achievements = @goals_and_activities
         @achievements = @goals_and_activities.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
-        @activitiess = @achievements.map { |goal| goal.activity }
+        @activities = @achievements.map { |goal| goal.activity }
         geocode_activities
 
         # @activities = @achievements.map(&:activity)
@@ -106,7 +106,7 @@ before_action :find_goal, only: [:show]
 
   def geocode_activities
     @activities = Activity.geocoded
-    @activities = @activitiess.select{ |activity| activity.location }
+    @activities = @activities.select{ |activity| activity.location }
     @markers = @activities.map do |activity|
       {
         lat: activity.latitude,
