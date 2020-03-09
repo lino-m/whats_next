@@ -46,6 +46,7 @@ before_action :find_goal, only: [:show]
 
     @achievements = Goal.where(completed: true)
     geocode_activities
+
   end
 
   def show
@@ -66,27 +67,34 @@ before_action :find_goal, only: [:show]
       @goals_and_activities_pg = PgSearch.multisearch(user_query)
       if @goals_and_activities_pg.empty?
         @text = "Sorry, no matches. Look at what others did"
-        @achievements = Goal.where(completed: true)
-        @achievements = @achievements.select { |a| a.class.name == 'Goal' }
-        # also do thing for markers
+        @achievements = Goal.all.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
+        @activitiess = @achievements.map { |goal| goal.activity }
+        geocode_activities
+
+        @activities.each do |a|
+          @achievements = Goal.joins(:activity).where(activity_id: a.id)
+        end
       else
         @text = ''
         @goals_and_activities = @goals_and_activities_pg.map(&:searchable)
         # @achievements = @goals_and_activities
         @achievements = @goals_and_activities.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
+        @activitiess = @achievements.map { |goal| goal.activity }
         geocode_activities
-        @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
+
+        # @activities = @achievements.map(&:activity)
+        # @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
+
+
         @activities.each do |a|
           @achievements = Goal.joins(:activity).where(activity_id: a.id)
         end
       end
-
     end
 
     # Flat.near('Tour Eiffel', 10)      # venues within 10 km of Tour Eiffel
     # Flat.near([40.71, 100.23], 20)
   end
-
 
   private
 
@@ -95,15 +103,14 @@ before_action :find_goal, only: [:show]
   end
 
   def geocode_activities
-    @something = Activity.geocoded
-    # @achievementss = @something.map(&:activity)
-    # @activities = @activities.where.not(latitude: nil, longitude: nil)
-    @markers = @something.map do |activity|
+    @activities = Activity.geocoded
+    @activities = @activitiess.select{ |activity| activity.location }
+    @markers = @activities.map do |activity|
       {
         lat: activity.latitude,
-        lng: activity.longitude
-        # infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
-
+        lng: activity.longitude,
+        # infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
+        image_url: helpers.asset_url('whatsnext.svg')
       }
       end
   end
