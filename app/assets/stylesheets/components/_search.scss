@@ -3,7 +3,6 @@
 .my-container {
   width: 600px;
   background-color: none;
-  height: 300px;
   padding: 10px;
   position: absolute;
   top: 5px;
@@ -11,6 +10,7 @@
   margin-left: - 300px;
   z-index: 2;
   border-radius: 3px;
+
 }
 #hidden-search {
   display: none;
@@ -18,8 +18,11 @@
   padding-top: 20px;
   width: 522px;
   position: absolute;
-  margin-left: 30px;
   padding-bottom: 30px;
+  border-radius: 3px;
+  left: 50%;
+  margin-left: - 262px;
+  z-index: 2;
   border-radius: 3px;
 }
 .box {

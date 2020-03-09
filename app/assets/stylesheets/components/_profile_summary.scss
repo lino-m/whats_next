@@ -1,0 +1,105 @@
+.profile_summary {
+  overflow: hidden;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 10px;
+  color: $logo-green
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  p{
+    font-size: 13px;
+  }
+  .bold > p {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  .background_badge {
+    border-radius: 8px 8px 0px 0px;
+    background-color: $logo-green;
+    padding: 70px;
+    margin: 10px;
+    text-align: center;
+    font-weight: 700;
+  }
+  .seperator {
+    width: 85%;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .show-user{
+    margin: 20px 10px;
+    padding: 8px 18px;
+  }
+  .profile-description {
+    margin-left: 15px;
+  }
+  .buttons{
+    margin: 18px auto;
+  }
+  .btn-edit-profile {
+    background-color: $logo-green;
+    color: white !important;
+    font-size: 12px;
+    font-weight: 700;
+    width: 145px;
+    border-radius: 8px;
+    margin: 4px;
+    opacity: 0.7;
+  }
+  .btn-edit-profile:hover {
+    opacity: 1
+  }
+  .btn-message {
+    background-color: grey;
+    color: white !important;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    margin: 4px;
+    opacity: 0.7;
+  }
+  .btn-message:hover {
+    opacity: 1
+  }
+  .social-infos{
+    padding: 8px 80px;
+  }
+  .new-goal {
+    width: 100%;
+  }
+  .btn-new-goal {
+    background-color: $logo-pink;
+    color: white !important;
+    font-size: 12px;
+    font-weight: 700;
+    width: 225px;
+    border-radius: 8px;
+    margin: 18px auto;
+    opacity: 0.7;
+  }
+  .btn-new-goal:hover {
+    opacity: 1
+  }
+  .user-infos {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+}

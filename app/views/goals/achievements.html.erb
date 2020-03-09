@@ -1,5 +1,7 @@
 
 <% @achievements.each do |achievement| %>
-    <%= achievement.title %>
+    <%= render 'shared/achievement_card_wide', achievement: achievement %>
   <%#= render "goal_card", goal: goal %>
 <% end %>
+
+

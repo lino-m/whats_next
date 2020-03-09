@@ -1,0 +1,19 @@
+h3 {
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.results-and-map {
+  box-sizing: content-box;
+}
+
+#map {
+  width: 30%;
+  height: 600px;
+  background-color: red;
+
+  box-sizing: content-box;
+  z-index: 2;
+  position: fixed;
+  left: 60%;
+}
