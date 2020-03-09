@@ -3,11 +3,17 @@ h3 {
   margin: 0 auto;
 }
 
-.x {
-  width: 70%;
+.results-and-map {
+  box-sizing: content-box;
 }
 
 #map {
-  width: 50%;
+  width: 30%;
   height: 600px;
+  background-color: red;
+
+  box-sizing: content-box;
+  z-index: 5;
+  position: fixed;
+  left: 60%;
 }

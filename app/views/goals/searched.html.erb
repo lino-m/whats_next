@@ -1,14 +1,14 @@
-<div class="container w-100">
-  <div class="row">
+<div class="container">
+  <div class="row results-and-map ">
 
-    <div class="results col-xs-8 x">
+    <div class="results ">
       <h3><%= @text %></h3>
       <% @achievements.each do |goal| %>
         <%= render "shared/achievement_card_wide", achievement: goal %>
       <% end %>
     </div>
 
-    <div class= 'col-xs-4' id="map", data-markers="<%= @markers.to_json %>">
+    <div class= 'g' id="map", data-markers="<%= @markers.to_json %>", data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
   </div>
 </div>

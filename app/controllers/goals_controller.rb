@@ -92,11 +92,13 @@ before_action :find_goal, only: [:show]
 
   def geocode_activities
     @activities = Activity.geocoded
-
+    @activities = @activities.where.not(latitude: nil, longitude: nil)
     @markers = @activities.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
+
       }
       end
   end
