@@ -45,6 +45,7 @@ before_action :find_goal, only: [:show]
   def achievements
 
     @achievements = Goal.where(completed: true)
+    # @activities = @activitiess.select{ |activity| activity.location }
     geocode_activities
 
   end
@@ -106,7 +107,7 @@ before_action :find_goal, only: [:show]
 
   def geocode_activities
     @activities = Activity.geocoded
-    @activities = @activitiess.select{ |activity| activity.location }
+    # @activities = @activitiess.select{ |activity| activity.location }
     @markers = @activities.map do |activity|
       {
         lat: activity.latitude,
