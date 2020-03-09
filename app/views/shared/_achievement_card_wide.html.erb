@@ -1,29 +1,40 @@
+<div class="card ">
 
-<div class="container">
-  <div class="row">
-    <div class="card col-8">
-      <%= cl_image_tag achievement.user.avatar.key, { class: "rounded-circle"} %>
-      <%= render "shared/icon-add" %>
-      <%= cl_image_tag achievement.photo.key, { class: "card-image"} if achievement.photo.attached? %>
-      <div class="card-body">
-        <h5 class="card-title" style="text-transform: uppercase;"><strong><%=  achievement.title %></strong></h5>
-        <p class="card-text" style="font-style: italic;"><%=achievement.motivation %></p>
-        <a href="#" class="btn btn-flat">set goal</a>
-      </div>
-    <div class="container">
-          <% achievement.milestones.each do |milestone| %>
-          <div class="row">
-            <% if milestone.done == true %>
-            <%= image_tag "checkbox.png", height:20 %>
-            <% else %>
-            <%= image_tag "checkbox_unchecked", height:20 %>
+  <%= cl_image_tag achievement.user.avatar.key, { class: "rounded-circle"} %>
+  <%= render "shared/icon-add" %>
+  <%= cl_image_tag achievement.photo.key, { class: "card-image"} %>
+  <div class="card-body">
+    <h5 class="card-title" style="text-transform: uppercase;"><strong><%=  achievement.title %></strong></h5>
+    <p class="card-text" style="font-style: italic;"><%=achievement.motivation %></p>
+    <a href="#" class="btn btn-flat">set goal</a>
+
+  <div class="container">
+    <div class="row">
+      <div class="card col-8">
+        <%= cl_image_tag achievement.user.avatar.key, { class: "rounded-circle"} %>
+        <%= render "shared/icon-add" %>
+        <%= cl_image_tag achievement.photo.key, { class: "card-image"} if achievement.photo.attached? %>
+        <div class="card-body">
+          <h5 class="card-title" style="text-transform: uppercase;"><strong><%=  achievement.title %></strong></h5>
+          <p class="card-text" style="font-style: italic;"><%=achievement.motivation %></p>
+          <a href="#" class="btn btn-flat">set goal</a>
+        </div>
+      <div class="container">
+            <% achievement.milestones.each do |milestone| %>
+            <div class="row">
+              <% if milestone.done == true %>
+              <%= image_tag "checkbox.png", height:20 %>
+              <% else %>
+              <%= image_tag "checkbox_unchecked", height:20 %>
+              <% end %>
+              <p class="name"><%= milestone.name %> </p> <p class="description"> <%= milestone.description %> </p> <p class="price"> <%= milestone.price %> € </p>
+            </div>
             <% end %>
-            <p class="name"><%= milestone.name %> </p> <p class="description"> <%= milestone.description %> </p> <p class="price"> <%= milestone.price %> € </p>
-          </div>
-          <% end %>
+        </div>
       </div>
+
     </div>
   </div>
+
 </div>
-
-
+</div>
