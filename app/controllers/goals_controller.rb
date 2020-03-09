@@ -68,6 +68,7 @@ before_action :find_goal, only: [:show]
         @text = "Sorry, no matches. Look at what others did"
         @achievements = Goal.where(completed: true)
         @achievements = @achievements.select { |a| a.class.name == 'Goal' }
+        # also do thing for markers
       else
         @text = ''
         @goals_and_activities = @goals_and_activities_pg.map(&:searchable)
@@ -76,7 +77,7 @@ before_action :find_goal, only: [:show]
         geocode_activities
         @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
         @activities.each do |a|
-        @achievements = Goal.joins(:activity).where(activity_id: a.id)
+          @achievements = Goal.joins(:activity).where(activity_id: a.id)
         end
       end
 
@@ -94,9 +95,10 @@ before_action :find_goal, only: [:show]
   end
 
   def geocode_activities
-    @activities = Activity.geocoded
-    @activities = @activities.where.not(latitude: nil, longitude: nil)
-    @markers = @activities.map do |activity|
+    @something = Activity.geocoded
+    # @achievementss = @something.map(&:activity)
+    # @activities = @activities.where.not(latitude: nil, longitude: nil)
+    @markers = @something.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude

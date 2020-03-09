@@ -12,3 +12,15 @@
   padding-left: 10px;
   padding-top: 10px;
 }
+
+.rounded-circle {
+  overflow:hidden;
+  height:40px;
+  width:40px;
+  border-radius:50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border: white 1px solid;
+  position:absolute;
+  top: 15px;
+  left: 15px
+}
