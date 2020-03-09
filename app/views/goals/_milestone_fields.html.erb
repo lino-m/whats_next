@@ -1,7 +1,19 @@
-<div class='nested-fields'>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :done, as: :boolean %>
-  <%= f.input :price_cents %>
-  <%= link_to_remove_association "remove milestone", f%>
+<div class='nested-fields milestones'>
+  <div class="container d-flex align-items-center justify-content-between" >
+    <div class="milestone-done">
+      <%= f.input :done, as: :boolean, label:false, class: "form-control" %>
+    </div>
+    <div class="milestone-name">
+      <%= f.input :name, placeholder: 'Step 01', label:false, class: "form-control" %>
+    </div>
+    <div class="milestone-description">
+      <%= f.input :description, placeholder: 'Tie my shoes and go!', label:false, class: "form-control" %>
+    </div>
+    <div class="milestone-price">
+      <%= f.input :price_cents, label:false,  :input_html => {value: number_with_precision(f.object.price_cents, precision: 2) }, class: "form-control" %>
+    </div>
+    <div class="remove-milestone">
+      <%= link_to_remove_association ('<i class="fas fa-minus-circle"></i>').html_safe, f%>
+    </div>
+  </div>
 </div>

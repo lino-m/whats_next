@@ -3,12 +3,32 @@
     <div class="form-group">
       <%= simple_form_for @goal do |f| %>
         <%= f.error_notification %>
-        <%= f.input :title %>
-        <%= f.input :motivation %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "form-control" %>
+        <div class="image-goal">
+        </div>
+        <div class="inspiration-new">
+          <div class="d-flex">
+            <%= image_tag "inspiration.svg", class: "inspiration-image" %>
+              <div class="box-inspiration">
+                    <p class="inspiration-text">Inspiration</p><p class="name">Some Guy</p>
+              </div>
+          </div>
+        </div>
+        <div class="goal-target">
+          <div class="d-flex justify-content-end">
+            <%= image_tag "target.svg", class: "target" %>
+            <h2 class="card-trip-goal">GOAL</h2>
+          </div>
+          <div>
+            <p class="date-added"> This goal is waiting for you!</p>
+          </div>
+        </div>
+        <div class="title"><%= f.input :title %></div>
+        <div class="motivation"><%= f.input :motivation %></div>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "photo-upload form-control" %>
         <!-- nested Milestones Partial -->
+        <div class="spererator"><hr></div>
+        <div class="headline-milestones"><h3>Milestones</h3></div>
         <div id="milestone">
-
         </div>
         <div id="milestones">
           <%= f.simple_fields_for :milestones do |builder| %>
@@ -21,7 +41,7 @@
                                                     assocticiation_insert_method: :append
                                               } %>
           </div>
-          <br>
+          <div class="spererator"><hr></div>
           <div>
             <%= f.simple_fields_for @activities do |a| %>
               <%= a.input :name, as: :select, collection: @activities, prompt: "Select Activity", label: false %>
