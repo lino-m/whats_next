@@ -11,9 +11,9 @@ h3 {
   width: 30%;
   height: 600px;
   background-color: red;
-
+  margin: 10px;
   box-sizing: content-box;
-  z-index: 2;
+  z-index: 0;
   position: fixed;
   left: 60%;
 }
