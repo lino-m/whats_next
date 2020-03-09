@@ -7,6 +7,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { searchCologne } from './search_buttons';
 // import { initAutocomplete } from '../plugins/init_mapbox';
 
+
 hiddenSearch();
 
 searchCologne();
