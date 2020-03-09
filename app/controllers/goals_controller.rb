@@ -32,6 +32,8 @@ before_action :find_goal, only: [:show]
 
   def achievements
    @achievements = Goal.where(completed: true)
+
+   # @milestones = Milestone.where(goal_id: @achievement.id)
   end
 
   def show
