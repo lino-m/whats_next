@@ -2,6 +2,7 @@ class GoalsController < ApplicationController
 before_action :find_goal, only: [:show]
 
   def index
+    @goals = Goal.where(completed: false)
     @achievements = Goal.where(completed: true)
   end
 
@@ -16,8 +17,9 @@ before_action :find_goal, only: [:show]
     @goal.user = current_user
     @activity = Activity.find(params[:goal][:activity][:name])
     @goal.activity_id = @activity.id
+    @goal.completed = false # test line Lino
     if @goal.save!
-      redirect_to goals_path
+      redirect_to dashboard_goals_path
     else
       render :new
     end
@@ -41,8 +43,22 @@ before_action :find_goal, only: [:show]
   end
 
   def achievements
+<<<<<<< HEAD
     @achievements = Goal.where(completed: true)
     geocode_activities
+=======
+   @achievements = Goal.where(completed: true)
+
+   @activities = Activity.geocoded #returns flats with coordinates
+
+    @markers = @flats.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude
+      }
+    end
+
+>>>>>>> 112812d3bbcb9beea1a187a95a664b1a69514031
   end
 
   def show
@@ -119,6 +135,6 @@ before_action :find_goal, only: [:show]
   end
 
   def goal_params
-    params.require(:goal).permit(:name, :description, :photo , milestones_attributes: [:name, :description, :done,  :price_cents]) #Milestone.attribute_names.map(:to_sym).push(:_destroy))
+    params.require(:goal).permit(:title, :motivation, :description, :photo , milestones_attributes: [:name, :description, :done,  :price_cents]) #Milestone.attribute_names.map(:to_sym).push(:_destroy))
   end
 end
