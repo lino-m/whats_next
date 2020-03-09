@@ -7,7 +7,7 @@
   position: absolute;
   top: 5px;
   /*left: 50%;*/
-  margin-left: 30px;
+  margin-left: 50px;
   z-index: 2;
   border-radius: 3px;
 
@@ -21,7 +21,7 @@
   padding-bottom: 30px;
   border-radius: 3px;
   left: 50%;
-  margin-left: - 262px;
+  margin-left: 50 px;
   z-index: 2;
   border-radius: 3px;
 }
@@ -31,6 +31,11 @@
 .binoculars {
   background-color: $logo-pink;
   border-radius: 0 4px 4px 0;
+  opacity: 0.5;
+  &:hover{
+    background-color: $logo-pink;
+    opacity: 0.8;
+  }
 }
 .recent {
   border-top: 1px solid $border-grey;
