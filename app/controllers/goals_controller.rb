@@ -54,7 +54,10 @@ before_action :find_goal, only: [:show]
 
   def achievement
     @achievement = Goal.find(params[:id])
-    @milestones = Milestone.where(goal_id: @achievement.id)
+    @milestones = @achievement.milestones
+    unless @achievement.completed
+      raise ActiveRecord::RecordNotFound.new("Goal not completed")
+    end
   end
 
   def duplicate

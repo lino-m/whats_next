@@ -155,7 +155,7 @@ activities = Activity.all
     motivation: 'Just because it is awesome and will impress a lot of people!',
     contribution: 100,
     category: 'Sports',
-    completed: true
+    completed: false
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/backflips_jmaze3.jpg')
   goal1.photo.attach(io: file, filename: 'backflips.jpeg', content_type: 'image/jpeg')
@@ -170,7 +170,7 @@ activities = Activity.all
     contribution: 100,
     category: 'Action', #,
     # photo: , TBD
-    completed: true
+    completed: false
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/parachute_xbagma.jpg')
   goal2.photo.attach(io: file, filename: 'parachute.jpeg', content_type: 'image/jpeg')
@@ -184,7 +184,7 @@ activities = Activity.all
     contribution: 100,
     category: 'New Things', #,
     # photo: , TBD
-    completed: true
+    completed: false
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414836/cat_cybhei.jpg')
   goal3.photo.attach(io: file, filename: 'cat.jpeg', content_type: 'image/jpeg')
@@ -198,7 +198,7 @@ activities = Activity.all
     contribution: 100,
     category: 'Delicious', #,
     # photo: , TBD
-    completed: true
+    completed: false
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414838/sushi_mm7hgu.jpg')
   goal4.photo.attach(io: file, filename: 'sushi.jpeg', content_type: 'image/jpeg')
@@ -211,7 +211,7 @@ activities = Activity.all
     contribution: 100,
     category: 'Travel', #,
     # photo: , TBD
-    completed: true
+    completed: false
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414836/Wien_i3ra0m.jpg')
   goal5.photo.attach(io: file, filename: 'wien.jpeg', content_type: 'image/jpeg')
@@ -222,7 +222,7 @@ activities = Activity.all
 # Display activity
 puts 'Creating Milestones for Goals'
 
-goals = Goal.all
+goals = Goal.where(completed: false)
 
 goals.each do |goal|
   Milestone.create(
@@ -277,7 +277,7 @@ activities = Activity.all
     completed: true
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/backflips_jmaze3.jpg')
-  goal1.photo.attach(io: file, filename: 'backflips.jpeg', content_type: 'image/jpeg')
+  goal6.photo.attach(io: file, filename: 'georgia.jpeg', content_type: 'image/jpeg')
 
 
 
@@ -292,9 +292,9 @@ activities = Activity.all
     completed: true
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/parachute_xbagma.jpg')
-  goal2.photo.attach(io: file, filename: 'parachute.jpeg', content_type: 'image/jpeg')
+  goal7.photo.attach(io: file, filename: 'puglia.jpeg', content_type: 'image/jpeg')
 
-  goal3 = Goal.create!(
+  goal8 = Goal.create!(
     user_id: karl.id,
     activity_id: activities.sample.id,
     title: 'Buy a dog!',
@@ -305,10 +305,10 @@ activities = Activity.all
     completed: true
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414836/cat_cybhei.jpg')
-  goal3.photo.attach(io: file, filename: 'cat.jpeg', content_type: 'image/jpeg')
+  goal8.photo.attach(io: file, filename: 'cat.jpeg', content_type: 'image/jpeg')
 
 
-  goal4 = Goal.create!(
+  goal9 = Goal.create!(
     user_id: marie.id,
     activity_id: activities.sample.id,
     title: 'Sell stuff on a fleamarket!',
@@ -319,10 +319,10 @@ activities = Activity.all
     completed: true
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414838/sushi_mm7hgu.jpg')
-  goal4.photo.attach(io: file, filename: 'sushi.jpeg', content_type: 'image/jpeg')
+  goal9.photo.attach(io: file, filename: 'sushi.jpeg', content_type: 'image/jpeg')
 
 
-  goal5 = Goal.create!(
+  goal10 = Goal.create!(
     user_id: hanna.id,
     activity_id: activities.sample.id,
     title: 'Eat at a five star restaurant!',
@@ -333,7 +333,7 @@ activities = Activity.all
     completed: true
     )
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414836/Wien_i3ra0m.jpg')
-  goal5.photo.attach(io: file, filename: 'wien.jpeg', content_type: 'image/jpeg')
+  goal10.photo.attach(io: file, filename: 'restaurant.jpeg', content_type: 'image/jpeg')
 
 
 # Display activity
