@@ -43,13 +43,9 @@ before_action :find_goal, only: [:show]
   end
 
   def achievements
-<<<<<<< HEAD
+
     @achievements = Goal.where(completed: true)
     geocode_activities
-=======
-   @achievements = Goal.where(completed: true)
-
-   @activities = Activity.geocoded #returns flats with coordinates
 
     @markers = @flats.map do |activity|
       {
@@ -57,8 +53,6 @@ before_action :find_goal, only: [:show]
         lng: activity.longitude
       }
     end
-
->>>>>>> 112812d3bbcb9beea1a187a95a664b1a69514031
   end
 
   def show
@@ -113,7 +107,7 @@ before_action :find_goal, only: [:show]
       {
         lat: activity.latitude,
         lng: activity.longitude
-        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
+        # infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })
 
       }
       end
