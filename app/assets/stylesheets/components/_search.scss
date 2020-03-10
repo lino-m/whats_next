@@ -65,7 +65,9 @@
   /*min-width:300px !important;*/
   border-radius: 4px 0 0 4px;
   border: none;
-  box-shadow: 0 0px 10px rgba(0,0,0,.1);
+  box-shadow: 0 0px 0.25px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
 }
 .input-field {
   flex-grow: 1;
