@@ -281,7 +281,7 @@ activities = Activity.all
     category: 'Nature',
     completed: true
     )
-  file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/backflips_jmaze3.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1569498286839-55f1a0766292?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
   goal6.photo.attach(io: file, filename: 'georgia.jpeg', content_type: 'image/jpeg')
 
 
@@ -296,7 +296,7 @@ activities = Activity.all
     # photo: , TBD
     completed: true
     )
-  file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/parachute_xbagma.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
   goal7.photo.attach(io: file, filename: 'puglia.jpeg', content_type: 'image/jpeg')
 
   goal8 = Goal.create!(
@@ -309,21 +309,21 @@ activities = Activity.all
     # photo: , TBD
     completed: true
     )
-  file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414836/cat_cybhei.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
   goal8.photo.attach(io: file, filename: 'cat.jpeg', content_type: 'image/jpeg')
 
 
   goal9 = Goal.create!(
     user_id: marie.id,
     activity_id: activities.sample.id,
-    title: 'Sell stuff on a fleamarket!',
+    title: 'Sell on a fleamarket!',
     motivation: "My closet is exploding and I don't wear half of the stuff inside. I really need to get rid of some pieces to make room for new ones." ,
     contribution: 100,
     category: 'Clothes', #,
     # photo: , TBD
     completed: true
     )
-  file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414838/sushi_mm7hgu.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1512237017014-1b4a7fa57654?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
   goal9.photo.attach(io: file, filename: 'sushi.jpeg', content_type: 'image/jpeg')
 
 
@@ -337,7 +337,7 @@ activities = Activity.all
     # photo: , TBD
     completed: true
     )
-  file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414836/Wien_i3ra0m.jpg')
+  file = URI.open('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
   goal10.photo.attach(io: file, filename: 'restaurant.jpeg', content_type: 'image/jpeg')
 
 

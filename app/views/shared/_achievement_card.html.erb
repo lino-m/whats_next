@@ -8,11 +8,11 @@
   <%= cl_image_tag achievement.photo.key, { class: "card-img-top"} %>
   <div class="card-body">
     <div class="card-body-text">
-      <h5 class="card-title" style="text-transform: uppercase;">
+      <h5 class="card-title">
         <strong><%=  achievement.title %></strong>
       </h5>
       <p class="card-text" style="font-style: italic;">
-        <%=achievement.motivation.truncate(40) %>...
+        <%=achievement.motivation.truncate(50) %>
       </p>
       <div class="icons-card">
         <p>
