@@ -102,13 +102,13 @@ puts 'Creating activities'
 
 horse = Activity.create(
   name: 'Horseriding',
-  location: 'Somestreet 4, 12345 Someplace',
-  category: 'New Things',
+  location: 'Lindenberger Str. 29, 16356 Berlin-Ahrensfelde',
+  category: 'Sports',
   )
 
 garden = Activity.create(
   name: 'Gardening',
-  location: 'Someroad 1, 12345 Somewhere',
+  location: 'Am Wiesengrund 1215378 Rüdersdorf bei Berlin',
   category: 'Nature',
   )
 

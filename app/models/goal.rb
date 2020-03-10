@@ -1,6 +1,15 @@
 class Goal < ApplicationRecord
   include PgSearch::Model
-  multisearchable against: [:title, :category, :motivation]
+  pg_search_scope(
+    :search_query,
+    against: [:title, :motivation, :category],
+    associated_against:{
+      activity: :location
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+  )
     # associated
     #   {
     #   category: 'A',
