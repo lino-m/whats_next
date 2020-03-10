@@ -6,12 +6,12 @@
   <div class="card-body">
     <h5 class="card-title" style="text-transform: uppercase;"><strong><%=  achievement.title %></strong></h5>
     <p class="card-text" style="font-style: italic;"><%=achievement.motivation %></p>
-    <a href="#" class="btn btn-flat">set goal</a>
+    <a href="#" class="btn btn-flat">see Milestones</a>
 
-    <div class="container">
+    <div class="container_new">
       <% achievement.milestones.each do |milestone| %>
       <div class="drop_down">
-        <div class="d-flex align-items-center justify-content-between">
+        <div class="flexbox d-flex align-items-center justify-content-between">
           <div class="d-flex align-items-center">
             <% if milestone.done == true %>
             <%= image_tag "checkbox.png", height:20 %>
@@ -27,6 +27,9 @@
         </div>
       </div>
       <% end %>
+      <div class="Goal_button">
+      <a href="#" class="btn btn-flat">Set Goal</a>
+      </div>
     </div>
   </div>
 </div>
