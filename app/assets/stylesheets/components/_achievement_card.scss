@@ -21,10 +21,15 @@
 }
 
 .card-body {
+  min-height: 251px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   padding-bottom: 0px;
+}
+
+.card-text {
+  color: #8e8e8e
 }
 
 .card-title {
@@ -35,12 +40,28 @@
   height: 150px;
 }
 
-.closed_card {
-  height: 0px;
-  overflow: hidden;
+.card-home {
+  padding: 0 !important;
 }
 
-.Goal_button {
-  margin-top: 15px;
-  margin-bottom: 15px;
+.user-name {
+    margin-bottom: 0;
+    line-height: 2.5;
+    margin-left: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icons-card {
+  p {
+    font-style: normal;
+    /* font-style: italic; */
+    font-size: 13px;
+    color: #adadad;
+  }
+  b {
+    color: #442f24;
+  }
 }

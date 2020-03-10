@@ -9,8 +9,10 @@
 
   <div class="d-flex " id="navbarSupportedContent">
     <div class="plus">
-      <%= link_to new_goal_path, class: "" do %>
-        <%= image_tag "add_project.svg", height:50 %>
+      <% if !@hide_goal_cta %>
+        <%= link_to new_goal_path, class: "" do %>
+          <%= image_tag "btn-flat.svg", height:50 %>
+        <% end %>
       <% end %>
     </div>
     <ul class="navbar-nav mr-auto">
