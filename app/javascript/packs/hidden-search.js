@@ -1,11 +1,11 @@
 const hiddenSearch = () => {
-  console.log('kdjflksaj')
   const searchQuery = document.getElementById("search_query");
+  const closeX = document.getElementById("close");
   const hiddenSearchbox = document.getElementById("hidden-search");
   searchQuery.addEventListener('focus', () => {
     hiddenSearchbox.style.display = "block";
   });
-  searchQuery.addEventListener('blur', () => {
+  closeX.addEventListener('click', () => {
     hiddenSearchbox.style.display = "none";
   });
 }

@@ -5,7 +5,7 @@
         <div class="top-search d-flex justify-content-between align-self-stretch">
           <%= f.input :query, label: false, placeholder: "What does your heart crave?", input_html: { autocomplete: 'off', class: "query-input" }  %>
           <div class="submit btn-info binoculars">
-            <i class="fas fa-arrow-right"></i>
+            <%= image_tag "Binoculars.svg", height:50, width:50 %>
           </div>
         </div>
       </div>
@@ -13,19 +13,15 @@
   </div>
 </div>
   <div id="hidden-search">
+
     <div class="explore box">
-      <div class="d-flex">
-        <p class= 'search-header justify-content-start'>EXPLORE WHAT'S NEXT</p>
-        <i class="far fa-window-close" id='close'></i>
-      </div>
+      <p class= 'search-header justify-content-start'>EXPLORE WHAT'S NEXT</p>
       <div class="my-row">
         <div class="explore d-flex justify-content-between">
           <%= button_to 'All', achievements_path, method: :get, class: "our-btn explore-btn" %>
           <%= button_to 'Achievements', achievements_path, method: :get, params: {query: ''}, class: "our-btn explore-btn" %>
           <%= button_to 'Users', achievements_path, method: :get, class: "our-btn explore-btn" %>
           <%= button_to 'Surprise Me!', achievements_path, method: :get, params: {query: ''}, class: "our-btn explore-btn" %>
-          <%#= link_to 'create goal', goals_path, method: :post %>
-
         </div>
       </div>
     </div>
@@ -33,12 +29,11 @@
     <div class="cities box">
       <p class= 'search-header'>EVERYTHING CLOSE TO...</p>
       <div class="my-row">
-        <div class="cities small-btn d-flex justify-content-between">
-          <%#= button_to 'Fehrbellin',search_path method: :get, params: {query: 'fehrbellin'}, class: "our-btn city-btn" %>
-          <%= button_to 'Hamburg', search_path, method: :get, params: {query: 'Hamburg'}, class: "our-btn city-btn" %>
+        <div class="cities small-btn d-flex d-flex justify-content-between">
+          <%= button_to 'Munich', search_path, method: :get, params: {query: 'munich'}, class: "our-btn city-btn" %>
           <%= button_to 'Berlin', search_path, method: :get, params: {query: 'berlin'}, class: "our-btn city-btn" %>
           <%= button_to 'Cologne', search_path, method: :get, params: {query: 'cologne'}, class: "our-btn city-btn" %>
-          <%= button_to 'Munich', search_path, method: :get, params: {query: 'munich'}, class: "our-btn city-btn" %>
+          <%= button_to 'Stuttgart', search_path, method: :get, params: {query: ''}, class: "our-btn city-btn" %>
         </div>
       </div>
     </div>
@@ -56,4 +51,3 @@
     </div>
 
   </div>
-
