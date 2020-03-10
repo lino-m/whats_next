@@ -33,3 +33,17 @@
 .card-img-top {
   height: 150px;
 }
+
+.card-home {
+  padding: 0 !important;
+}
+
+.user-name {
+    margin-bottom: 0;
+    line-height: 2.5;
+    margin-left: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}

@@ -1,10 +1,9 @@
 
-<div class="card h-100">
-
-  <%= cl_image_tag achievement.user.avatar.key, { class: "rounded-circle"} %>
-  <%= link_to new_goal_path do %>
-    <%= render "shared/icon-add" %>
-  <% end %>
+<div class="card card-home h-100">
+  <div class="lockup-card d-flex position-absolute">
+    <%= cl_image_tag achievement.user.avatar.key, { class: "rounded-circle"} %>
+    <p class="user-name">@<%= achievement.user.username.capitalize %></p>
+  </div>
 
   <%= cl_image_tag achievement.photo.key, { class: "card-img-top"} %>
   <div class="card-body">
@@ -15,8 +14,16 @@
       <p class="card-text" style="font-style: italic;">
         <%=achievement.motivation[0..60] %>...
       </p>
+      <div class="d-flex">
+        <p class="" style="font-style: italic;">
+          <%= achievement %>
+        </p>
+        <p class="" style="font-style: italic;">
+          <%= achievement.category %>
+        </p>
+      </div>
     </div>
-      <%= link_to 'show more', new_goal_path, class: "btn btn-flat" %>
+      <%= link_to '+ Add to List', new_goal_path, class: "btn btn-flat" %>
   </div>
 
 </div>
