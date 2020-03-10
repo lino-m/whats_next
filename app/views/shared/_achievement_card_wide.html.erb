@@ -2,7 +2,7 @@
   <%= cl_image_tag achievement.user.avatar.key, { class: "rounded-circle"} %>
   <%= render "shared/icon-add" %>
   <%= cl_image_tag achievement.photo.key, { class: "card-image"} %>
-  <div class="card-body">
+  <div class="card-body-wide">
     <h5 class="card-title" style="text-transform: uppercase;"><strong><%=  achievement.title %></strong></h5>
     <p class="card-text" style="font-style: italic;"><%=achievement.motivation %></p>
     <div class="btn btn-flat milestone_dropdown" data-card-id="<%= achievement.id %>">see Milestones</div>
@@ -27,9 +27,6 @@
         </div>
       </div>
       <% end %>
-    </div>
-    <div class="Goal_button d-flex align-items-end">
-      <a href="#" class="btn btn-flat">Set Goal</a>
     </div>
   </div>
 
