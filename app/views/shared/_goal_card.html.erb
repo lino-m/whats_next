@@ -4,9 +4,9 @@
   <div class="inspiration">
     <div class="d-flex">
       <%= image_tag "inspiration.svg", class: "inspiration-image" %>
-        <div class="box-inspiration">
-              <p class="inspiration-text">Inspiration</p><p class="name">Some Guy</p>
-        </div>
+      <div class="box-inspiration">
+        <p class="inspiration-text">Inspiration</p><p class="name">Some Guy</p>
+      </div>
     </div>
   </div>
   <%= image_tag "notification.svg", class: "green-point position-absolute" %>
@@ -17,20 +17,20 @@
     </div>
     <div class="lockup">
       <% if goal.completed == false %>
-        <div class="false">
-          <div class="d-flex justify-content-end">
-            <%= image_tag "target.svg", class: "target" %>
-            <h2 class="card-trip-goal">GOAL</h2>
-          </div>
-          <p class="date-added">created: <%= goal.created_at.strftime("%B %d, %Y") %></p> <!-- ("%B %d %Y, %l:%M%P")  -->
+      <div class="false">
+        <div class="d-flex justify-content-end">
+          <%= image_tag "target.svg", class: "target" %>
+          <h2 class="card-trip-goal">GOAL</h2>
         </div>
+        <p class="date-added">created: <%= goal.created_at.strftime("%B %d, %Y") %></p> <!-- ("%B %d %Y, %l:%M%P")  -->
+      </div>
       <% else %>
-        <div class="true">
-          <div class="d-flex justify-content-end">
-            <h2 class="card-trip-goal">Achievement</h2>
-          </div>
-          <p class="date-added">created:<%= goal.created_at %></p>
+      <div class="true">
+        <div class="d-flex justify-content-end">
+          <h2 class="card-trip-goal">Achievement</h2>
         </div>
+        <p class="date-added">created:<%= goal.created_at %></p>
+      </div>
       <% end %>
     </div>
   </div>
@@ -41,40 +41,37 @@
       </div>
       <button type="button" class="btn btn-light">ARCHIEVED</button>
     </div>
-    </div>
-    <!-- -----------------------------Milestones--------------------------------->
-    <div class="btn btn-flat milestone_dropdown" data-card-id="<%= goal.id %>">
-      see Milestones
-    </div>
+  </div>
+  <!-- -----------------------------Milestones--------------------------------->
+  <div class="btn btn-flat milestone_dropdown" data-card-id="<%= goal.id %>">
+    see Milestones
+  </div>
   <div class="container_new">
 
     <div class="closed_card" id="card-<%= goal.id %>">
       <% goal.milestones.each do |milestone| %>
       <div class="drop_down">
-          <div class="headlines d-flex align-items-center justify-content-between">
-            <p>ITEM NAME</p>
-            <p class="goal_description">DESCRIPTION</p>
-            <p>COSTS</p>
-          </div>
-        <div class="flexbox d-flex align-items-center justify-content-between">
-          <div class="d-flex align-items-center">
-            <% if milestone.done == true %>
-            <%= image_tag "checkbox.png", height:20 %>
-            <% else %>
-            <%= image_tag "checkbox_unchecked", height:20 %>
-            <% end %>
-            <p class="name mb-0"><%= milestone.name %> </p>
-          </div>
-          <div class="goal_description">
-            <p class="description mb-0"> <%= milestone.description %> </p>
-          </div>
-          <p class="price mb-0"> <%= milestone.price %> € </p>
-        </div>
-      </div>
-      <% end %>
-    </div>
+        <div class="headlines d-flex align-items-center justify-content-between">
+<!--              <input type="checkbox" name="goal" class="checkbox_hidden">
+-->            <p class="item_name">ITEM NAME</p>
+<p class="goal_description">DESCRIPTION</p>
+<p>COSTS</p>
+</div>
+<div class="milestone_items d-flex align-items-center justify-content-between">
+  <input type="checkbox" name="goal" class="checkbox_milestones">
+  <div class="d-flex align-items-center">
+    <p class="name mb-0"><%= milestone.name %> </p>
   </div>
+  <div class="goal_description">
+    <p class="description mb-0"> <%= milestone.description %> </p>
   </div>
+  <p class="price mb-0"> <%= milestone.price %> € </p>
+</div>
+</div>
+<% end %>
+</div>
+</div>
+</div>
 </div>
 
 
