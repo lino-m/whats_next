@@ -65,33 +65,29 @@ before_action :find_goal, only: [:show]
   end
 
 
- def searched
-   if params[:search].present?
+   def searched
+    if params[:search].present?
       user_query = params[:search][:query]
-      @goals_and_activities_pg = PgSearch.multisearch(user_query)
-      if @goals_and_activities_pg.empty?
-        @text = "Sorry, no matches. Look at what others did"
-        @achievements = Goal.all.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
-        @activitiess = @achievements.map { |goal| goal.activity }
-        geocode_activities
+      sql_query = "
+        goals.title @@ :query
+        OR goals.category @@ :query
+        OR goals.motivati @@ :query
+        OR activities.location @@ :query
+        OR activities.name @@ :query
+      "
+      @achieve = Goal.joins(:activities).where(sql_query, query: "%#{user_query}%")
+      @achieve = Goal.where(completed: true).search_query(user_query)
 
-        @activities.each do |a|
-          @achievements = Goal.joins(:activity).where(activity_id: a.id)
-        end
+      if @achieve.empty?
+        @text = "Sorry, no matches. Look at what others did"
+        @achievements = Goal.where(completed: true)
+        geocode
       else
         @text = ''
-        @goals_and_activities = @goals_and_activities_pg.map(&:searchable)
-        # @achievements = @goals_and_activities
-        @achievements = @goals_and_activities.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
-        @activitiess = @achievements.map { |goal| goal.activity }
-        geocode_activities
+        @achievements = Goal.joins(:activities).where(sql_query, query: "%#{user_query}%")
+        @achievements = Goal.where(completed: true).search_query(user_query)
+        geocode
 
-        # @activities = @achievements.map(&:activity)
-        # @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
-
-        @activitiess.each do |a|
-          @achievements = Goal.joins(:activity).where(activity_id: a.id)
-        end
       end
     end
 
