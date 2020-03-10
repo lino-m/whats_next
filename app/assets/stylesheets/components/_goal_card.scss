@@ -3,6 +3,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
+  text-align: center;
   .card-trip-infos {
     padding: 16px;
     display: flex;
@@ -76,6 +77,10 @@
   top: 204px;
 }
 
+.flexbox {
+  margin: 10px 30px;
+}
+
 .lockup {
   position: absolute;
   right: 23px;
@@ -141,6 +146,20 @@
   background: $logo-green;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
+}
+
+.btn-flat {
+  font-size: 12px;
+}
+
+.closed_card {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px inset;
+}
+
+.headlines {
+  font-size: 14px;
+  margin: 15px 30px;
+  font-weight: 700;
 }
 
 .btn-light:hover {
