@@ -41,6 +41,41 @@
       </div>
       <button type="button" class="btn btn-light">ARCHIEVED</button>
     </div>
+    </div>
+    <!-- -----------------------------Milestones--------------------------------->
+    <div class="btn btn-flat milestone_dropdown" data-card-id="<%= goal.id %>">
+      see Milestones
+    </div>
+  <div class="container_new">
+
+    <div class="closed_card" id="card-<%= goal.id %>">
+      <% goal.milestones.each do |milestone| %>
+      <div class="drop_down">
+          <div class="headlines d-flex align-items-center justify-content-between">
+            <p>ITEM NAME</p>
+            <p class="goal_description">DESCRIPTION</p>
+            <p>COSTS</p>
+          </div>
+        <div class="flexbox d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <% if milestone.done == true %>
+            <%= image_tag "checkbox.png", height:20 %>
+            <% else %>
+            <%= image_tag "checkbox_unchecked", height:20 %>
+            <% end %>
+            <p class="name mb-0"><%= milestone.name %> </p>
+          </div>
+          <div class="goal_description">
+            <p class="description mb-0"> <%= milestone.description %> </p>
+          </div>
+          <p class="price mb-0"> <%= milestone.price %> € </p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
   </div>
 </div>
+
+
 
