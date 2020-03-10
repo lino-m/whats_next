@@ -45,7 +45,7 @@ before_action :find_goal, only: [:show]
   def achievements
 
     @achievements = Goal.where(completed: true)
-    geocode_activities
+    geocode
 
   end
 

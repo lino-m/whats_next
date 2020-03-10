@@ -129,6 +129,11 @@ Activity.create(
   location: 'Via Valle Verzasca, 6596 Gordola, Schweiz',
   category: 'Bungy',
   )
+hike_in_georgia = Activity.create(
+  name: 'Hiking in Georgia',
+  location: 'Davit Aghmashenebeli Avenue 166, 0112 Tbilissi',
+  category: 'Nature, Sports',
+  )
 
 # Display activity
 puts 'Creating Goals'
@@ -269,7 +274,7 @@ activities = Activity.all
 
   goal6 = Goal.create!(
     user_id: frieda.id,
-    activity_id: activities.sample.id,
+    activity_id: hike_in_georgia.id,
     title: 'Go hiking in Georgia!',
     motivation: 'The nature there is supposed to be beyond beautiful!',
     contribution: 100,
