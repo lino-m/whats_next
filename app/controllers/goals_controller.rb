@@ -42,15 +42,12 @@ before_action :find_goal, only: [:show]
     end
   end
 
- def achievements
+  def achievements
 
     @achievements = Goal.where(completed: true)
-    @activitiess = @achievements.map { |goal| goal.activity }
     geocode_activities
-    @activities.each do |a|
-      @achievements = Goal.joins(:activity).where(activity_id: a.id)
-    end
- end
+
+  end
 
   def show
 
@@ -67,39 +64,39 @@ before_action :find_goal, only: [:show]
   def duplicate
   end
 
-  def searched
-   if params[:search].present?
-      user_query = params[:search][:query]
-      @goals_and_activities_pg = PgSearch.multisearch(user_query)
-      if @goals_and_activities_pg.empty?
-        @text = "Sorry, no matches. Look at what others did"
-        @achievements = Goal.all.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
-        @activitiess = @achievements.map { |goal| goal.activity }
-        geocode_activities
 
-        @activities.each do |a|
-          @achievements = Goal.joins(:activity).where(activity_id: a.id)
-        end
+   def searched
+    if params[:search].present?
+      user_query = params[:search][:query]
+    elsif params[:query].present?
+      user_query = params[:query]
+    end
+      sql_query = "
+        goals.title @@ :query
+        OR goals.category @@ :query
+        OR goals.motivati @@ :query
+        OR activities.location @@ :query
+        OR activities.name @@ :query
+      "
+      @achieve = Goal.joins(:activities).where(sql_query, query: "%#{user_query}%")
+      @achieve = Goal.where(completed: true).search_query(user_query)
+
+      if @achieve.empty?
+        @text = "Sorry, no matches. Look at what others did"
+        @achievements = Goal.where(completed: true)
+        geocode
       else
         @text = ''
-        @goals_and_activities = @goals_and_activities_pg.map(&:searchable)
-        # @achievements = @goals_and_activities
-        @achievements = @goals_and_activities.select { |goa| goa.class.name == 'Goal' }.select { |g| g.completed }
-        @activitiess = @achievements.map { |goal| goal.activity }
-        geocode_activities
+        @achievements = Goal.joins(:activities).where(sql_query, query: "%#{user_query}%")
+        @achievements = Goal.where(completed: true).search_query(user_query)
+        geocode
 
-        # @activities = @achievements.map(&:activity)
-        # @activities = @goals_and_activities.select { |goa| goa.class.name == 'Activity'}
-
-        @activitiess.each do |a|
-          @achievements = Goal.joins(:activity).where(activity_id: a.id)
-        end
       end
+
     end
 
     # Flat.near('Tour Eiffel', 10)      # venues within 10 km of Tour Eiffel
     # Flat.near([40.71, 100.23], 20)
-  end
 
   private
 
@@ -107,17 +104,17 @@ before_action :find_goal, only: [:show]
     @goal = Goal.find(params[:id])
   end
 
-  def geocode_activities
-    @activities = Activity.geocoded
-    # @activities = @activitiess.select{ |activity| activity.location }
-    @markers = @activities.map do |activity|
+  def geocode
+    # @ach = @achievements.select{ |ach| ach.activity.location }
+    @markers = @achievements.map do |ach|
       {
-        lat: activity.latitude,
-        lng: activity.longitude,
-        infoWindow: render_to_string(partial: "shared/info_window", locals: { activity: activity }),
+        # x = Geocoder.search(@achievements[0].activity.location)[0].data['lat']
+        lat: Geocoder.search(ach.activity.location)[0].data['lat'],
+        lng: Geocoder.search(ach.activity.location)[0].data['lon'],
+        infoWindow: render_to_string(partial: "shared/info_window", locals: { goal: ach }),
         image_url: helpers.asset_url('whatsnext.svg')
       }
-      end
+    end
   end
 
   def goal_params
