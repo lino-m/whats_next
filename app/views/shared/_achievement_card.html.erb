@@ -18,6 +18,9 @@
         <p>
          Category: <b><%= achievement.category %></b>
         </p>
+        <p>
+         Location: <b><%= achievement.activity.location.split(",")[1].split(" ")[0].strip %></b>
+        </p>
       </div>
     </div>
       <%= link_to new_goal_path do%>
@@ -26,5 +29,3 @@
   </div>
 
 </div>
-
-
