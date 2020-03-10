@@ -4,9 +4,9 @@ const hiddenSearch = () => {
   searchQuery.addEventListener('focus', () => {
     hiddenSearchbox.style.display = "block";
   });
-  searchQuery.addEventListener('blur', () => {
-    hiddenSearchbox.style.display = "none";
-  });
+  // searchQuery.addEventListener('blur', () => {
+  //   hiddenSearchbox.style.display = "none";
+  // });
 }
 
 export { hiddenSearch };

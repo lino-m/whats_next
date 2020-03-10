@@ -68,6 +68,9 @@ before_action :find_goal, only: [:show]
    def searched
     if params[:search].present?
       user_query = params[:search][:query]
+    elsif params[:query].present?
+      user_query = params[:query]
+    end
       sql_query = "
         goals.title @@ :query
         OR goals.category @@ :query
@@ -89,11 +92,11 @@ before_action :find_goal, only: [:show]
         geocode
 
       end
+
     end
 
     # Flat.near('Tour Eiffel', 10)      # venues within 10 km of Tour Eiffel
     # Flat.near([40.71, 100.23], 20)
-  end
 
   private
 
