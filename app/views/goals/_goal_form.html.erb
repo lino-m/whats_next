@@ -3,12 +3,66 @@
     <div class="form-group">
       <%= simple_form_for @goal do |f| %>
         <%= f.error_notification %>
-        <%= f.input :title %>
-        <%= f.input :motivation %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "form-control" %>
-        <!-- nested Milestones Partial -->
-        <div id="milestone">
+        <div class="image-goal">
+          <div class="d-flex justify-content-center">
+            <div class="upload-field">
+              <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "photo-upload form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="inspiration-new">
+          <div class="d-flex">
+            <%= image_tag "inspiration.svg", class: "inspiration-image" %>
+              <div class="box-inspiration">
+                    <p class="inspiration-text">Inspiration</p><p class="name">Some Guy</p>
+              </div>
+          </div>
+        </div>
+        <div class="goal-target">
+          <div class="d-flex justify-content-end">
+            <%= image_tag "target.svg", class: "target" %>
+            <h2 class="card-trip-goal">GOAL</h2>
+          </div>
+          <div>
+            <p class="date-added"> This goal is waiting for you!</p>
+          </div>
+        </div>
+        <div class="title"><%= f.input :title %></div>
+        <div class="motivation"><%= f.input :motivation %></div>
+        <div class="progress-management">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="progress" style="height: 9px;">
+              <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="progress-message">
+            <div class="d-flex">
+             <p><i class="fas fa-rocket"></i></p>
+             <p class="short-message">Let's Go!<p>
+            </div>
+            </div>
+          </div>
+          <div id="progess-numbers">
+            <div class="d-flex">
+              <div id="progress-barget">
 
+              </div>
+              <div id="target-budget">
+                <p> of 0.00 €</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- nested Milestones Partial -->
+        <div class="spererator"><hr></div>
+        <div class="headline-milestones"><h3>Milestones</h3></div>
+        <div class="headers">
+          <div class="d-flex justify-content-between">
+            <div class="item-name">ITEM NAME</div>
+            <div class="description-mile">DESCRIPTION</div>
+            <div class="costs">COSTS</div>
+          </div>
+        </div>
+        <div id="milestone">
         </div>
         <div id="milestones">
           <%= f.simple_fields_for :milestones do |builder| %>
@@ -21,14 +75,23 @@
                                                     assocticiation_insert_method: :append
                                               } %>
           </div>
-          <br>
+          <div class="spererator"><hr></div>
           <div>
             <%= f.simple_fields_for @activities do |a| %>
               <%= a.input :name, as: :select, collection: @activities, prompt: "Select Activity", label: false %>
             <% end %>
           </div>
+          <div>
+            <div class="spererator"><hr></div>
+              <div class="d-flex justify-content-end">
+                <%= f.input :contribution, :input_html => { value: number_with_precision(f.object.contribution, precision: 2), class: 'contribution-amount' }%>
+                <div class="input-group-text currency-sign">€</div>
+              </div>
+          </div>
         </div>
-        <%= f.button :submit, class: "btn btn-primary" %>
+        <div class="submit d-flex justify-content-end">
+          <%= f.button :submit, class: "btn btn-primary submit" %>
+        </div>
       <% end %>
     </div>
 
