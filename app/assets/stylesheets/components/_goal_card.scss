@@ -77,8 +77,9 @@
   top: 204px;
 }
 
-.flexbox {
-  margin: 10px 30px;
+.milestone_items {
+  margin: 10px 45px;
+  position: relative;
 }
 
 .lockup {
@@ -158,8 +159,22 @@
 
 .headlines {
   font-size: 14px;
-  margin: 15px 30px;
+  margin: 15px 45px;
   font-weight: 700;
+  margin-bottom: 0px;
+}
+
+.item_name {
+  min-width: 5%;
+}
+
+.checkbox_milestones {
+  position: absolute;
+  left: -30px;
+}
+
+.description {
+
 }
 
 .btn-light:hover {
