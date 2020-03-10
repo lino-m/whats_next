@@ -13,15 +13,19 @@
   </div>
 </div>
   <div id="hidden-search">
-
     <div class="explore box">
-      <p class= 'search-header justify-content-start'>EXPLORE WHAT'S NEXT</p>
+      <div class="d-flex">
+        <p class= 'search-header justify-content-start'>EXPLORE WHAT'S NEXT</p>
+        <p id='close'>X</p>
+      </div>
       <div class="my-row">
         <div class="explore d-flex justify-content-between">
           <%= button_to 'All', achievements_path, method: :get, class: "our-btn explore-btn" %>
           <%= button_to 'Achievements', achievements_path, method: :get, params: {query: ''}, class: "our-btn explore-btn" %>
           <%= button_to 'Users', achievements_path, method: :get, class: "our-btn explore-btn" %>
           <%= button_to 'Surprise Me!', achievements_path, method: :get, params: {query: ''}, class: "our-btn explore-btn" %>
+          <%#= link_to 'create goal', goals_path, method: :post %>
+
         </div>
       </div>
     </div>

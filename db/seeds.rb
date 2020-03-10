@@ -108,7 +108,7 @@ horse = Activity.create(
 
 garden = Activity.create(
   name: 'Gardening',
-  location: 'Am Wiesengrund 1215378 Rüdersdorf bei Berlin',
+  location: 'Am Wiesengrund 12, 1215378 Rüdersdorf bei Berlin',
   category: 'Nature',
   )
 
@@ -128,6 +128,11 @@ Activity.create(
   name: 'Bungy Jump Like James Bond',
   location: 'Via Valle Verzasca, 6596 Gordola, Schweiz',
   category: 'Bungy',
+  )
+hike_in_georgia = Activity.create(
+  name: 'Hiking in Georgia',
+  location: 'Davit Aghmashenebeli Avenue 166, 0112 Tbilissi',
+  category: 'Nature, Sports',
   )
 
 # Display activity
@@ -269,7 +274,7 @@ activities = Activity.all
 
   goal6 = Goal.create!(
     user_id: frieda.id,
-    activity_id: activities.sample.id,
+    activity_id: hike_in_georgia.id,
     title: 'Go hiking in Georgia!',
     motivation: 'The nature there is supposed to be beyond beautiful!',
     contribution: 100,

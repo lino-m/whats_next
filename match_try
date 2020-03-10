@@ -1,0 +1,11 @@
+
+
+location1 = 'Via Valle Verzasca, 6596 Gordola, Schweiz',
+
+location2 = 'Davit Aghmashenebeli Avenue 166, 0112 Tbilissi',
+
+match_data = location1.match(/^(*),(*),(*)$/)
+
+puts "Street: #{match_data[1]}"
+puts "City: #{match_data[2]}"
+puts "Country: #{match_data[3]}"
