@@ -2,7 +2,10 @@
   z-index: 100;
   border-radius: 20px;
   font-size: 1em;
-  h1 {
-    font-size: 1.2em;
+  color: $font-black;
+  h2, a {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: $font-black;
   }
 }
