@@ -4,7 +4,7 @@ class Goal < ApplicationRecord
     :search_query,
     against: [:title, :motivation, :category],
     associated_against:{
-      activity: :location
+      activity: [:location, :name]
     },
     using: {
       tsearch: { prefix: true }
