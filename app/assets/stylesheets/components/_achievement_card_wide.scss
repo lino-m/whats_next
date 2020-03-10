@@ -28,7 +28,7 @@
 }
 
 .goal_description {
-  min-width: 60%;
+  min-width: 55%;
   text-align: left;
 }
 
@@ -36,9 +36,26 @@
   font-size: 15px;
 }
 
+.container_new {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.flexbox {
+  padding: 4px 0;
+}
+
+.closed_card {
+  height: 0px;
+  overflow: hidden;
+}
+
+.Goal_button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .lockup-card {
     top: 95px;
     left: 15px;
 }
-
-

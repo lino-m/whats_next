@@ -25,6 +25,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  padding-bottom: 0px;
 }
 
 .card-text {
@@ -32,7 +33,7 @@
 }
 
 .card-title {
-  font-size: 16px;
+  font-size: 23px;
 }
 
 .card-img-top {
