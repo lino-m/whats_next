@@ -11,16 +11,23 @@
 
     <div class="container">
       <% achievement.milestones.each do |milestone| %>
-      <div class="row">
-        <% if milestone.done == true %>
-        <%= image_tag "checkbox.png", height:20 %>
-        <% else %>
-        <%= image_tag "checkbox_unchecked", height:20 %>
-        <% end %>
-        <p class="name"><%= milestone.name %> </p> <p class="description"> <%= milestone.description %> </p> <p class="price"> <%= milestone.price %> € </p>
+      <div class="drop_down">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <% if milestone.done == true %>
+            <%= image_tag "checkbox.png", height:20 %>
+            <% else %>
+            <%= image_tag "checkbox_unchecked", height:20 %>
+            <% end %>
+            <p class="name mb-0"><%= milestone.name %> </p>
+          </div>
+          <div class="goal_description">
+            <p class="description mb-0"> <%= milestone.description %> </p>
+          </div>
+          <p class="price mb-0"> <%= milestone.price %> € </p>
+        </div>
       </div>
       <% end %>
     </div>
-
   </div>
 </div>
