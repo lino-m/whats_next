@@ -1,26 +1,28 @@
 .banner {
   height: 60vh;
+  font-family: 'Poppins', sans-serif !important;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(255,255,255,0.4)), image-url("banner1.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.32)), image-url("banner1.jpg");
   background-size: cover;
   background-position: 10% 15%;
-  color: #3E3E3E;
+  color: white;
   text-align: left;
   background-color: #f0f0f0;
   h1 {
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: bold;
     font-size: 45px;
   }
   p {
-    font-family: roboto thin;
-    font-style: italic;
-    color: #3E3E3E;
+    font-family: "Poppins";
+    /* font-style: italic; */
+    color: white;
+    font-weight: 900;
     opacity: .5;
     font-size: 25px;
-    margin-bottom: 30px;;
+    margin-bottom: 30px;
   }
 /*  .banner-content {
     padding-left: 5rem;
