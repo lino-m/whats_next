@@ -5,6 +5,7 @@
         <div class="top-search d-flex justify-content-between align-self-stretch">
           <%= f.input :query, label: false, placeholder: "What does your heart crave?", input_html: { autocomplete: 'off', class: "query-input" }  %>
           <div class="submit btn-info binoculars">
+            <%#= f.submit as: :hidden  %>
             <%= image_tag "Binoculars.svg", height:50, width:50 %>
           </div>
         </div>
@@ -12,16 +13,16 @@
     <% end %>
   </div>
 </div>
+
+          <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
+            <%= f.input :query, label: false, as: :hidden %>
+            <%= f.submit 'cologne', id: "cologne", class: "city-btn our-btn"%>
+
+          <% end %>
+
+
+
   <div id="hidden-search">
-          <%#= button_to 'Cologne', search_path, params: {query: 'cologne'}, class: "our-btn city-btn" %>
-          <%#= button_to '+', {:controller => "goals", :action => "searched", :query => "fehrbellin"} , :method=>:post  %>
-
-    <%= simple_form_for :search, method: :get, url: search_path, html: {class:"" } do |f| %>
-      <%= f.input :query, label: false, as: :hidden %>
-      <%= f.submit 'cologne', id: "cologne", class: "city-btn our-btn"%>
-
-    <% end %>
-
     <div class="explore box">
       <p class= 'search-header justify-content-start'>EXPLORE WHAT'S NEXT</p>
       <div class="my-row">
@@ -39,10 +40,9 @@
       <div class="my-row">
         <div class="cities small-btn d-flex d-flex justify-content-between">
           <%= button_to 'Munich', search_path, method: :get, params: {query: 'munich'}, class: "our-btn city-btn" %>
-          <%# raise %>
           <%= button_to 'Berlin', search_path, method: :get, params: {query: 'berlin'}, class: "our-btn city-btn" %>
           <%= button_to 'Cologne', search_path, method: :get, params: {query: 'cologne'}, class: "our-btn city-btn" %>
-          <%= button_to 'Stuttgart', search_path, method: :get, params: {query: 'stuttgart'}, class: "our-btn city-btn" %>
+          <%= button_to 'Stuttgart', search_path, method: :get, params: {query: 'Stuttgart'}, class: "our-btn city-btn" %>
         </div>
       </div>
     </div>
@@ -60,4 +60,3 @@
     </div>
 
   </div>
-

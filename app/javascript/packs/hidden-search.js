@@ -1,5 +1,4 @@
 const hiddenSearch = () => {
-  console.log('kdjflksaj')
   const searchQuery = document.getElementById("search_query");
   const hiddenSearchbox = document.getElementById("hidden-search");
   searchQuery.addEventListener('focus', () => {
