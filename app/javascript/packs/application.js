@@ -7,13 +7,10 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 import { dropdownGoal } from './dropdown_goal';
 
-// import { searchCologne } from './search_buttons';
 // import { initAutocomplete } from '../plugins/init_mapbox';
 
 
 hiddenSearch();
-
-// searchCologne();
 
 initMapbox();
 

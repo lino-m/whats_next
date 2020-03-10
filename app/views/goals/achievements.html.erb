@@ -1,12 +1,16 @@
 <div class="container">
-  <div class="row ">
+  <div class="row mt-3 results-and-map ">
 
     <div class="col-8">
-      <% @achievements.each do |achievement| %>
-      <%= render 'shared/achievement_card_wide', achievement: achievement %>
-      <%#= render "goal_card", goal: goal %>
-      <% end %>
-
+      <div class="results ">
+        <h3><%= @text %></h3>
+        <% @achievements.each do |goal| %>
+          <%= render "shared/achievement_card_wide", achievement: goal %>
+        <% end %>
+      </div>
+    </div>
+    <div class= 'col-4' >
+      <div class=' sticky-top'id="map" data-markers="<%= @markers.to_json %>", data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
 </div>
