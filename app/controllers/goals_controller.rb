@@ -71,7 +71,7 @@ before_action :find_goal, only: [:show]
       sql_query = "
         goals.title @@ :query
         OR goals.category @@ :query
-        OR goals.motivati @@ :query
+        OR goals.motivation @@ :query
         OR activities.location @@ :query
         OR activities.name @@ :query
       "
@@ -82,7 +82,6 @@ before_action :find_goal, only: [:show]
         @text = "Sorry, no matches. Look at what others did"
         @achievements = Goal.where(completed: true)
         geocode
-        raise
       else
         @text = ''
         @achievements = Goal.joins(:activities).where(sql_query, query: "%#{user_query}%")

@@ -284,10 +284,10 @@ activities = Activity.all
   goal7 = Goal.create!(
     user_id: fred.id,
     activity_id: garden.id,
-    title: 'Mountainbiking in Puglia !',
-    motivation: "Challenging and exiting routes to explore surrounded by a great landscape" ,
+    title: 'Grow my own Veggies!',
+    motivation: "Be in nature more often and know what I'm eating" ,
     contribution: 100,
-    category: 'Sports', #,
+    category: 'Nature', #,
     # photo: , TBD
     completed: true
     )
