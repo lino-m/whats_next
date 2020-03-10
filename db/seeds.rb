@@ -108,7 +108,7 @@ horse = Activity.create(
 
 garden = Activity.create(
   name: 'Gardening',
-  location: 'Am Wiesengrund 1215378 Rüdersdorf bei Berlin',
+  location: 'Am Wiesengrund 12, 1215378 Rüdersdorf bei Berlin',
   category: 'Nature',
   )
 
