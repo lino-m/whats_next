@@ -12,6 +12,13 @@ before_action :find_milestone, only: [:destroy]
     @milestone = Milestone.new
   end
 
+  def update
+    @milestone = Milestone.find(params[:id])
+    @milestone.done ? @milestone.done = false : @milestone.done = true
+    @milestone.save
+    redirect_to dashboard_goals_path
+  end
+
   def destroy
     @milestone.destroy
     respond_to do |format|
