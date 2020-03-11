@@ -4,6 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { hiddenSearch } from './hidden-search';
 import { initMapbox } from '../plugins/init_mapbox';
+// this needs to be out
 
 import { dropdownGoal } from './dropdown_goal';
 
