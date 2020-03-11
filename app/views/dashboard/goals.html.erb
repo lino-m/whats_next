@@ -4,7 +4,6 @@
     <a href= "#<%= goal.id %>" > Start achieving now! </a>
     </div>
 <% end %>
-
 <ul class="nav nav-tabs justify-content-center">
   <li class="nav-item" id="goals_button">
     <%= link_to "Goals", "/dashboard/goals" %>
@@ -13,7 +12,6 @@
     <%= link_to "Achievements", "/dashboard/goals" %>
   </li>
 </ul>
-
 <div class="container my-4">
   <div class="row">
     <div class="col-4 z-minus">
@@ -23,31 +21,15 @@
     <!--  <------------- Goal Card ---------------->
       </div>
     </div>
-      <div id="dashboard-goals">
-        <div class="col-8">
-          <% @goals.each do |goal| %>
-              <%= render 'shared/goal_card', goal: goal %>
-          <% end %>
-        </div>
-      </div>
-
-    <div id="dashboard-achievements">
-      <div class="col-8">
-          <% @achievements.each do |goal| %>
-            <%= render 'shared/achievement_card', achievement: goal %>
-          <% end %>
-      </div>
+    <div class="col-8" id="dashboard-goals">
+      <% @goals.each do |goal| %>
+          <%= render 'shared/goal_card', goal: goal %>
+      <% end %>
     </div>
      <div class="col-8" id="dashboard-achievements">
       <% @achievements.each do |goal| %>
           <%= render 'shared/goal_card', goal: goal %>
       <% end %>
     </div>
-
   </div>
 </div>
-
-
-
-
-
