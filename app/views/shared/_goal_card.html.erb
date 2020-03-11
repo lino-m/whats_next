@@ -10,10 +10,12 @@
     </div>
   </div>
   <%= image_tag "notification.svg", class: "green-point position-absolute" %>
+
+
   <div class="card-trip-infos">
     <div>
-      <h2 class="headline"><%= goal.title %></h2>
-      <p class="motivation"><%= goal.motivation %></p>
+      <h2 class="headline"> <%= goal.title %> </h2>
+      <p class="motivation"> <%= goal.motivation %> </p>
     </div>
     <div class="lockup">
       <% if goal.completed == false %>
@@ -34,6 +36,8 @@
       <% end %>
     </div>
   </div>
+
+
   <div class="progress-management">
     <div class="d-flex justify-content-between align-items-center">
       <div class="progress" style="height: 9px;">
