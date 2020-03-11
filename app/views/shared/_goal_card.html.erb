@@ -1,6 +1,6 @@
-<div class="card-trip">
-  <%#= goal_or_default_image_tag(goal, class: "image-card-goal") %>
-  <%= image_tag "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", class: "image-card-goal" %>
+<div class="card-trip mb-4">
+  <%= goal_or_default_image_tag(goal, class: "image-card-goal") %>
+  <%#= image_tag "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", class: "image-card-goal" %>
   <div class="inspiration">
     <div class="d-flex">
       <%= image_tag "inspiration.svg", class: "inspiration-image" %>
@@ -51,32 +51,35 @@
     see Milestones
   </div>
   <div class="container_new">
-
     <div class="closed_card" id="card-<%= goal.id %>">
-      <% goal.milestones.each do |milestone| %>
-      <div class="drop_down">
-        <div class="headlines d-flex align-items-center justify-content-between">
-<!--              <input type="checkbox" name="goal" class="checkbox_hidden">
--->            <p class="item_name">ITEM NAME</p>
-<p class="goal_description">DESCRIPTION</p>
-<p>COSTS</p>
-</div>
-<div class="milestone_items d-flex align-items-center justify-content-between">
-  <input type="checkbox" name="goal" class="checkbox_milestones">
-  <div class="d-flex align-items-center">
-    <p class="name mb-0"><%= milestone.name %> </p>
-  </div>
-  <div class="goal_description">
-    <p class="description mb-0"> <%= milestone.description %> </p>
-  </div>
-  <p class="price mb-0"> <%= milestone.price %> € </p>
-</div>
-</div>
-<% end %>
-</div>
-</div>
-</div>
-</div>
 
+      <div class="headlines d-flex align-items-center justify-content-between">
+     <p class="item_name">ITEM NAME</p>
+     <p class="goal_description">DESCRIPTION</p>
+     <p>COSTS</p>
+      </div>
+     <% goal.milestones.each do |milestone| %>
+     <div class="drop_down">
+      <div class="milestone_items d-flex align-items-center justify-content-between">
+      <%= simple_form_for [goal, milestone], url: goal_milestone_path(goal, milestone), id: :edit_submit do |f| %>
+        <%= check_box_tag milestone.name, milestone.id, milestone.done %>
+        <%= f.submit 'check', id: 'submit_milestones'%>
+        <% end %>
+        <!-- <input type="checkbox" name="goal" id="checkbox_milestones"> -->
+        <div class="d-flex align-items-center">
+          <p class="name mb-0"><%= milestone.name %> </p>
+        </div>
+        <div class="goal_description">
+          <p class="description mb-0"> <%= milestone.description %> </p>
+        </div>
+        <p class="price mb-0"> <%= milestone.price %> € </p>
+        <p> <%= link_to "Del M", goal_milestone_path(goal, milestone) , method: :delete, remote: true %> </p>
+      </div>
+    </div>
+    <% end %>
+    <p> <%= link_to "Del G", goal_path(goal) , method: :delete, remote: true %> </p>
+  </div>
+</div>
+</div>
 
 

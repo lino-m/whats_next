@@ -1,5 +1,5 @@
 class MilestonesController < ApplicationController
-
+before_action :find_milestone, only: [:destroy]
 # def index
 # @milestones = Milestone.all
 # end
@@ -10,6 +10,14 @@ class MilestonesController < ApplicationController
 
   def new
     @milestone = Milestone.new
+  end
+
+  def destroy
+    @milestone.destroy
+    respond_to do |format|
+      format.html { render 'dashboard/goal_milestones' }
+      format.js  { render :layout => false }
+    end
   end
 
 

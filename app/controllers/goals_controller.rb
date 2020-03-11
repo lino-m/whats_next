@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-before_action :find_goal, only: [:show]
+before_action :find_goal, only: [:show, :destroy]
 
   def index
     @goals = Goal.where(completed: false)
@@ -27,7 +27,9 @@ before_action :find_goal, only: [:show]
 
   def edit
     @goal = find_goal
-    @milestones = Milestone.where(goal_id: @goal.id)
+    @milestones = @goal.milestones
+    # @goal.milestones.build
+    @activities = Activity.all
   end
 
   def update
@@ -35,8 +37,9 @@ before_action :find_goal, only: [:show]
     @goal.user = current_user
     @activity = Activity.find(params[:goal][:activity][:name])
     @goal.activity_id = @activity.id
+    @goal.completed = false
     if @goal.save!
-      redirect_to goals_path
+      redirect_to dashboard_goals_path
     else
       render :edit
     end
@@ -46,6 +49,12 @@ before_action :find_goal, only: [:show]
     @achievements = Goal.where(completed: true)
     geocode
 
+  end
+
+  def goal_refrence
+    @goal = find_goal
+    @new_goal = Goal.new(title: @goal, motivation: @motivation)
+    @milestones = @goal.milestones
   end
 
   def show
@@ -94,8 +103,13 @@ before_action :find_goal, only: [:show]
 
     end
 
-    # Flat.near('Tour Eiffel', 10)      # venues within 10 km of Tour Eiffel
-    # Flat.near([40.71, 100.23], 20)
+    def destroy
+      @goal.destroy
+      respond_to do |format|
+        format.html { render 'dashboard/goals' }
+        format.js  { render :layout => false }
+      end
+    end
 
   private
 
@@ -118,6 +132,7 @@ before_action :find_goal, only: [:show]
   end
 
   def goal_params
-    params.require(:goal).permit(:title, :motivation, :description, :photo , milestones_attributes: [:name, :description, :done,  :price_cents]) #Milestone.attribute_names.map(:to_sym).push(:_destroy))
+    params.require(:goal).permit(:title, :motivation, :activity_id, :completed, :photo , milestones_attributes: [:name, :description, :done,  :price_cents], activity_attributes: [:name, :location, :category]) #Milestone.attribute_names.map(:to_sym).push(:_destroy))
   end
 end
+
