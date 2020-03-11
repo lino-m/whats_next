@@ -1,4 +1,4 @@
-<div class="card-trip">
+<div class="card-trip" data-goal-id="<%= goal.id %>">
   <%#= goal_or_default_image_tag(goal, class: "image-card-goal") %>
   <%= image_tag "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", class: "image-card-goal" %>
   <div class="inspiration">
@@ -53,25 +53,31 @@
       <div class="drop_down">
         <div class="headlines d-flex align-items-center justify-content-between">
 <!--              <input type="checkbox" name="goal" class="checkbox_hidden">
--->            <p class="item_name">ITEM NAME</p>
-<p class="goal_description">DESCRIPTION</p>
-<p>COSTS</p>
-</div>
-<div class="milestone_items d-flex align-items-center justify-content-between">
-  <input type="checkbox" name="goal" class="checkbox_milestones">
-  <div class="d-flex align-items-center">
-    <p class="name mb-0"><%= milestone.name %> </p>
+-->       <p class="item_name">ITEM NAME</p>
+          <p class="goal_description">DESCRIPTION</p>
+          <p>COSTS</p>
+        </div>
+        <div class="milestone_items d-flex align-items-center justify-content-between">
+          <input type="checkbox" name="goal" class="checkbox_milestones">
+          <div class="d-flex align-items-center">
+            <p class="name mb-0"><%= milestone.name %> </p>
+          </div>
+          <div class="goal_description">
+            <p class="description mb-0"> <%= milestone.description %> </p>
+          </div>
+          <p class="price mb-0"> <%= milestone.price %> € </p>
+          <p> <%#= link_to "Delete", , method: :delete, remote: true %> </p>
+        </div>
+
+
+          <p> <%= link_to "Delete Goal", goal_path(goal) , method: :delete, remote: true %> </p>
+
+
+      </div>
+       <% end %>
+    </div>
+
   </div>
-  <div class="goal_description">
-    <p class="description mb-0"> <%= milestone.description %> </p>
-  </div>
-  <p class="price mb-0"> <%= milestone.price %> € </p>
-</div>
-</div>
-<% end %>
-</div>
-</div>
-</div>
 </div>
 
 

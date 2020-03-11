@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
   def goals
     @goals = current_user.goals.where(completed: false)
+    @achievements = current_user.goals.where(completed: true)
     # @milestones = @goals.milestones
   end
 
