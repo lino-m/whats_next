@@ -1,4 +1,5 @@
 .profile_summary {
+  z-index:-300000 !important;
   overflow: hidden;
   background: white;
   border-radius: 8px;
@@ -102,4 +103,9 @@
     margin-bottom: 40px;
   }
 
+}
+
+
+.z-minus {
+  z-index: -1;
 }

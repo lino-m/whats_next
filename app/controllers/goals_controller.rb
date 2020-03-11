@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-before_action :find_goal, only: [:show, :edit]
+before_action :find_goal, only: [:show, :destroy]
 
   def index
     @goals = Goal.where(completed: false)
@@ -103,8 +103,13 @@ before_action :find_goal, only: [:show, :edit]
 
     end
 
-    # Flat.near('Tour Eiffel', 10)      # venues within 10 km of Tour Eiffel
-    # Flat.near([40.71, 100.23], 20)
+    def destroy
+      @goal.destroy
+      respond_to do |format|
+        format.html { render 'dashboard/goals' }
+        format.js  { render :layout => false }
+      end
+    end
 
   private
 
@@ -130,3 +135,4 @@ before_action :find_goal, only: [:show, :edit]
     params.require(:goal).permit(:title, :motivation, :activity_id, :completed, :photo , milestones_attributes: [:name, :description, :done,  :price_cents], activity_attributes: [:name, :location, :category]) #Milestone.attribute_names.map(:to_sym).push(:_destroy))
   end
 end
+
