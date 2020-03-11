@@ -189,16 +189,37 @@
 }
 }
 
+.nav-tabs {
+  padding: 11px;
+  background: #fafafa;
+    :hover{
+      background-color: $rose;
+  }
+  }
+.nav-tabs > li {
+  font-weight: bold;
+  list-style-type: none;
+  display: inline;
+  border: solid;
+  border-width: 0;
+  margin: 0 45px 0 0;
+  border-radius: 4px;
+  padding: 8px 24px;
+  background: #CF4A82;
+  -webkit-transition: background 0.3s ease;
+  color: #fafafa;
+   :hover {
+  color: #fafafa;
+  text-decoration: none;
+  }
+  a {
+    color: white;
+  }
+}
 
-
-
-
-
-
-
-
-
-
+.nav-tabs .nav-item {
+    margin-bottom: -12px;
+}
 
 
 
