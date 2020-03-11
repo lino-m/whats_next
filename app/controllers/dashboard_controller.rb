@@ -2,6 +2,8 @@ class DashboardController < ApplicationController
   def goals
     @goals = current_user.goals.where(completed: false).order(created_at: :desc)
     @achievements = current_user.goals.where(completed: true)
+    @milestone_done = []
+    @milestone_todo = []
     # @milestones = @goals.milestones
   end
 
