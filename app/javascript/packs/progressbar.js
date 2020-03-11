@@ -4,6 +4,15 @@ const progressbar = () => {
     const barId = progressbar.dataset.goalId;
     const milestonesChecks = document.getElementsByClassName(`goal-card-${barId}`)
     let progress = 0;
+
+    const achievedButton = document.getElementById("achieved-button");
+    achievedButton.addEventListener('click', () => {
+      targetProgressbar.style.width = 100 + '%';
+      for(let check of milestonesChecks) {
+      check = checked
+      }
+    })
+
     for(let check of milestonesChecks) {
       if (check.checked) {
         progress ++;
@@ -17,3 +26,7 @@ const progressbar = () => {
 }
 
 export { progressbar };
+
+// searchQuery.addEventListener('focus', () => {
+//     hiddenSearchbox.style.display = "block";
+//   });
