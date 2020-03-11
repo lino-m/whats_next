@@ -23,20 +23,10 @@
     <!--  <------------- Goal Card ---------------->
       </div>
     </div>
-      <div id="dashboard-goals">
-        <div class="col-8">
-          <% @goals.each do |goal| %>
-              <%= render 'shared/goal_card', goal: goal %>
-          <% end %>
-        </div>
-      </div>
-
-    <div id="dashboard-achievements">
-      <div class="col-8">
-          <% @achievements.each do |goal| %>
-            <%= render 'shared/achievement_card', achievement: goal %>
-          <% end %>
-      </div>
+    <div class="col-8" id="dashboard-goals">
+      <% @goals.each do |goal| %>
+          <%= render 'shared/goal_card', goal: goal %>
+      <% end %>
     </div>
      <div class="col-8" id="dashboard-achievements">
       <% @achievements.each do |goal| %>
