@@ -6,7 +6,8 @@
         <div class="image-goal">
           <div class="d-flex justify-content-center">
             <div class="upload-field">
-              <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "photo-upload form-control" %>
+              <%= f.input :photo, class: "photo-upload form-control" %>
+              <%#= f.input :photos, as: :file, input_html: { multiple: true }, class: "photo-upload form-control" %>
             </div>
           </div>
         </div>
@@ -76,16 +77,30 @@
                                               } %>
           </div>
           <div class="spererator"><hr></div>
-          <div>
-            <%= f.simple_fields_for @activities do |a| %>
-              <%= a.input :name, as: :select, collection: @activities, prompt: "Select Activity", label: false %>
-            <% end %>
+          <!-- Connected Activity -->
+          <div class="headline-milestones"><h3>Connected Activity</h3></div>
+          <div class="connected-activity">
+            <div class="d-flex justify-content-between">
+              <div class="activity-infos">
+                  <div class="activity-categoty">
+
+                  </div>
+                  <div class="activity-location">
+
+                  </div>
+              </div>
+              <div class="drop-down-activities">
+                <%= f.simple_fields_for @activities do |a| %>
+                  <%= a.input :name, as: :select, collection: @activities, prompt: "Select Activity", label: false %>
+                <% end %>
+              </div>
+            </div>
           </div>
           <div>
             <div class="spererator"><hr></div>
               <div class="d-flex justify-content-end">
-                <%= f.input :contribution, :input_html => { value: number_with_precision(f.object.contribution, precision: 2), class: 'contribution-amount' }%>
-                <div class="input-group-text currency-sign">€</div>
+                <div class="form-group integer optional goal_contribution form-group-valid"><input class="form-control numeric integer optional contributon" value="0.00" autofocus="autofocus" type="number" step="1" name="goal[contributon]" id=""></div>
+                <div class="input-group-text con-currency-sign">€</div>
               </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
-<div class="card-trip" data-goal-id="<%= goal.id %>">
-  <%#= goal_or_default_image_tag(goal, class: "image-card-goal") %>
-  <%= image_tag "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", class: "image-card-goal" %>
+
+<div class="card-trip">
+  <%= goal_or_default_image_tag(goal, class: "image-card-goal") %>
+  <%#= image_tag "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", class: "image-card-goal" %>
   <div class="inspiration">
     <div class="d-flex">
       <%= image_tag "inspiration.svg", class: "inspiration-image" %>
@@ -78,6 +79,13 @@
     </div>
 
   </div>
+
+  <p class="price mb-0"> <%= milestone.price %> € </p>
+</div>
+</div>
+<% end %>
+</div>
+</div>
 </div>
 
 
