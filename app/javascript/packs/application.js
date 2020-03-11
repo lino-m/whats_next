@@ -14,10 +14,8 @@ hiddenSearch();
 
 initMapbox();
 
-
 totalSumGoalManager();
 
 dropdownGoal();
-
 
 // initAutocomplete(); #This musnt be commented in if it isnt finished.!!!!!
