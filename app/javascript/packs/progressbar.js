@@ -26,7 +26,3 @@ const progressbar = () => {
 }
 
 export { progressbar };
-
-// searchQuery.addEventListener('focus', () => {
-//     hiddenSearchbox.style.display = "block";
-//   });
