@@ -19,20 +19,20 @@
     </div>
     <div class="lockup">
       <% if goal.completed == false %>
-      <div class="false">
-        <div class="d-flex justify-content-end">
-          <%= image_tag "target.svg", class: "target" %>
-          <h2 class="card-trip-goal">GOAL</h2>
+        <div class="false">
+          <div class="d-flex justify-content-end">
+            <%= image_tag "target.svg", class: "target" %>
+            <h2 class="card-trip-goal">GOAL</h2>
+          </div>
+          <p class="date-added">created: <%= goal.created_at.strftime("%B %d, %Y") %></p> <!-- ("%B %d %Y, %l:%M%P")  -->
         </div>
-        <p class="date-added">created: <%= goal.created_at.strftime("%B %d, %Y") %></p> <!-- ("%B %d %Y, %l:%M%P")  -->
-      </div>
       <% else %>
-      <div class="true">
-        <div class="d-flex justify-content-end">
-          <h2 class="card-trip-goal">Achievement</h2>
+        <div class="true">
+          <div class="d-flex justify-content-end">
+            <h2 class="card-trip-goal">Achievement</h2>
+          </div>
+          <p class="date-added">created:<%= goal.created_at %></p>
         </div>
-        <p class="date-added">created:<%= goal.created_at %></p>
-      </div>
       <% end %>
     </div>
   </div>
