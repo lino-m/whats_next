@@ -17,8 +17,7 @@ Rails.application.routes.draw do
     resources :milestones, except: :show
   end
 
-
-
+  get "/achievements/:id/reference", to: "goals#goal_refrence"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

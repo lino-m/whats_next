@@ -67,6 +67,10 @@
   .motivation input {
     font-size: 14px;
   }
+  .contributon {
+    font-size: 14px;
+    font-weight: 700;
+  }
   .contribution-amount {
     width: 115px;
   }
@@ -74,6 +78,13 @@
     height: 38px;
     position: relative;
     top: 32px;
+  }
+
+  .con-currency-sign {
+    height: 38px;
+    position: relative;
+    top: 0px;
+
   }
 }
 
@@ -170,6 +181,16 @@
     opacity: 1;
   }
 }
+
+.connected-activity{
+  .activity-infos {
+
+  }
+  .drop-down-activities {
+
+  }
+}
+
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
