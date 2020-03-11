@@ -97,10 +97,9 @@
   background-color: white;
   height: 1.6em;
   min-width: 108px;
+  flex-grow: 1;
 }
-.small-btn{
-  font-size: 13px;
-}
+
 .city-btn {
   font-size: 13px;
   box-shadow: 0 0px 0.25px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);

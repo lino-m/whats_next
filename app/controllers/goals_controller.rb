@@ -43,7 +43,6 @@ before_action :find_goal, only: [:show]
   end
 
   def achievements
-
     @achievements = Goal.where(completed: true)
     geocode
 
