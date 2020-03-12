@@ -11,18 +11,22 @@ const progressbar = () => {
         progress ++;
       }
     }
+    console.log("pro", progress)
+    console.log("miles", milestonesChecks.length)
+     console.log( ((progress/milestonesChecks.length)* 100).toFixed(2) + '%' )
+
     const updatedProgress = ((progress/milestonesChecks.length)* 100).toFixed(2) + '%';
-    console.log(updatedProgress);
+
     const targetProgressbar = document.getElementById(`progbar-${goalId}`);
     targetProgressbar.style.width = updatedProgress;
 
     const achievedButton = document.getElementById(`achieved-button-${goalId}`);
     achievedButton.addEventListener('click', () => {
-      targetProgressbar.style.width = 100 + '%';
       for(let check of milestonesChecks) {
         if (!check.checked) {
           check.click();
         }
+        targetProgressbar.style.width = 100 + '%';
         // const form = check.parentElement;
         // const submitButton = form.querySelector("input[type='submit");
         // submitButton.click();
