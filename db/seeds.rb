@@ -20,8 +20,8 @@ Milestone.destroy_all
 
 # Display activity
 puts 'Creating users'
-
 counter = 0
+###################### create a user like this #######################
 frieda = User.create(
    first_name: 'Frieda',
     last_name: 'Scholz',
@@ -33,6 +33,8 @@ frieda = User.create(
   )
 file = URI.open('https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2800&q=80')
   frieda.avatar.attach(io: file, filename: 'frieda.jpeg', content_type: 'image/jpeg')
+
+#############################################
 
 fred = User.create(
    first_name: 'Fred',
