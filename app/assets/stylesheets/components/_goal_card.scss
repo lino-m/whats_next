@@ -10,7 +10,6 @@
     justify-content: space-between;
     align-items: flex-end;
     position: relative;
-    margin-bottom: 5px;
 
   .headline {
   position: absolute;
@@ -283,4 +282,10 @@
 
 .price {
   margin-left: -100px;
+}
+
+
+img {
+    vertical-align: baseline;
+    border-style: none;
 }
