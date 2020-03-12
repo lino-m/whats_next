@@ -93,7 +93,7 @@ before_action :find_goal, only: [:show, :destroy]
     @achieve = Goal.where(completed: true).search_query(user_query)
 
     if @achieve.empty?
-      @text = "Sorry, no matches. Look at what others did"
+      @text = "Sorry, no matches. But take a look at other great achievements!"
       @achievements = Goal.where(completed: true)
       geocode
     else
