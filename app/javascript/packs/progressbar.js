@@ -9,7 +9,7 @@ const progressbar = () => {
     achievedButton.addEventListener('click', () => {
       targetProgressbar.style.width = 100 + '%';
       for(let check of milestonesChecks) {
-      check = checked
+      check.checked = true;
       }
     })
 

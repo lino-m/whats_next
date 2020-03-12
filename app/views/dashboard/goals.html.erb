@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="display-goals col-8">
-      <div class="list" style="">
+      <!-- <div class="list" style=""> -->
         <ul class="nav nav-tabs justify-content-center" style="height: 10px;width:fit-content; margin-bottom:5px;">
           <li class="nav-item" id="goals_button">
             <%= link_to "Goals", "/dashboard/goals" %>
@@ -23,7 +23,6 @@
             <%= link_to "Achievements", "/dashboard/goals" %>
           </li>
         </ul>
-      </div>
       <div class="" id="dashboard-goals">
         <% @goals.each do |goal| %>
             <%= render 'shared/goal_card', goal: goal %>
