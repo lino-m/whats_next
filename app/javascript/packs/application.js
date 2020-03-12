@@ -7,9 +7,9 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { totalSumGoalManager } from './total_sum_goal';
 import { dropdownGoal } from './dropdown_goal';
 import { toggleDashboardView } from './toggle_goals_achievements';
+import { progressbar } from './progressbar';
 import { checkboxMilestones } from './ajax_milestones';
 import { loadDynamicBannerText } from './banner';
-
 
 // import { initAutocomplete } from '../plugins/init_mapbox';
 
@@ -20,6 +20,7 @@ initMapbox();
 totalSumGoalManager();
 dropdownGoal();
 toggleDashboardView();
+progressbar();
 checkboxMilestones();
 
 

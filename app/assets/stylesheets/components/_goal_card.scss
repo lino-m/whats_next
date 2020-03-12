@@ -104,14 +104,23 @@
 }
 
 .btn-light {
-  background-color: $logo-pink;
+  background-color: $logo-green;
   color: white;
   font-size: 12px;
-  // position: absolute;
-  // right: 13px;
   font-weight: 700;
-  // margin-top: 20px;
   border-radius: 5px;
+}
+
+.btn-light:hover {
+  color: $rose;
+}
+@media (max-width: 990px) {
+  // .lockup {
+  //   position: relative;
+  // }
+  .card-trip .motivation  {
+      width: 250px;
+}
 }
 
 .inspiration-text {
@@ -175,18 +184,6 @@
 
 .description {
 
-}
-
-.btn-light:hover {
-  color: $logo-green;
-}
-@media (max-width: 990px) {
-  // .lockup {
-  //   position: relative;
-  // }
-  .card-trip .motivation  {
-      width: 250px;
-}
 }
 
 .nav-tabs {

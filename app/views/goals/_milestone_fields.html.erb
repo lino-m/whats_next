@@ -10,9 +10,12 @@
       <%= f.input :description, placeholder: 'Tie my shoes and go!', label:false, class: "form-control" %>
     </div>
     <div class="milestone-price">
-      <div class="d-flex">
-        <div class="form-group integer optional goal_milestones_price_cents form-group-valid"><input class="form-control numeric integer optional price" value="0.00" autofocus="autofocus" type="number" step="1" name="goal[milestones_attributes][0][price_cents]" id="goal_milestones_attributes_0_price_cents"></div>
+      <div class="d-flex justify-content-end">
+        <div class="milestone-price">
+          <%= f.input :price_cents, label:false,  :input_html => {value: number_with_precision(f.object.price_cents, precision: 2), class: "form-control price mile-price" } %>
+        </div>
         <div class="input-group-text">€</div>
+<!--         <div class="form-group integer optional goal_milestones_price_cents form-group-valid"><input class="form-control numeric integer optional price" value="0.00" autofocus="autofocus" type="number" step="1" name="goal[milestones_attributes][0][price_cents]" id="goal_milestones_attributes_0_price_cents"></div>-->
       </div>
     </div>
     <div class="remove-milestone">
