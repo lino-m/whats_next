@@ -73,43 +73,41 @@ before_action :find_goal, only: [:show, :destroy]
   end
 
 
-   def searched
+  def searched
     if params[:search].present?
       user_query = params[:search][:query]
     elsif params[:query].present?
       user_query = params[:query]
     end
-      sql_query = "
-        goals.title @@ :query
-        OR goals.category @@ :query
-        OR goals.motivati @@ :query
-        OR activities.location @@ :query
-        OR activities.name @@ :query
-      "
-      @achieve = Goal.joins(:activities).where(sql_query, query: "%#{user_query}%")
-      @achieve = Goal.where(completed: true).search_query(user_query)
+    sql_query = "
+      goals.title @@ :query
+      OR goals.category @@ :query
+      OR goals.motivati @@ :query
+      OR activities.location @@ :query
+      OR activities.name @@ :query
+    "
+    @achieve = Goal.joins(:activities).where(sql_query, query: "%#{user_query}%")
+    @achieve = Goal.where(completed: true).search_query(user_query)
 
-      if @achieve.empty?
-        @text = "Sorry, no matches. Look at what others did"
-        @achievements = Goal.where(completed: true)
-        geocode
-      else
-        @text = ''
-        @achievements = Goal.joins(:activities).where(sql_query, query: "%#{user_query}%")
-        @achievements = Goal.where(completed: true).search_query(user_query)
-        geocode
-
-      end
-
+    if @achieve.empty?
+      @text = "Sorry, no matches. Look at what others did"
+      @achievements = Goal.where(completed: true)
+      geocode
+    else
+      @text = ''
+      @achievements = Goal.joins(:activities).where(sql_query, query: "%#{user_query}%")
+      @achievements = Goal.where(completed: true).search_query(user_query)
+      geocode
     end
+  end
 
-    def destroy
-      @goal.destroy
-      respond_to do |format|
-        format.html { render 'dashboard/goals' }
-        format.js  { render :layout => false }
-      end
+  def destroy
+    @goal.destroy
+    respond_to do |format|
+      format.html { render 'dashboard/goals' }
+      format.js  { render :layout => false }
     end
+  end
 
   private
 
