@@ -67,7 +67,7 @@
 
       <div class="milestone_items d-flex align-items-center justify-content-between" >
         <%= simple_form_for [goal, milestone], url: goal_milestone_path(goal, milestone),remote: true, id: :edit_submit do |f| %>
-          <%= check_box_tag milestone.name, milestone.id, milestone.done, id: "milestone-"+milestone.id.to_s, 'data-milestone-id' => milestone.id, class: "goal-card-#{goal.id} milestone-checkbox" %>
+          <%= check_box_tag milestone.name, milestone.id, milestone.done, id: "milestone-"+milestone.id.to_s, 'data-milestone-id' => milestone.id, 'data-goal-id' => goal.id, class: "goal-card-#{goal.id} milestone-checkbox" %>
           <%= f.submit 'check', id: "milestone-submit-"+milestone.id.to_s, class: 'milestone_submit_button' %>
         <% end %>
         <!-- <input type="checkbox" name="goal" id="checkbox_milestones"> -->

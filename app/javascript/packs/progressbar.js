@@ -11,9 +11,9 @@ const progressbar = () => {
         progress ++;
       }
     }
-    console.log("pro", progress)
-    console.log("miles", milestonesChecks.length)
-     console.log( ((progress/milestonesChecks.length)* 100).toFixed(2) + '%' )
+    // console.log("pro", progress)
+    // console.log("miles", milestonesChecks.length)
+    //  console.log( ((progress/milestonesChecks.length)* 100).toFixed(2) + '%' )
 
     const updatedProgress = ((progress/milestonesChecks.length)* 100).toFixed(2) + '%';
 
