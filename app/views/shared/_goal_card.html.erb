@@ -5,7 +5,7 @@
     <div class="d-flex">
       <%= image_tag "inspiration.svg", class: "inspiration-image" %>
       <div class="box-inspiration">
-        <p class="inspiration-text">Inspiration</p><p class="name">Some Guy</p>
+        <p class="inspiration-text">Inspiration</p><p class="name">Paul Miller</p>
       </div>
     </div>
   </div>
@@ -60,29 +60,31 @@
       <div class="headlines d-flex align-items-center justify-content-between">
      <p class="item_name">ITEM NAME</p>
      <p class="goal_description">DESCRIPTION</p>
-     <p>COSTS</p>
+     <p id="costs">COSTS</p>
       </div>
      <% goal.milestones.each do |milestone| %>
      <div class="drop_down">
 
-      <div class="milestone_items d-flex align-items-center justify-content-between">
+      <div class="milestone_items d-flex align-items-center justify-content-between" >
         <%= simple_form_for [goal, milestone], url: goal_milestone_path(goal, milestone),remote: true, id: :edit_submit do |f| %>
           <%= check_box_tag milestone.name, milestone.id, milestone.done, id: "milestone-"+milestone.id.to_s, 'data-milestone-id' => milestone.id, class: "goal-card-#{goal.id} milestone-checkbox" %>
           <%= f.submit 'check', id: "milestone-submit-"+milestone.id.to_s, class: 'milestone_submit_button' %>
         <% end %>
         <!-- <input type="checkbox" name="goal" id="checkbox_milestones"> -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center n-container">
           <p class="name mb-0"><%= milestone.name %> </p>
         </div>
         <div class="goal_description">
           <p class="description mb-0"> <%= milestone.description %> </p>
         </div>
-        <p class="price mb-0"> <%= humanized_money(milestone.price_cents) %> € </p>
-        <p> <%= link_to "Del M", goal_milestone_path(goal, milestone) , method: :delete, remote: true %> </p>
+        <p class="price mb-0"> <%= milestone.price %> € </p>
+        <p> <%= link_to goal_milestone_path(goal, milestone), class: "item_delete", method: :delete, remote: true do %> </p>
+        <%= image_tag "whatsnext.svg", height:50 %>
+        <% end %>
       </div>
     </div>
     <% end %>
-    <p> <%= link_to "Del G", goal_path(goal) , method: :delete, remote: true %> </p>
+    <p><%= link_to "delete Goal", goal_path(goal), class: "btn btn-flat-small", method: :delete, remote: true %> </p>
   </div>
 </div>
 </div>
