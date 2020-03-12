@@ -114,3 +114,24 @@
   margin: 15px;
   padding: 0 !important;
 }
+
+
+.badge-icons {
+  position: absolute;
+  top: 100px;
+  left: 25%;
+}
+
+.badge-icons > li {
+  width: 20px;
+  display: inline-block;
+}
+
+.profile_summary .background_badge {
+    color: white;
+    border-radius: 8px 8px 0px 0px;
+    background-color: #53C2BC;
+    padding: 70px;
+    margin: 10px;
+    text-align: center;
+}
