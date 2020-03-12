@@ -41,21 +41,11 @@
   <div class="progress-management">
     <div class="d-flex justify-content-between align-items-center">
       <div class="progress" style="height: 9px;">
-        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        <div id="progbar-<%= goal.id %>" class="progress-bar" data-goal-id="<%= goal.id %>"  role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+
+        </div>
       </div>
-      <!-- <button onclick="myFunction()">Try it</button> -->
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-  var time = new Date().getHours();
-  if (time < 20) {
-    document.getElementById("demo").innerHTML = "Good day";
-  }
-}
-</script>
-      <button type="button" class="btn btn-light" onclick="myFunction()">ACHIEVED</button>
+      <button id="achieved-button" type="button" class="btn btn-light">ACHIEVED</button>
     </div>
   </div>
   <!-- -----------------------------Milestones--------------------------------->
@@ -72,10 +62,11 @@ function myFunction() {
       </div>
      <% goal.milestones.each do |milestone| %>
      <div class="drop_down">
+
       <div class="milestone_items d-flex align-items-center justify-content-between">
-      <%= simple_form_for [goal, milestone], url: goal_milestone_path(goal, milestone), id: :edit_submit do |f| %>
-        <%= check_box_tag milestone.name, milestone.id, milestone.done %>
-        <%= f.submit 'check', id: 'submit_milestones'%>
+        <%= simple_form_for [goal, milestone], url: goal_milestone_path(goal, milestone),remote: true, id: :edit_submit do |f| %>
+          <%= check_box_tag milestone.name, milestone.id, milestone.done, id: "milestone-"+milestone.id.to_s, 'data-milestone-id' => milestone.id, class: "goal-card-#{goal.id} milestone-checkbox" %>
+          <%= f.submit 'check', id: "milestone-submit-"+milestone.id.to_s, class: 'milestone_submit_button' %>
         <% end %>
         <!-- <input type="checkbox" name="goal" id="checkbox_milestones"> -->
         <div class="d-flex align-items-center">
