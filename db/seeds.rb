@@ -373,4 +373,22 @@ achievements.each do |goal|
 end
 
 
+############### LINO SEEDS START
+
+peter = User.create(
+   first_name: 'Peter',
+    last_name: 'Parker',
+    email: 'peter@stark.web',
+    achievement_score: (100..1000).to_a.sample,
+    impressions: (10..500).to_a.sample,
+    username: 'Peter',
+    password: '123456'
+  )
+file = URI.open('')
+  hanna.avatar.attach(io: file, filename: 'hanna.jpeg', content_type: 'image/jpeg')
+
+
+################ LINO SEEDS END
+
+
 
