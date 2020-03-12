@@ -3,7 +3,8 @@
 
     <div class="col-8">
       <div class="results ">
-        <h3><%= @text %></h3>
+        <h3 id="no_matches">
+          <%= @text %></h3>
         <% @achievements.each do |goal| %>
           <%= render "shared/achievement_card_wide", achievement: goal %>
         <% end %>
