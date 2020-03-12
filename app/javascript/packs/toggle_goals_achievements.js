@@ -23,11 +23,12 @@ const toggleDashboardView = () => {
     })
   }
 
-  showGoals();
+  const shouldRun = goalsButton && achievementsButton;
 
-  if (goalsButton && achievementsButton) {
+  if (shouldRun) {
     goalsButton.addEventListener('click', (event) => {
       event.preventDefault();
+      goalsButton.dataset.goalsMode = "true";
       achievementsButton.style.backgroundColor = "#dd81a8"
       goalsButton.style.backgroundColor = "#CF4A82"
       showGoals();
@@ -35,10 +36,18 @@ const toggleDashboardView = () => {
 
     achievementsButton.addEventListener('click', (event) => {
       event.preventDefault();
+      goalsButton.dataset.goalsMode = "false";
       achievementsButton.style.backgroundColor = "#CF4A82"
       goalsButton.style.backgroundColor = "#dd81a8"
       showAchievements();
     });
+
+    if (goalsButton.dataset.goalsMode === "true") {
+      showGoals();
+      achievementsButton.style.backgroundColor = "#dd81a8"
+    } else {
+      showAchievements();
+    }
   }
 }
 
