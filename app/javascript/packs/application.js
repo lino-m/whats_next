@@ -7,6 +7,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { totalSumGoalManager } from './total_sum_goal';
 import { dropdownGoal } from './dropdown_goal';
 import { toggleDashboardView } from './toggle_goals_achievements';
+import { achievedButton } from './achieved-button';
 
 // import { initAutocomplete } from '../plugins/init_mapbox';
 
@@ -16,5 +17,6 @@ initMapbox();
 totalSumGoalManager();
 dropdownGoal();
 toggleDashboardView();
+achievedButton();
 
 // initAutocomplete(); #This musnt be commented in if it isnt finished.!!!!!

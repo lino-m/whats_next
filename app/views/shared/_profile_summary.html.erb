@@ -32,6 +32,10 @@
     </div>
     <div class="seperator"><hr></div>
     <div class="new-goal d-flex justify-content-center">
-      <%= link_to "New Goal", new_goal_path, class: "btn btn-new-goal" %>
+      <div class="plus" id="profile-plus">
+        <%= link_to new_goal_path, class: "" do %>
+          <%= image_tag "btn-flat.svg", height:50 %>
+      <% end %>
+    </div>
   </div>
 </div>
