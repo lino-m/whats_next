@@ -1,7 +1,8 @@
 <div class="card" id="<%= achievement.id %>">
   <%= cl_image_tag achievement.user.avatar.key, { class: "rounded-circle"} %>
-  <%= link_to "edit", edit_goal_path(achievement) %>
-  <%= render "shared/icon-add" %>
+  <%= link_to edit_goal_path(achievement) do %>
+    <%= render "shared/icon-add" %>
+  <% end %>
   <%= cl_image_tag achievement.photo.key, { class: "card-image"} %>
   <div class="card-body-wide">
     <h5 class="card-title" style="text-transform: uppercase;"><strong><%=  achievement.title %></strong></h5>

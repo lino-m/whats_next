@@ -48,7 +48,7 @@
 
               </div>
               <div id="target-budget">
-                <p> of 0.00 €</p>
+                <p>of 0.00 €</p>
               </div>
             </div>
           </div>
@@ -81,6 +81,11 @@
           <div class="headline-milestones"><h3>Connected Activity</h3></div>
           <div class="connected-activity">
             <div class="d-flex justify-content-between">
+              <div class="drop-down-activities">
+                <%= f.simple_fields_for @activities do |a| %>
+                  <%= a.input :name, as: :select, collection: @activities, prompt: "Select Activity", label: false %>
+                <% end %>
+              </div>
               <div class="activity-infos">
                   <div class="activity-categoty">
 
@@ -88,11 +93,6 @@
                   <div class="activity-location">
 
                   </div>
-              </div>
-              <div class="drop-down-activities">
-                <%= f.simple_fields_for @activities do |a| %>
-                  <%= a.input :name, as: :select, collection: @activities, prompt: "Select Activity", label: false %>
-                <% end %>
               </div>
             </div>
           </div>
@@ -104,8 +104,8 @@
               </div>
           </div>
         </div>
-        <div class="submit d-flex justify-content-end">
-          <%= f.button :submit, class: "btn btn-primary submit" %>
+        <div class="d-flex justify-content-end">
+          <%= f.submit "Create Goal", class: "btn btn-primary submit" %>
         </div>
       <% end %>
     </div>
