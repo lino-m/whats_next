@@ -28,6 +28,9 @@ before_action :find_goal, only: [:show, :destroy]
   def edit
     @goal = find_goal
     @milestones = @goal.milestones
+    @milestones.each do |milestone|
+      milestone.done = false
+    end
     # @goal.milestones.build
     @activities = Activity.all
   end
