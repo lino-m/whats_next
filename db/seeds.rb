@@ -129,7 +129,11 @@ horse = Activity.create(
 
 
 #BIANCA/ACTIVITIES###################
-
+backflips = Activity.create(
+  name: 'Skate masters',
+  location: 'Anywhere, Worldwide',
+  category: 'Nature, Sports',
+  )
 ############################################################################
 
 garden = Activity.create(
@@ -138,19 +142,19 @@ garden = Activity.create(
   category: 'Nature',
   )
 
-Activity.create(
+parachute_berlin = Activity.create(
   name: 'Parachuting Near Berlin',
   location: 'Flugplatzstraße 3, 16833 Fehrbellin',
   category: 'Parachuting',
   )
 
-Activity.create(
+parachute_fellbach = Activity.create(
   name: 'Blue Sky Adventures Stuttgart',
   location: 'Fellbacher Str. 143, 70736 Fellbach',
   category: 'Parachuting',
   )
 
-Activity.create(
+bungy = Activity.create(
   name: 'Bungy Jump Like James Bond',
   location: 'Via Valle Verzasca, 6596 Gordola, Schweiz',
   category: 'Bungy',
@@ -167,21 +171,21 @@ puts 'Creating Goals'
 users = User.all
 activities = Activity.all
 
-# users.each do |user|
-#   Goal.create!(
-#     user_id: user.id,
-#     activity_id: activities.sample.id,
-#     title: 'If it is parachuting or bungy, I am testing it!',
-#     motivation: 'I want to overcome some of my own axieties and get out of my comfort zone',
-#     contribution: 100,
-#     category: 'adventure' #,
-#     # photo: , TBD
-#     )
-# end
+                                                                                  # users.each do |user|
+                                                                                  #   Goal.create!(
+                                                                                  #     user_id: user.id,
+                                                                                  #     activity_id: activities.sample.id,
+                                                                                  #     title: 'If it is parachuting or bungy, I am testing it!',
+                                                                                  #     motivation: 'I want to overcome some of my own axieties and get out of my comfort zone',
+                                                                                  #     contribution: 100,
+                                                                                  #     category: 'adventure' #,
+                                                                                  #     # photo: , TBD
+                                                                                  #     )
+                                                                                  # end
 ###################### create a goal like this #######################
   goal1 = Goal.create!(
     user_id: frieda.id,
-    activity_id: activities.sample.id,
+    activity_id: backflips.id,
     title: 'Practice backflips!',
     motivation: 'Just because it is awesome and will impress a lot of people!',
     contribution: 100,
