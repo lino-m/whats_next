@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-const milestoneId = progressbar.dataset.milestoneId;
-console.log(milestoneId);
-let milestone = document.querySelector("[data-milestone-id='<%= @milestone.id %>']")
-  console.log(milestone);
-  milestone.remove();
-=======
-var milestone = document.querySelector("[data-milestone-id='<%= @milestone.id %>']")
+var mile = document.querySelector("[data-milestone-id='<%= @milestone.id %>']")
+var milestone = mile.parentNode.parentNode;
 milestone.remove();
->>>>>>> 35f1b3722ae4a73fe7d8a6f84e6e67af09ed7e76
 
 
 
