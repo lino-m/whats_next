@@ -9,10 +9,12 @@ import { dropdownGoal } from './dropdown_goal';
 import { toggleDashboardView } from './toggle_goals_achievements';
 import { progressbar } from './progressbar';
 import { checkboxMilestones } from './ajax_milestones';
+import { loadDynamicBannerText } from './banner';
 
 // import { initAutocomplete } from '../plugins/init_mapbox';
 
 
+loadDynamicBannerText();
 hiddenSearch();
 initMapbox();
 totalSumGoalManager();
@@ -20,5 +22,6 @@ dropdownGoal();
 toggleDashboardView();
 progressbar();
 checkboxMilestones();
+
 
 // initAutocomplete(); #This musnt be commented in if it isnt finished.!!!!!
