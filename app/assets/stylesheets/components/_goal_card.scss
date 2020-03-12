@@ -80,6 +80,7 @@
 .milestone_items {
   margin: 10px 45px;
   position: relative;
+  width: 100%;
 }
 
 .lockup {
@@ -168,13 +169,17 @@
 
 .headlines {
   font-size: 14px;
-  margin: 15px 45px;
+  margin: 15px 125px 0 100px;
   font-weight: 700;
   margin-bottom: 0px;
+
 }
+
 
 .item_name {
   min-width: 5%;
+  margin-right: 36px;
+  margin-left: -6px;
 }
 
 .checkbox_milestones {
@@ -182,13 +187,18 @@
   left: -30px;
 }
 
-.description {
+.goal_description {
+  margin-right: 75px;
+}
 
+.description {
+  margin-left: 5px;
 }
 
 .nav-tabs {
+  margin-top: -11px;
   padding: 11px;
-  background: #fafafa;
+  position: relative;
     :hover{
       background-color: $rose;
   }
@@ -199,7 +209,7 @@
   display: inline;
   border: solid;
   border-width: 0;
-  margin: 0 45px 0 0;
+  margin: 0 5px 0 0;
   border-radius: 4px;
   padding: 8px 24px;
   background: #CF4A82;
@@ -215,12 +225,55 @@
 }
 
 .nav-tabs .nav-item {
-    margin-bottom: -12px;
+  margin-right: 13px;
+  margin-left: -10px;
+  margin-bottom: -12px;
+  border-radius: 8px 8px 0px 0;
 }
 
 .milestone_submit_button {
   display: none;
 }
 
+.edit_milestone {
+  // position: absolute;
+  // left: 40px;
+}
+
+.btn-flat-small {
+  text-transform: uppercase;
+  color: #fafafa;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background: #f79bba;
+  -webkit-transition: background 0.3s ease;
+  font-size: 9px;
+  margin-left: 604px;
+
+}
+
+.btn-flat-small:hover {
+  background: #FFB8D1;
+  color: #fafafa;
+}
 
 
+
+.btn-flat-small:after{
+    bottom:0; right:0;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+}
+
+.drop_down {
+  width: 90%
+}
+
+.name.mb-0 {
+  padding: 0 34px;
+  padding-left: 10px;
+}
+
+.price {
+  margin-left: -100px;
+}
