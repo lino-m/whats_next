@@ -187,8 +187,9 @@
 }
 
 .nav-tabs {
+  margin-top: -11px;
   padding: 11px;
-  background: #fafafa;
+  position: relative;
     :hover{
       background-color: $rose;
   }
@@ -199,7 +200,7 @@
   display: inline;
   border: solid;
   border-width: 0;
-  margin: 0 45px 0 0;
+  margin: 0 5px 0 0;
   border-radius: 4px;
   padding: 8px 24px;
   background: #CF4A82;
@@ -215,7 +216,10 @@
 }
 
 .nav-tabs .nav-item {
-    margin-bottom: -12px;
+  margin-right: 13px;
+  margin-left: -10px;
+  margin-bottom: -12px;
+  border-radius: 8px 8px 0px 0;
 }
 
 .milestone_submit_button {
