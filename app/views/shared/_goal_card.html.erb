@@ -77,7 +77,7 @@
         <div class="goal_description">
           <p class="description mb-0"> <%= milestone.description %> </p>
         </div>
-        <p class="price mb-0"> <%= milestone.price %> € </p>
+        <p class="price mb-0"> <%= humanized_money(milestone.price_cents) %> € </p>
         <p> <%= link_to "Del M", goal_milestone_path(goal, milestone) , method: :delete, remote: true %> </p>
       </div>
     </div>
