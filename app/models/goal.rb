@@ -24,4 +24,8 @@ class Goal < ApplicationRecord
   has_many :milestones, dependent: :destroy
   has_one_attached :photo
   accepts_nested_attributes_for :milestones #, reject_if: :all_blank, allow_destroy: true
+
+  def milestones_done?
+    self.milestones.all? { |milestone| milestone.done }
+  end
 end

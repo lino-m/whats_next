@@ -1,19 +1,41 @@
 const toggleDashboardView = () => {
   const goalsButton = document.getElementById("goals_button");
   const achievementsButton = document.getElementById("achievements_button");
+  const cards = document.querySelectorAll(".goal-card-to-toggle");
 
-  const dashboardGoals = document.getElementById("dashboard-goals");
-  const dashboardAchievements = document.getElementById("dashboard-goals");
+  const showGoals = () => {
+    cards.forEach(card => {
+      if (card.dataset.done === "true") {
+        card.style.display = "none";
+      } else {
+        card.style.display = "block";
+      }
+    })
+  }
 
-  goalsButton.addEventListener('click', () => {
-    dashboardGoals.style.display = "block";
-    dashboardAchievements.style.display = "none";
-  });
+  const showAchievements = () => {
+    cards.forEach(card => {
+      if (card.dataset.done  === "true") {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    })
+  }
 
-  achievementsButton.addEventListener('click', () => {
-    dashboardGoals.style.display = "none";
-    dashboardAchievements.style.display = "block";
-  });
+  showGoals();
+
+  if (goalsButton && achievementsButton) {
+    goalsButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      showGoals();
+    });
+
+    achievementsButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      showAchievements();
+    });
+  }
 }
 
 export { toggleDashboardView };
