@@ -20,7 +20,12 @@ const progressbar = () => {
     achievedButton.addEventListener('click', () => {
       targetProgressbar.style.width = 100 + '%';
       for(let check of milestonesChecks) {
-      check.checked = true;
+        if (!check.checked) {
+          check.click();
+        }
+        // const form = check.parentElement;
+        // const submitButton = form.querySelector("input[type='submit");
+        // submitButton.click();
       }
     })
   }
