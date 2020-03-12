@@ -44,6 +44,7 @@ const toggleDashboardView = () => {
 
     if (goalsButton.dataset.goalsMode === "true") {
       showGoals();
+      achievementsButton.style.backgroundColor = "#dd81a8"
     } else {
       showAchievements();
     }
