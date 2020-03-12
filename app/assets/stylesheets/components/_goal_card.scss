@@ -13,10 +13,11 @@
     margin-bottom: 5px;
 
   .headline {
+  position: absolute;
   font-size: 20px;
   font-weight: bold;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   color: $logo-green
     }
   }
@@ -53,10 +54,10 @@
 }
 
 .card-trip .motivation {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-  margin-right: 30px;
+    font-size: 12px;
+    opacity: .7;
+    margin-left: 0;
+    margin-top: 40px;
 }
 
 .box-inspiration {
