@@ -10,13 +10,13 @@
     justify-content: space-between;
     align-items: flex-end;
     position: relative;
-    margin-bottom: 5px;
 
   .headline {
+  position: absolute;
   font-size: 20px;
   font-weight: bold;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   color: $logo-green
     }
   }
@@ -53,10 +53,10 @@
 }
 
 .card-trip .motivation {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-  margin-right: 30px;
+    font-size: 12px;
+    opacity: .7;
+    margin-left: 0;
+    margin-top: 40px;
 }
 
 .box-inspiration {
@@ -74,7 +74,7 @@
 .green-point {
   right: 35px;
   max-width: 30px;
-  top: 204px;
+  top: 236px;
 }
 
 .milestone_items {
@@ -121,6 +121,7 @@
   // }
   .card-trip .motivation  {
       width: 250px;
+      margin-bottom: 0px;
 }
 }
 
@@ -144,6 +145,10 @@
   padding-bottom: 15px;
 }
 
+.n-container {
+  max-width: 160px;
+}
+
 .inspiration {
   position: absolute;
   background-color: white;
@@ -151,6 +156,7 @@
   left: 17px;
   padding: 5px;
   border-radius: 5px;
+  top: 233px;
 }
 
 .profile {
@@ -276,4 +282,10 @@
 
 .price {
   margin-left: -100px;
+}
+
+
+img {
+    vertical-align: baseline;
+    border-style: none;
 }
