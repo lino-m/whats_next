@@ -60,7 +60,7 @@
       <div class="headlines d-flex align-items-center justify-content-between">
      <p class="item_name">ITEM NAME</p>
      <p class="goal_description">DESCRIPTION</p>
-     <p>COSTS</p>
+     <p id="costs">COSTS</p>
       </div>
      <% goal.milestones.each do |milestone| %>
      <div class="drop_down">
@@ -78,11 +78,13 @@
           <p class="description mb-0"> <%= milestone.description %> </p>
         </div>
         <p class="price mb-0"> <%= milestone.price %> € </p>
-        <p> <%= link_to "Del M", goal_milestone_path(goal, milestone) , method: :delete, remote: true %> </p>
+        <p> <%= link_to goal_milestone_path(goal, milestone), class: "item_delete", method: :delete, remote: true do %> </p>
+        <%= image_tag "whatsnext.svg", height:50 %>
+        <% end %>
       </div>
     </div>
     <% end %>
-    <p> <%= link_to "Del G", goal_path(goal) , method: :delete, remote: true %> </p>
+    <p><%= link_to "delete Goal", goal_path(goal), class: "btn btn-flat-small", method: :delete, remote: true %> </p>
   </div>
 </div>
 </div>
