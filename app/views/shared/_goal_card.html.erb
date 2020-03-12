@@ -18,6 +18,7 @@
       <p class="motivation"> <%= goal.motivation %> </p>
     </div>
     <div class="lockup">
+
       <% if goal.completed == false %>
         <div class="false">
           <div class="d-flex justify-content-end">
@@ -26,6 +27,7 @@
           </div>
           <p class="date-added">created: <%= goal.created_at.strftime("%B %d, %Y") %></p> <!-- ("%B %d %Y, %l:%M%P")  -->
         </div>
+
       <% else %>
         <div class="true">
           <div class="d-flex justify-content-end">
@@ -45,7 +47,7 @@
 
         </div>
       </div>
-      <button id="achieved-button" type="button" class="btn btn-light">ACHIEVED</button>
+      <button id="achieved-button-<%= goal.id %>" data-goal-id="<%= goal.id %>" type="button" class="btn btn-light">ACHIEVED</button>
     </div>
   </div>
   <!-- -----------------------------Milestones--------------------------------->
