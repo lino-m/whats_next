@@ -1,4 +1,4 @@
-<div class="card-trip mb-4">
+<div class="card-trip mb-4 goal-card-to-destroy goal-card-to-toggle" data-goal-id="<%= goal.id %>" data-done="<%= goal.milestones_done? %>">
   <%= goal_or_default_image_tag(goal, class: "image-card-goal") %>
   <%#= image_tag "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", class: "image-card-goal" %>
   <div class="inspiration">
@@ -47,7 +47,7 @@
 
         </div>
       </div>
-      <button id="achieved-button-<%= goal.id %>" data-goal-id="<%= goal.id %>" type="button" class="btn btn-light">ACHIEVED</button>
+      <button id="achieved-button-<%= goal.id %>" data-goal-id="<%= goal.id %>" type="button" class="btn btn-light">DONE!</button>
     </div>
   </div>
   <!-- -----------------------------Milestones--------------------------------->

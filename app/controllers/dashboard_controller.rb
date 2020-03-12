@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
   def goals
-    @goals = current_user.goals.where(completed: false).order(created_at: :desc)
-    @achievements = current_user.goals.where(completed: true)
+    @goals = current_user.goals.order(created_at: :desc)
+    # @achievements = current_user.goals.where(completed: true)
   end
 
   def achievements
