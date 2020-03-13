@@ -268,7 +268,7 @@ activities = Activity.all
                                                                                   # end
 ###################### create a goal like this #######################
   goal1 = Goal.create!(
-    user_id: frieda.id,
+    user_id: hanna.id,
     activity_id: backflips.id,
     title: 'Practice backflips!',
     motivation: 'Just because it is awesome and will impress a lot of people!',
@@ -631,14 +631,14 @@ Milestone.create(
 
 Milestone.create(
   goal_id: goalstartup.id,
-  name: 'Code',
+  name: 'Step 1',
   description: 'Learn to code',
   done: false,
   # price assigned as 0 by default
   )
 Milestone.create(
   goal_id: goalstartup.id,
-  name: 'Business Plan',
+  name: 'Step 2',
   description: 'Make a Business Plan',
   done: false,
   # price assigned as 0 by default
@@ -646,7 +646,7 @@ Milestone.create(
 
 Milestone.create(
   goal_id: goalstartup.id,
-  name: 'Team',
+  name: 'Step 3',
   description: "Gather a team",
   done: false,
   # price assigned as 0 by default
@@ -654,7 +654,7 @@ Milestone.create(
 
 Milestone.create(
   goal_id: goalstartup.id,
-  name: 'Office',
+  name: 'Step 4',
   description: 'Find the right office',
   done: false,
   # price assigned as 0 by default
@@ -662,7 +662,7 @@ Milestone.create(
 
 Milestone.create(
   goal_id: goalstartup.id,
-  name: 'Office',
+  name: 'Step 5',
   description: 'Find the right office',
   done: false,
   # price assigned as 0 by default
@@ -670,7 +670,7 @@ Milestone.create(
 
 Milestone.create(
   goal_id: goalstartup.id,
-  name: 'Build App',
+  name: 'Step 6',
   description: 'Start working on our Feedback App',
   done: false,
   # price assigned as 0 by default
@@ -901,6 +901,54 @@ Milestone.create(
 ###########################################################################
 
 #ANYO/MILESTONE/ACHIEVEMENTS#####################
+Milestone.create(
+  goal_id: goal7.id,
+  name: 'Step 01',
+  description: 'Look for a nice garden in the community',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: 'Step 02',
+  description: 'Buy seeds',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: 'Step 03',
+  description: 'lay out flower beds',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: 'Step 04',
+  description: 'make a seeding calender for the veggies I want to grow',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: 'Step 05',
+  description: 'seed the plants',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: 'Step 06',
+  description: 'Watch the veggies grow',
+  done: false,
+  # price assigned as 0 by default
+  )
 
 
 #CARO/MILESTONE/ACHIEVEMENTS#####################
