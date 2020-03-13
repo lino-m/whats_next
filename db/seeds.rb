@@ -922,7 +922,7 @@ Milestone.create(
 Milestone.create(
   goal_id: goal7.id,
   name: 'Step 04',
-  description: 'make a seeding calender for the veggies I want to grow',
+  description: 'make a seeding calender for the veggies',
   done: false,
   # price assigned as 0 by default
   )
