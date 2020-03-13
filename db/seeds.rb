@@ -10,18 +10,12 @@ Goal.destroy_all
 Milestone.destroy_all
 
 
-############################################# Customized Users, Goals, Activities, Milestones and Achievments
-
-
-# The space for customization
-
-
-############################################# Generic Population
-
 # Display activity
 puts 'Creating users'
 counter = 0
+
 ###################### create a user like this #######################
+
 frieda = User.create(
    first_name: 'Frieda',
     last_name: 'Scholz',
@@ -34,7 +28,21 @@ frieda = User.create(
 file = URI.open('https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2800&q=80')
   frieda.avatar.attach(io: file, filename: 'frieda.jpeg', content_type: 'image/jpeg')
 
-#############################################
+############################################################################
+
+#ANYO/USERS#####################
+
+
+#CARO/USERS#####################
+
+
+#LINO/USERS#####################
+
+
+#BIANCA/USERS###################
+
+
+#############################################################################
 
 fred = User.create(
    first_name: 'Fred',
@@ -101,12 +109,32 @@ end
 
 # Display activity
 puts 'Creating activities'
-
+###################### create an activity like this #######################
 horse = Activity.create(
   name: 'Horseriding',
   location: 'Lindenberger Str. 29, 16356 Berlin-Ahrensfelde',
   category: 'Sports',
   )
+
+###########################################################################
+
+
+#ANYO/ACTIVITIES#####################
+
+
+#CARO/ACTIVITIES#####################
+
+
+#LINO/ACTIVITIES#####################
+
+
+#BIANCA/ACTIVITIES###################
+backflips = Activity.create(
+  name: 'Skate masters',
+  location: 'Anywhere, Worldwide',
+  category: 'Nature, Sports',
+  )
+############################################################################
 
 garden = Activity.create(
   name: 'Gardening',
@@ -114,19 +142,19 @@ garden = Activity.create(
   category: 'Nature',
   )
 
-Activity.create(
+parachute_berlin = Activity.create(
   name: 'Parachuting Near Berlin',
   location: 'Flugplatzstraße 3, 16833 Fehrbellin',
   category: 'Parachuting',
   )
 
-Activity.create(
+parachute_fellbach = Activity.create(
   name: 'Blue Sky Adventures Stuttgart',
   location: 'Fellbacher Str. 143, 70736 Fellbach',
   category: 'Parachuting',
   )
 
-Activity.create(
+bungy = Activity.create(
   name: 'Bungy Jump Like James Bond',
   location: 'Via Valle Verzasca, 6596 Gordola, Schweiz',
   category: 'Bungy',
@@ -143,21 +171,21 @@ puts 'Creating Goals'
 users = User.all
 activities = Activity.all
 
-# users.each do |user|
-#   Goal.create!(
-#     user_id: user.id,
-#     activity_id: activities.sample.id,
-#     title: 'If it is parachuting or bungy, I am testing it!',
-#     motivation: 'I want to overcome some of my own axieties and get out of my comfort zone',
-#     contribution: 100,
-#     category: 'adventure' #,
-#     # photo: , TBD
-#     )
-# end
-
+                                                                                  # users.each do |user|
+                                                                                  #   Goal.create!(
+                                                                                  #     user_id: user.id,
+                                                                                  #     activity_id: activities.sample.id,
+                                                                                  #     title: 'If it is parachuting or bungy, I am testing it!',
+                                                                                  #     motivation: 'I want to overcome some of my own axieties and get out of my comfort zone',
+                                                                                  #     contribution: 100,
+                                                                                  #     category: 'adventure' #,
+                                                                                  #     # photo: , TBD
+                                                                                  #     )
+                                                                                  # end
+###################### create a goal like this #######################
   goal1 = Goal.create!(
     user_id: frieda.id,
-    activity_id: activities.sample.id,
+    activity_id: backflips.id,
     title: 'Practice backflips!',
     motivation: 'Just because it is awesome and will impress a lot of people!',
     contribution: 100,
@@ -167,7 +195,20 @@ activities = Activity.all
   file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/backflips_jmaze3.jpg')
   goal1.photo.attach(io: file, filename: 'backflips.jpeg', content_type: 'image/jpeg')
 
+#######################################################################
 
+#ANYO/GOAL#####################
+
+
+#CARO/GOAL#####################
+
+
+#LINO/GOAL#####################
+
+
+#BIANCA/GOAL###################
+
+############################################################################
 
   goal2 = Goal.create!(
     user_id: fred.id,
@@ -230,30 +271,52 @@ activities = Activity.all
 puts 'Creating Milestones for Goals'
 
 goals = Goal.where(completed: false)
+###################### create a milestone like this #######################
+Milestone.create(
+  goal_id: goal1.id,
+  name: 'Step 01',
+  description: 'Add description here',
+  done: false,
+  # price assigned as 0 by default
+  )
+###########################################################################
 
-goals.each do |goal|
-  Milestone.create(
-    goal_id: goal.id,
-    name: 'Step 01',
-    description: 'Add description here',
-    done: false,
-    # price assigned as 0 by default
-    )
-  Milestone.create(
-    goal_id: goal.id,
-    name: 'Step 02',
-    description: 'Add description here',
-    done: false,
-    # price assigned as 0 by default
-    )
-  Milestone.create!(
-    goal_id: goal.id,
-    name: 'Step 03',
-    description: goal.activity.name,
-    done: false,
-    # price assigned as 0 by default
-    )
-end
+#ANYO/MILESTONE/GOALS#####################
+
+
+#CARO/MILESTONE/GOALS#####################
+
+
+#LINO/MILESTONE/GOALS#####################
+
+
+#BIANCA/MILESTONE/GOALS###################
+
+############################################################################
+# goals.each do |goal|
+#   Milestone.create(
+#     goal_id: goal.id,
+#     name: 'Step 01',
+#     description: 'Add description here',
+#     done: false,
+#     # price assigned as 0 by default
+#     )
+#   Milestone.create(
+#     goal_id: goal.id,
+#     name: 'Step 02',
+#     description: 'Add description here',
+#     done: false,
+#     # price assigned as 0 by default
+#     )
+#   Milestone.create!(
+#     goal_id: goal.id,
+#     name: 'Step 03',
+#     description: goal.activity.name,
+#     done: false,
+#     # price assigned as 0 by default
+#     )
+# end
+
 
 ########################################## Achievements
 
@@ -274,6 +337,18 @@ activities = Activity.all
 #     )
 # end
 
+#ANYO/ACHIEVEMENTS#####################
+
+
+#CARO/ACHIEVEMENTS#####################
+
+
+#LINO/ACHIEVEMENTS#####################
+
+
+#BIANCA/ACHIEVEMENTS###################
+
+############################################################################
   goal6 = Goal.create!(
     user_id: frieda.id,
     activity_id: hike_in_georgia.id,
@@ -348,29 +423,52 @@ puts 'Creating Milestones for Achievements'
 
 achievements = Goal.where(completed: true)
 
-achievements.each do |goal|
-  Milestone.create(
-    goal_id: goal.id,
-    name: 'Step 01',
-    description: 'Add description here',
-    done: true
-    # price assigned as 0 by default
-    )
-  Milestone.create(
-    goal_id: goal.id,
-    name: 'Step 02',
-    description: 'Add description here',
-    done: true
-    # price assigned as 0 by default
-    )
-  Milestone.create!(
-    goal_id: goal.id,
-    name: 'Step 03',
-    description: goal.activity.name,
-    done: true
-    # price assigned as 0 by default
-    )
-end
+###################### create a milestone like this #######################
+Milestone.create(
+  goal_id: goal1.id,
+  name: 'Step 01',
+  description: 'Add description here',
+  done: false,
+  # price assigned as 0 by default
+  )
+###########################################################################
+
+#ANYO/MILESTONE/ACHIEVEMENTS#####################
+
+
+#CARO/MILESTONE/ACHIEVEMENTS#####################
+
+
+#LINO/MILESTONE/ACHIEVEMENTS#####################
+
+
+#BIANCA/MILESTONE/ACHIEVEMENTS###################
+
+############################################################################
+
+# achievements.each do |goal|
+#   Milestone.create(
+#     goal_id: goal.id,
+#     name: 'Step 01',
+#     description: 'Add description here',
+#     done: true
+#     # price assigned as 0 by default
+#     )
+#   Milestone.create(
+#     goal_id: goal.id,
+#     name: 'Step 02',
+#     description: 'Add description here',
+#     done: true
+#     # price assigned as 0 by default
+#     )
+#   Milestone.create!(
+#     goal_id: goal.id,
+#     name: 'Step 03',
+#     description: goal.activity.name,
+#     done: true
+#     # price assigned as 0 by default
+#     )
+# end
 
 
 ############### LINO SEEDS START
