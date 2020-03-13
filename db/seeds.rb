@@ -268,7 +268,7 @@ activities = Activity.all
                                                                                   # end
 ###################### create a goal like this #######################
   goal1 = Goal.create!(
-    user_id: frieda.id,
+    user_id: hanna.id,
     activity_id: backflips.id,
     title: 'Practice backflips!',
     motivation: 'Just because it is awesome and will impress a lot of people!',
@@ -901,6 +901,54 @@ Milestone.create(
 ###########################################################################
 
 #ANYO/MILESTONE/ACHIEVEMENTS#####################
+Milestone.create(
+  goal_id: goal7.id,
+  name: 'Step 01',
+  description: 'Look for a nice garden in the community',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: 'Step 02',
+  description: 'Buy seeds',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: 'Step 03',
+  description: 'lay out flower beds',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: 'Step 04',
+  description: 'make a seeding calender for the veggies I want to grow',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: 'Step 05',
+  description: 'seed the plants',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: 'Step 06',
+  description: 'Watch the veggies grow',
+  done: false,
+  # price assigned as 0 by default
+  )
 
 
 #CARO/MILESTONE/ACHIEVEMENTS#####################
