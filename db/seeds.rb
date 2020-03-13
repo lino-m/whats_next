@@ -125,13 +125,13 @@ horse = Activity.create(
 #CARO/ACTIVITIES#####################
 code = Activity.create(
   name: 'Le Wagon Coding Bootcamp',
-  location: 'Rudi-Dutschke-Straße 2610969 Berlin',
+  location: 'Rudi-Dutschke-Straße 26,10969 Berlin',
   category: 'Learning',
   )
 
 startup = Activity.create(
   name: 'Berlin Valley ',
-  location: 'Gustav-Meyer-Allee 25 13355 Berlin',
+  location: 'Gustav-Meyer-Allee 25, 13355 Berlin',
   category: 'Learning',
   )
 
