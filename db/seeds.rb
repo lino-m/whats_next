@@ -20,7 +20,7 @@ frieda = User.create(
    first_name: 'Frieda',
     last_name: 'Scholz',
     email: 'frieda@scholz.de',
-    achievement_score: (100..1000).to_a.sample,
+    achievement_score: 20,
     impressions: (10..500).to_a.sample,
     username: 'frieda',
     password: '123456'
@@ -191,22 +191,38 @@ surfing = Activity.create(
   )
 
 #CARO/ACTIVITIES#####################
+code = Activity.create(
+  name: 'Le Wagon Coding Bootcamp',
+  location: 'Rudi-Dutschke-Straße 26, 10969 Berlin',
+  category: 'Learning',
+  )
 
+startup = Activity.create(
+  name: 'Berlin Valley ',
+  location: 'Gustav-Meyer-Allee 25, 13355 Berlin',
+  category: 'Learning',
+  )
 
 #LINO/ACTIVITIES#####################
 
 
 #BIANCA/ACTIVITIES###################
+diving = Activity.create(
+  name: 'Dive the blue hole',
+  location: 'Chapoose Street, Caye Caulker',
+  category: 'Nature, Sports, Diving',
+  )
+
 backflips = Activity.create(
   name: 'Skate masters',
-  location: 'Anywhere, Worldwide',
+  location: 'Revaler Str. 99, 10245 Berlin',
   category: 'Nature, Sports',
   )
 ############################################################################
 
 garden = Activity.create(
   name: 'Gardening',
-  location: 'Am Wiesengrund 12, 1215378 Rüdersdorf bei Berlin',
+  location: 'Am Wiesengrund 19, 1215378 Rüdersdorf bei Berlin',
   category: 'Nature',
   )
 
@@ -304,8 +320,32 @@ goal7 = Goal.create!(
   goal8.photo.attach(io: file, filename: 'northernlights.jpeg', content_type: 'image/jpeg')
 
 
+
 #CARO/GOAL#####################
 
+goalcode = Goal.create!(
+    user_id: frieda.id,
+    activity_id: code.id,
+    title: 'Learn how to Code!',
+    motivation: 'I want to know what happens behind the scenes of technology and be able to shape it!',
+    contribution: 100,
+    category: 'Learning',
+    completed: true
+    )
+  file = URI.open('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+  goalcode.photo.attach(io: file, filename: 'code.jpeg', content_type: 'image/jpeg')
+
+  goalstartup = Goal.create!(
+    user_id: frieda.id,
+    activity_id: startup.id,
+    title: 'Found my own Startup!',
+    motivation: 'I want to start my own Company to be my own boss.',
+    contribution: 100,
+    category: 'Learning',
+    completed: false
+    )
+  file = URI.open('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+  goalcode.photo.attach(io: file, filename: 'code.jpeg', content_type: 'image/jpeg')
 
 #LINO/GOAL#####################
 
@@ -560,8 +600,81 @@ Milestone.create(
   # price assigned as 0 by default
   )
 #CARO/MILESTONE/GOALS#####################
+Milestone.create(
+  goal_id: goalcode.id,
+  name: 'Secure a spot',
+  description: 'Apply for a bootcamp',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: goalcode.id,
+  name: 'Computer',
+  description: 'Buy a new Computer',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: goalcode.id,
+  name: 'Prep Work',
+  description: 'Look into some coding Languages to be a little prepared',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: goalcode.id,
+  name: 'Do the Bootcamp',
+  description: "Let's do this!",
+  done: true,
+  # price assigned as 0 by default
+  )
 
+Milestone.create(
+  goal_id: goalstartup.id,
+  name: 'Code',
+  description: 'Learn to code',
+  done: false,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: goalstartup.id,
+  name: 'Business Plan',
+  description: 'Make a Business Plan',
+  done: false,
+  # price assigned as 0 by default
+  )
 
+Milestone.create(
+  goal_id: goalstartup.id,
+  name: 'Team',
+  description: "Gather a team",
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goalstartup.id,
+  name: 'Office',
+  description: 'Find the right office',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goalstartup.id,
+  name: 'Office',
+  description: 'Find the right office',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goalstartup.id,
+  name: 'Build App',
+  description: 'Start working on our Feedback App',
+  done: false,
+  # price assigned as 0 by default
+  )
 #LINO/MILESTONE/GOALS#####################
 
 
@@ -622,6 +735,85 @@ activities = Activity.all
 
 
 #BIANCA/ACHIEVEMENTS###################
+divegoal = Goal.create!(
+    user_id: frieda.id,
+    activity_id: diving.id,
+    title: 'Follow my passion!',
+    motivation: 'Underwater the beauty and stillness is from another world!',
+    contribution: 100,
+    category: 'Nature',
+    completed: false,
+    )
+  # divegoal.photo = 'dive.jpg'
+  # file_data = File.read('assets/dive.jpg')
+ file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1584089328/dive_tckkmd.jpg')
+  divegoal.photo.attach(io: file, filename: 'dive.jpg', content_type: 'image/jpg')
+
+Milestone.create(
+  goal_id: divegoal.id,
+  name: 'Step 01',
+  description: 'get a medical checkup',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: divegoal.id,
+  name: 'Step 02',
+  description: 'choose a diving school and book a course',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: divegoal.id,
+  name: 'Step 03',
+  description: 'book an accomodation',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: divegoal.id,
+  name: 'Step 04',
+  description: 'book a flight',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: divegoal.id,
+  name: 'Step 05',
+  description: 'get vaccinated if neccessary',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: divegoal.id,
+  name: 'Step 06',
+  description: 'get that open water Padi-Certification',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: divegoal.id,
+  name: 'Step 06',
+  description: 'get that open water Padi-Certification',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: divegoal.id,
+  name: 'Step 06',
+  description: 'get that advanced open water Padi-Certification',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: divegoal.id,
+  name: 'Step 06',
+  description: 'dive the blue hole!',
+  done: true,
+  # price assigned as 0 by default
+  )
+
+
 
 ############################################################################
   goal6 = Goal.create!(
@@ -757,8 +949,9 @@ peter = User.create(
     username: 'Peter',
     password: '123456'
   )
-# file = URI.open('')
-#   hanna.avatar.attach(io: file, filename: 'hanna.jpeg', content_type: 'image/jpeg')
+
+file = URI.open('https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+  hanna.avatar.attach(io: file, filename: 'hanna.jpeg', content_type: 'image/jpeg')
 
 
 ################ LINO SEEDS END
