@@ -344,8 +344,8 @@ goalcode = Goal.create!(
     category: 'Learning',
     completed: false
     )
-  file = URI.open('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
-  goalcode.photo.attach(io: file, filename: 'code.jpeg', content_type: 'image/jpeg')
+  file = URI.open('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80')
+  goalstartup.photo.attach(io: file, filename: 'startup.jpeg', content_type: 'image/jpeg')
 
 #LINO/GOAL#####################
 
