@@ -125,13 +125,13 @@ horse = Activity.create(
 #CARO/ACTIVITIES#####################
 code = Activity.create(
   name: 'Le Wagon Coding Bootcamp',
-  location: 'Rudi-Dutschke-Straße 2610969 Berlin',
+  location: 'Rudi-Dutschke-Straße 26, 10969 Berlin',
   category: 'Learning',
   )
 
 startup = Activity.create(
   name: 'Berlin Valley ',
-  location: 'Gustav-Meyer-Allee 25 13355 Berlin',
+  location: 'Gustav-Meyer-Allee 25, 13355 Berlin',
   category: 'Learning',
   )
 
@@ -142,7 +142,7 @@ startup = Activity.create(
 diving = Activity.create(
   name: 'Dive the blue hole',
   location: 'Chapoose Street, Caye Caulker',
-  category: 'Nature, Sports',
+  category: 'Nature, Sports, Diving',
   )
 
 backflips = Activity.create(
@@ -467,7 +467,7 @@ divegoal = Goal.create!(
     motivation: 'Underwater the beauty and stillness is from another world!',
     contribution: 100,
     category: 'Nature',
-    completed: true
+    completed: false,
     )
   # divegoal.photo = 'dive.jpg'
   # file_data = File.read('assets/dive.jpg')
