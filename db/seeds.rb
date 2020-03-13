@@ -123,7 +123,17 @@ horse = Activity.create(
 
 
 #CARO/ACTIVITIES#####################
+code = Activity.create(
+  name: 'Le Wagon Coding Bootcamp',
+  location: 'Rudi-Dutschke-Straße 2610969 Berlin',
+  category: 'Learning',
+  )
 
+startup = Activity.create(
+  name: 'Berlin Valley ',
+  location: 'Gustav-Meyer-Allee 25 13355 Berlin',
+  category: 'Learning',
+  )
 
 #LINO/ACTIVITIES#####################
 
@@ -200,8 +210,32 @@ activities = Activity.all
 #ANYO/GOAL#####################
 
 
+
 #CARO/GOAL#####################
 
+goalcode = Goal.create!(
+    user_id: frieda.id,
+    activity_id: code.id,
+    title: 'Learn how to Code!',
+    motivation: 'I want to know what happens behind the scenes of technology and be able to shape it!',
+    contribution: 100,
+    category: 'Learning',
+    completed: true
+    )
+  file = URI.open('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+  goalcode.photo.attach(io: file, filename: 'code.jpeg', content_type: 'image/jpeg')
+
+  goalstartup = Goal.create!(
+    user_id: frieda.id,
+    activity_id: startup.id,
+    title: 'Found my own Startup!',
+    motivation: 'I want to start my own Company to be my own boss.',
+    contribution: 100,
+    category: 'Learning',
+    completed: false
+    )
+  file = URI.open('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+  goalcode.photo.attach(io: file, filename: 'code.jpeg', content_type: 'image/jpeg')
 
 #LINO/GOAL#####################
 
@@ -285,8 +319,81 @@ Milestone.create(
 
 
 #CARO/MILESTONE/GOALS#####################
+Milestone.create(
+  goal_id: goalcode.id,
+  name: 'Secure a spot',
+  description: 'Apply for a bootcamp',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: goalcode.id,
+  name: 'Computer',
+  description: 'Buy a new Computer',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: goalcode.id,
+  name: 'Prep Work',
+  description: 'Look into some coding Languages to be a little prepared',
+  done: true,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: goalcode.id,
+  name: 'Do the Bootcamp',
+  description: "Let's do this!",
+  done: true,
+  # price assigned as 0 by default
+  )
 
+Milestone.create(
+  goal_id: goalstartup.id,
+  name: 'Code',
+  description: 'Learn to code',
+  done: false,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: goalstartup.id,
+  name: 'Business Plan',
+  description: 'Make a Business Plan',
+  done: false,
+  # price assigned as 0 by default
+  )
 
+Milestone.create(
+  goal_id: goalstartup.id,
+  name: 'Team',
+  description: "Gather a team",
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goalstartup.id,
+  name: 'Office',
+  description: 'Find the right office',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goalstartup.id,
+  name: 'Office',
+  description: 'Find the right office',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goalstartup.id,
+  name: 'Build App',
+  description: 'Start working on our Feedback App',
+  done: false,
+  # price assigned as 0 by default
+  )
 #LINO/MILESTONE/GOALS#####################
 
 
@@ -482,7 +589,7 @@ peter = User.create(
     username: 'Peter',
     password: '123456'
   )
-file = URI.open('')
+file = URI.open('https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
   hanna.avatar.attach(io: file, filename: 'hanna.jpeg', content_type: 'image/jpeg')
 
 
