@@ -31,7 +31,53 @@ file = URI.open('https://images.unsplash.com/photo-1499887142886-791eca5918cd?ix
 ############################################################################
 
 #ANYO/USERS#####################
+andrea = User.create(
+   first_name: 'Andrea',
+    last_name: 'Scholz',
+    email: 'Andrea@scholz.de',
+    achievement_score: (100..1000).to_a.sample,
+    impressions: (10..500).to_a.sample,
+    username: 'Andy',
+    password: '123456'
+  )
+file = URI.open('https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2800&q=80')
+  andrea.avatar.attach(io: file, filename: 'andrea.jpeg', content_type: 'image/jpeg')
 
+  antonia = User.create(
+   first_name: 'Antonia',
+    last_name: 'Scholz',
+    email: 'Antonia@scholz.de',
+    achievement_score: (100..1000).to_a.sample,
+    impressions: (10..500).to_a.sample,
+    username: 'Toni',
+    password: '123456'
+  )
+file = URI.open('https://images.unsplash.com/photo-1567468219153-4b1dea5227ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
+  antonia.avatar.attach(io: file, filename: 'antonia.jpeg', content_type: 'image/jpeg')
+
+lisbeth = User.create(
+   first_name: 'Lisbeth',
+    last_name: 'Brown',
+    email: 'lisbeth@scholz.de',
+    achievement_score: (100..1000).to_a.sample,
+    impressions: (10..500).to_a.sample,
+    username: 'Lis',
+    password: '123456'
+  )
+file = URI.open('https://images.unsplash.com/photo-1528809217021-151305b50e55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80')
+  lisbeth.avatar.attach(io: file, filename: 'lisbeth.jpeg', content_type: 'image/jpeg')
+
+lino = User.create(
+   first_name: 'Lino',
+    last_name: 'Maurer',
+    email: 'lino@maurer.de',
+    achievement_score: (100..1000).to_a.sample,
+    impressions: (10..500).to_a.sample,
+    username: 'Lino',
+    password: '123456'
+  )
+file = URI.open('https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1115&q=80')
+  lino.avatar.attach(io: file, filename: 'lino.jpeg', content_type: 'image/jpeg')
 
 #CARO/USERS#####################
 
@@ -92,20 +138,20 @@ hanna = User.create(
 file = URI.open('https://images.unsplash.com/photo-1528341866330-07e6d1752ec2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1002&q=80')
   hanna.avatar.attach(io: file, filename: 'hanna.jpeg', content_type: 'image/jpeg')
 
-5.times do
-  user = User.new(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.free_email(name: "testmail#{counter} "),
-    achievement_score: (100..1000).to_a.sample,
-    impressions: (10..500).to_a.sample
-    )
-  counter += 1
-  user.username = user.first_name
-  user.password = '123456'
-  # user.avatar.attach(File.open('../../app/assets/images/default-avatar.jpg')
-  user.save!
-end
+# 5.times do
+#   user = User.new(
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     email: Faker::Internet.free_email(name: "testmail#{counter} "),
+#     achievement_score: (100..1000).to_a.sample,
+#     impressions: (10..500).to_a.sample
+#     )
+#   counter += 1
+#   user.username = user.first_name
+#   user.password = '123456'
+#   # user.avatar.attach(File.open('../../app/assets/images/default-avatar.jpg')
+#   user.save!
+# end
 
 # Display activity
 puts 'Creating activities'
@@ -120,7 +166,29 @@ horse = Activity.create(
 
 
 #ANYO/ACTIVITIES#####################
+helicopter = Activity.create(
+  name: 'Helicopter Tour',
+  location: 'Ashford Ave, 00907 San Juan',
+  category: 'Action',
+  )
 
+cinqueterre = Activity.create(
+  name: 'cinque Terre Hiking',
+  location: 'Monterosso al Mare, 19016 La Spezia',
+  category: 'Hiking',
+  )
+
+northernlights = Activity.create(
+  name: 'Northern Lights in Iceland',
+  location: 'Einivellir 1, 221 Hafnarfjörður',
+  category: 'Places',
+  )
+
+surfing = Activity.create(
+  name: 'Surfing Chicama',
+  location: 'Puerto Malabrigo, 13731 Malabrigo',
+  category: 'Surfing',
+  )
 
 #CARO/ACTIVITIES#####################
 
@@ -198,6 +266,42 @@ activities = Activity.all
 #######################################################################
 
 #ANYO/GOAL#####################
+goal6 = Goal.create!(
+    user_id: antonia.id,
+    activity_id: surfing.id,
+    title: 'Surfing in Peru',
+    motivation: 'Everyone wants to visit macchu pichu but I want to surf chicama – longest wave in the world!',
+    contribution: 100,
+    category: 'Sports',
+    completed: false
+    )
+  file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/backflips_jmaze3.jpg')
+  goal6.photo.attach(io: file, filename: 'backflips.jpeg', content_type: 'image/jpeg')
+
+
+goal7 = Goal.create!(
+    user_id: lino.id,
+    activity_id: helicopter.id,
+    title: 'See my town from above',
+    motivation: 'I love the vibrations of technicity and I know that sitting in a heli its amazing',
+    contribution: 100,
+    category: 'Sports',
+    completed: false
+    )
+  file = URI.open('https://images.unsplash.com/photo-1490118121063-d12f8c4464ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80')
+  goal7.photo.attach(io: file, filename: 'helicopter.jpeg', content_type: 'image/jpeg')
+
+  goal8 = Goal.create!(
+    user_id: lisbeth.id,
+    activity_id: northernlights.id,
+    title: 'Observe the Northern Lights',
+    motivation: 'As a child and as a grown woman I have been always amazed by the northern lights – now its time to got to iceland',
+    contribution: 100,
+    category: 'nature',
+    completed: false
+    )
+  file = URI.open('https://images.unsplash.com/photo-1509529711801-deac231925ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
+  goal8.photo.attach(io: file, filename: 'northernlights.jpeg', content_type: 'image/jpeg')
 
 
 #CARO/GOAL#####################
@@ -282,8 +386,179 @@ Milestone.create(
 ###########################################################################
 
 #ANYO/MILESTONE/GOALS#####################
+Milestone.create(
+  goal_id: goal6.id,
+  name: '01',
+  description: 'set the date for my vacation',
+  done: false,
+  # price assigned as 0 by default
+  )
 
+Milestone.create(
+  goal_id: goal6.id,
+  name: '02',
+  description: 'ask my boyfriend if he wants to join',
+  done: false,
+  # price assigned as 0 by default
+  )
 
+Milestone.create(
+  goal_id: goal6.id,
+  name: '03',
+  description: 'take a look at booking.com for the best price',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal6.id,
+  name: '04',
+  description: 'go to booking.com and book a hotel',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal6.id,
+  name: '05',
+  description: 'call the flight operator to check if i can take my surfboard for free',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal6.id,
+  name: '06',
+  description: 'book the flight',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal6.id,
+  name: '07',
+  description: 'check my surfboards for any damage',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal6.id,
+  name: '08',
+  description: 'pack my stuff and watering my plants',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal6.id,
+  name: '09',
+  description: 'enjoy vacation and surf the amanzing wave',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: '1.',
+  description: 'check for flight operators around San Juan',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: '2.',
+  description: 'ask my peoples if they want to join',
+  done: false,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: goal7.id,
+  name: '3.',
+  description: 'make sure the the operator has more then 4 stars',
+  done: false,
+  # price assigned as 0 by default
+  )
+Milestone.create(
+  goal_id: goal7.id,
+  name: '4.',
+  description: 'book the heli for 5 people',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal7.id,
+  name: '5.',
+  description: 'Enjoy the view over San Juan',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal8.id,
+  name: 'Step 1',
+  description: 'Googleling for the best time to see the northernlights',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal8.id,
+  name: 'Step 2',
+  description: 'book the bubble hotel - most important step',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal8.id,
+  name: 'Step 3',
+  description: 'Book the flight to Reykjavík',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal8.id,
+  name: 'Step 4',
+  description: 'Make sure that I dont need a Visa',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal8.id,
+  name: 'Step 5',
+  description: 'Ask my Parents for feeding my cat',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal8.id,
+  name: 'Step 6',
+  description: 'Book a Taxi to the airport',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal8.id,
+  name: 'Step 7',
+  description: 'Pack my stuff – important to pack my downjacket.',
+  done: false,
+  # price assigned as 0 by default
+  )
+
+Milestone.create(
+  goal_id: goal8.id,
+  name: 'Step 8',
+  description: 'enjoy iceland',
+  done: false,
+  # price assigned as 0 by default
+  )
 #CARO/MILESTONE/GOALS#####################
 
 
@@ -482,8 +757,8 @@ peter = User.create(
     username: 'Peter',
     password: '123456'
   )
-file = URI.open('')
-  hanna.avatar.attach(io: file, filename: 'hanna.jpeg', content_type: 'image/jpeg')
+# file = URI.open('')
+#   hanna.avatar.attach(io: file, filename: 'hanna.jpeg', content_type: 'image/jpeg')
 
 
 ################ LINO SEEDS END
