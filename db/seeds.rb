@@ -660,17 +660,10 @@ Milestone.create(
   # price assigned as 0 by default
   )
 
-Milestone.create(
-  goal_id: goalstartup.id,
-  name: 'Step 5',
-  description: 'Find the right office',
-  done: false,
-  # price assigned as 0 by default
-  )
 
 Milestone.create(
   goal_id: goalstartup.id,
-  name: 'Step 6',
+  name: 'Step 5',
   description: 'Start working on our Feedback App',
   done: false,
   # price assigned as 0 by default
@@ -817,7 +810,7 @@ Milestone.create(
 
 ############################################################################
   goal6 = Goal.create!(
-    user_id: frieda.id,
+    user_id: hanna.id,
     activity_id: hike_in_georgia.id,
     title: 'Go hiking in Georgia!',
     motivation: 'The nature there is supposed to be beyond beautiful!',
