@@ -602,28 +602,28 @@ Milestone.create(
 #CARO/MILESTONE/GOALS#####################
 Milestone.create(
   goal_id: goalcode.id,
-  name: 'Secure a spot',
+  name: 'Step 1',
   description: 'Apply for a bootcamp',
   done: true,
   # price assigned as 0 by default
   )
 Milestone.create(
   goal_id: goalcode.id,
-  name: 'Computer',
+  name: 'Step 2',
   description: 'Buy a new Computer',
   done: true,
   # price assigned as 0 by default
   )
 Milestone.create(
   goal_id: goalcode.id,
-  name: 'Prep Work',
-  description: 'Look into some coding Languages to be a little prepared',
+  name: 'Step 3',
+  description: 'Look into some coding Languages',
   done: true,
   # price assigned as 0 by default
   )
 Milestone.create(
   goal_id: goalcode.id,
-  name: 'Do the Bootcamp',
+  name: 'Step 4',
   description: "Let's do this!",
   done: true,
   # price assigned as 0 by default
