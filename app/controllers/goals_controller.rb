@@ -1,5 +1,6 @@
 class GoalsController < ApplicationController
 before_action :find_goal, only: [:show, :destroy]
+skip_before_action :authenticate_user!, only: [:achievements, :searched, :achievement]
 
   def index
     @goals = Goal.where(completed: false)
