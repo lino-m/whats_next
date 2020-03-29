@@ -1,4 +1,6 @@
-<h2>Log in</h2>
+<div class="container_signin">
+
+<h2 class="form_ueberschrift">Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -13,8 +15,11 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class: "btn btn-flat log_in"  %>
   </div>
 <% end %>
-
+<div class="link_form">
+<div class="member">Not a member yet?</div>
 <%= render "devise/shared/links" %>
+</div>
+</div>
