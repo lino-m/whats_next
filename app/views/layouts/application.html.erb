@@ -13,13 +13,16 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <div id="page-container">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+      <div id="content-wrap">
+        <%= yield %>
+      </div>
+      <%= render 'shared/footer' %>
+    </div>
 
-    <%= yield %>
-    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
-
     <%= javascript_pack_tag 'application' %>
     <%#= javascript_pack_tag 'init_mapbox' %>
 
