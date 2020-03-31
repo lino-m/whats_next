@@ -276,7 +276,7 @@ activities = Activity.all
     category: 'Sports',
     completed: false
     )
-  file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/backflips_jmaze3.jpg')
+  file = URI.open('https://res.cloudinary.com/frieda/image/upload/v1583414837/backflips_jmaze3.jpg', , :crop=>"fill")
   goal1.photo.attach(io: file, filename: 'backflips.jpeg', content_type: 'image/jpeg')
 
 #######################################################################
