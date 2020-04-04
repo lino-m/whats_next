@@ -115,3 +115,37 @@
   box-shadow: 0 0px 0.25px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
   border: none;
 }
+
+@media(max-width: 800px) {
+  .my-container {
+    width: 400px;
+  }
+}
+
+@media(max-width: 568px) {
+  #hidden-search {
+    width: 200px;
+  }
+  .explore {
+    flex-wrap: wrap;
+  }
+  .cities {
+    flex-wrap: wrap;
+  }
+  .small-btn.d-flex.justify-content-between {
+    flex-wrap: wrap;
+  }
+  .navbar-nav.mr-auto {
+    flex-direction: row;
+  }
+
+}
+
+@media(max-width: 550px) {
+  .my-container{
+    width: 250px;
+  }
+}
+
+
+
